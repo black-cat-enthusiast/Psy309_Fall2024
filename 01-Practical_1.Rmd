@@ -1,0 +1,83 @@
+---
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+# Asking Scientific Questions and Literature Review 
+
+## Overview {-}
+
+The purpose of this assignment is to showcase your interest in a specific topic related to psychology, and to demonstrate your ability to find **scholarly sources** that make claims related to your topic. 
+
+***Your submission should not be longer than 2 pages (including references)***
+
+## 1. Choose a Reasearch Topic in Psychology {-}
+
+**In a single paragraph (3-5 sentences), tell us what you would like to research.**
+
+*Some questions that you could think over while selecting at topic:*
+
+Why did you decide to study Psychology? There is some mystery about the mind, or some insight that you have had, that motivates you. Do you want to help people with a particular set of challenges? Do you want to understand growth and development? The way the brain works? How people interact? The possibilities are endless.
+
+In this course you will learn how to develop a research proposal around a topic of your choice, one that could be the beginning of a grant proposal or a way to wow potential supervisors for grad school, or to impress potential employers who want to know if you can lead project. The more you make this something relevant to your own goals, the more useful this course will be.
+
+It must be a topic in *psychology*: i.e., the study of the mind, and it should be something that can be studied *scientifically*, i.e., observed in such a way that other people could replicate your process and generate similar data. This topic will be the basis for your research project over the course of the semester, so please give it some thought!
+
+## 2. See What's Out There {-}
+
+Go to [the library PsycINFO page](https://guides.library.utoronto.ca/psycinfoovid), [Google Scholar](https://scholar.google.ca/), or similar academic search engine.
+
+Conduct a basic search for a topic that you are interested in. If you would like more information about this process, we have multiple videos on conducting a literature search available online.
+
+**Please write a few paragraphs describing:**
+
+- The search engine(s) that you used 
+
+- What were the *specific* search terms you used (so if we entered those terms, we should get the same output as you)
+
+- How did you expand / change your search terms to focus on the types of studies you were most interested in? 
+
+- Provide a reference list of 3-5 peer-reviewed, academic research papers on your research topic; the references should be listed in [APA format](https://guides.library.utoronto.ca/c.php?g=250462&p=1670709).
+
+- At least one of your papers must be an empirical paper! 
+
+**Provide a brief (3-5 sentence) summary of one empirical, peer-reviewed research paper from your list** (preferably one that represents an approach to your research topic that you find interesting.)
+
+- Tell us what the paper was about and why you chose it - how did you know it was an empirical paper? What about it was interesting to you?
+    + You don’t have to tell us everything about the paper- again just a 3-5 sentence summary in your own words, which means you must leave many details out! You will get into the details of this paper in the next two practical assignments. Note: you can change this ‘focus paper’ later if you find something better, but it is better to start with a specific paper in mind.
+    + You will end up having to create an empirical research proposal by the end of the term, so this paper can be an important example for you to rely and build upon as the term goes on. The important thing is to pick a paper and dive in - this is a ‘safe space’ to just immerse yourself in a research approach, regardless of whether you actually perform research like this in the future!
+
+
+## 3. Reflect {-}
+
+**Write a closing paragraph (3-5 sentences) describing what it was like to try to find research on your topic.**
+
+- Was it hard to pick a topic? Did your topic change based on what you found (or couldn’t find) during your literature review? What advice would you give to other students doing this assignment in the future?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

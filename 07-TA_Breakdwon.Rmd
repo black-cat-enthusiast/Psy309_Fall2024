@@ -1,0 +1,104 @@
+---
+output:
+  word_document: default
+  html_document: default
+  pdf_document: default
+---
+
+# TA Responsibilities {-}
+
+## Overview {-}
+
+- Anticipated enrollment = 38 students
+
+The assignments build across the term, so it makes the most sense for **each TA to be assigned ~13 students** to assess throughout the term. 
+
+- We will split the two term tests such that each of you grades 1-2 questions across all of the tests. 
+
+## Course Deliverables {-}
+
+### 1. 5x 3% "Practical" assignments {-}
+
+- Each TA marks bi-weekly submissions for ~13 students.
+- Practicals are intended to be "bite-sized" pieces of their final paper project.
+- Each submission will be graded out of 15 marks.
+- A rubric will be provided on Quercus to evaluate the practical submissions. 
+
+### 2. 2x 25% Tests {-}
+
+- Completed on Quercus
+- MC will be auto-graded
+- Answer keys for SA questions will be provided the day of the test. 
+
+### 3. 5% Poster Presentation {-}
+
+- The purpose of this assignment is to encourage students to complete and understand their analysis for the final project well ahead of the deadline to submit the written report.
+- Students will upload a 5-minute video explaining their project and results. 
+- Mostly graded for completion, but also offers an opportunity to provide feedback about the interpretations. 
+
+### 3. 20% Paper {-}
+
+- "Capstone" project for this course (12-14 pages all-in)
+- You will evaluate the same ~13 students as you have graded all semester. 
+- A detailed rubric will be provided on Quercus to evaluate the essays. 
+
+### 4. 10% In-class participation {-}
+
+- No contribution from TAs - Jennet will manage. 
+
+### TA Student contact {-}
+
+- 10 weekly office hours - **Please send Jennet your personal zoom links** 
+
+- Remaining hours allocated to student contact in the DDAH form can be used to field emails. 
+
+- In any situation where students are hostile or you don't know how to respond to them, feel free to forward their correspondences along to me to deal with. *You can count on me to back up your calls!* 
+
+```{r, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE,message=FALSE,warning=FALSE)
+
+library(tidyverse)
+library(reshape2)
+
+data <- read_csv("Breakdown.csv")
+```
+
+## Course Responsibilities {-}
+
+All of your TA responsibilities can be completed virtually. Psy309 will involve two in-class tests that  will be completed on Quercus. 
+
+```{r}
+knitr::kable(data)
+```
+
+*Note* That there will be late / deferred submissions for all of the assignments.
+
+```{r}
+data$Assignment <- as.character(data$Assignment)
+data$Assignment <- factor(data$Assignment,levels=unique(data$Assignment))
+
+data$Size <- as.character(data$Size)
+data$Size <- factor(data$Size, levels=c("Small","Med","Largest"))
+
+a <- data %>%
+  ggplot(aes(x=Due_Date,y=Assignment,colour=Size,size=Size))+
+  geom_point(alpha=0.5)+
+  theme_classic()+
+  scale_x_continuous(labels = as.character(data$Due_Date),breaks=data$Due_Date)+
+  theme(axis.text.x = element_text(angle = 45,vjust=1,hjust=1))+
+  labs(
+    x="Assignment Due Dates",
+    y="PSY 309 Deliverables"
+  )+
+  guides(size="none")
+
+ggsave("Psy309_deliverables.png",a,height=4,width=5,dpi=300)
+
+knitr::include_graphics("Psy309_deliverables.png")
+```
+
+### Reminders {-}
+
+- Practical assignments are due Fridays at 11:59pm.
+
+I will email you a reminder that submissions are available the day after the due date. 

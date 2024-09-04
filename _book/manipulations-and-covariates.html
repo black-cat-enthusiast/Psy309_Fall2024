@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Practical #3 Manipulations and Covariates | A book of Practical Assignments for Psy309 at UTM Fall 2024</title>
+  <meta name="description" content="This is an organized index of the 5 practical assignments and the final writing project that PSY309 students at UTM will complete during the Fall 2024 semester." />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Practical #3 Manipulations and Covariates | A book of Practical Assignments for Psy309 at UTM Fall 2024" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is an organized index of the 5 practical assignments and the final writing project that PSY309 students at UTM will complete during the Fall 2024 semester." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Practical #3 Manipulations and Covariates | A book of Practical Assignments for Psy309 at UTM Fall 2024" />
+  
+  <meta name="twitter:description" content="This is an organized index of the 5 practical assignments and the final writing project that PSY309 students at UTM will complete during the Fall 2024 semester." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="exploring-types-of-measurement-in-research.html"/>
+<link rel="next" href="correlation-statistics-and-plots.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Psy309 Computational Assignments</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="asking-scientific-questions-and-literature-review.html"><a href="asking-scientific-questions-and-literature-review.html"><i class="fa fa-check"></i><b>1</b> Asking Scientific Questions and Literature Review</a>
+<ul>
+<li class="chapter" data-level="" data-path="asking-scientific-questions-and-literature-review.html"><a href="asking-scientific-questions-and-literature-review.html#overview"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="asking-scientific-questions-and-literature-review.html"><a href="asking-scientific-questions-and-literature-review.html#choose-a-reasearch-topic-in-psychology"><i class="fa fa-check"></i>1. Choose a Reasearch Topic in Psychology</a></li>
+<li class="chapter" data-level="" data-path="asking-scientific-questions-and-literature-review.html"><a href="asking-scientific-questions-and-literature-review.html#see-whats-out-there"><i class="fa fa-check"></i>2. See What’s Out There</a></li>
+<li class="chapter" data-level="" data-path="asking-scientific-questions-and-literature-review.html"><a href="asking-scientific-questions-and-literature-review.html#reflect"><i class="fa fa-check"></i>3. Reflect</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exploring-types-of-measurement-in-research.html"><a href="exploring-types-of-measurement-in-research.html"><i class="fa fa-check"></i><b>2</b> Exploring Types of Measurement in Research</a>
+<ul>
+<li class="chapter" data-level="" data-path="exploring-types-of-measurement-in-research.html"><a href="exploring-types-of-measurement-in-research.html#identify-dependent-variables"><i class="fa fa-check"></i>1. Identify dependent variable(s)</a></li>
+<li class="chapter" data-level="" data-path="exploring-types-of-measurement-in-research.html"><a href="exploring-types-of-measurement-in-research.html#identify-claims-made-by-the-paper"><i class="fa fa-check"></i>2. Identify claim(s) made by the paper</a></li>
+<li class="chapter" data-level="" data-path="exploring-types-of-measurement-in-research.html"><a href="exploring-types-of-measurement-in-research.html#critically-evaluate-the-measuement-approach"><i class="fa fa-check"></i>3. Critically Evaluate the Measuement Approach</a></li>
+<li class="chapter" data-level="" data-path="exploring-types-of-measurement-in-research.html"><a href="exploring-types-of-measurement-in-research.html#develop-a-research-idea"><i class="fa fa-check"></i>4. Develop a Research Idea</a></li>
+<li class="chapter" data-level="" data-path="exploring-types-of-measurement-in-research.html"><a href="exploring-types-of-measurement-in-research.html#reflect-1"><i class="fa fa-check"></i>5. Reflect</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html"><i class="fa fa-check"></i><b>3</b> Manipulations and Covariates</a>
+<ul>
+<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#connecting-covariates-to-your-topic-of-interest"><i class="fa fa-check"></i>1. Connecting covariates to your topic of interest</a></li>
+<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#experiments-manipulating-independent-variables"><i class="fa fa-check"></i>2. Experiments: Manipulating Independent Variable(s)</a></li>
+<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#connect-the-theory-to-computation-in-r"><i class="fa fa-check"></i>3. Connect the theory to computation in R!</a></li>
+<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#reflect-2"><i class="fa fa-check"></i>4. Reflect</a></li>
+<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#code-for-practical-3"><i class="fa fa-check"></i>Code For Practical #3</a>
+<ul>
+<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#object-oriented-programming"><i class="fa fa-check"></i>Object-oriented programming</a></li>
+<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#random-number-generation"><i class="fa fa-check"></i>Random number generation</a></li>
+<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#sample-from-the-normal-distribution"><i class="fa fa-check"></i>Sample from the normal distribution</a></li>
+<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#sampling-from-a-list-of-values"><i class="fa fa-check"></i>Sampling from a list of values</a></li>
+<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#example-of-a-complete-dataset"><i class="fa fa-check"></i>Example of a complete dataset</a></li>
+<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#aggregate-table-of-data"><i class="fa fa-check"></i>Aggregate table of data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="correlation-statistics-and-plots.html"><a href="correlation-statistics-and-plots.html"><i class="fa fa-check"></i><b>4</b> Correlation Statistics and Plots</a>
+<ul>
+<li class="chapter" data-level="" data-path="correlation-statistics-and-plots.html"><a href="correlation-statistics-and-plots.html#thinking-about-association"><i class="fa fa-check"></i>1. Thinking About Association</a></li>
+<li class="chapter" data-level="" data-path="correlation-statistics-and-plots.html"><a href="correlation-statistics-and-plots.html#what-is-already-known-about-these-varaibles"><i class="fa fa-check"></i>2. What is already known about these varaibles?</a></li>
+<li class="chapter" data-level="" data-path="correlation-statistics-and-plots.html"><a href="correlation-statistics-and-plots.html#power-analysis-what-sample-size-should-you-use"><i class="fa fa-check"></i>3. Power Analysis: what sample size should you use?</a></li>
+<li class="chapter" data-level="" data-path="correlation-statistics-and-plots.html"><a href="correlation-statistics-and-plots.html#a-picture-is-worth-100-words"><i class="fa fa-check"></i>4. A picture is worth 100 words…</a></li>
+<li class="chapter" data-level="" data-path="correlation-statistics-and-plots.html"><a href="correlation-statistics-and-plots.html#reflect-3"><i class="fa fa-check"></i>5. Reflect</a></li>
+<li class="chapter" data-level="" data-path="correlation-statistics-and-plots.html"><a href="correlation-statistics-and-plots.html#code-for-practical-4"><i class="fa fa-check"></i>Code for Practical #4</a>
+<ul>
+<li class="chapter" data-level="" data-path="correlation-statistics-and-plots.html"><a href="correlation-statistics-and-plots.html#generate-data"><i class="fa fa-check"></i>Generate Data</a></li>
+<li class="chapter" data-level="" data-path="correlation-statistics-and-plots.html"><a href="correlation-statistics-and-plots.html#check-out-the-data"><i class="fa fa-check"></i>Check out the data</a></li>
+<li class="chapter" data-level="" data-path="correlation-statistics-and-plots.html"><a href="correlation-statistics-and-plots.html#check-the-correlation"><i class="fa fa-check"></i>Check the correlation</a></li>
+<li class="chapter" data-level="" data-path="correlation-statistics-and-plots.html"><a href="correlation-statistics-and-plots.html#code-to-generate-a-basic-scatterplot"><i class="fa fa-check"></i>Code to generate a basic scatterplot:</a></li>
+<li class="chapter" data-level="" data-path="correlation-statistics-and-plots.html"><a href="correlation-statistics-and-plots.html#a-fancier-better-looking-scatterplot"><i class="fa fa-check"></i>A fancier, better looking scatterplot:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html"><i class="fa fa-check"></i><b>5</b> Connecting the IV and Covariate</a>
+<ul>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#thinking-about-causality"><i class="fa fa-check"></i>1. Thinking About Causality</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#what-is-already-known"><i class="fa fa-check"></i>2. What is already known?</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#connect-the-theory-of-the-iv-dv-relationship-to-your-proposed-covariate."><i class="fa fa-check"></i>3. Connect the theory of the IV-DV relationship to your proposed covariate.</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#transform-the-continuous-covariate-to-a-categorical-variable"><i class="fa fa-check"></i>4. Transform the continuous covariate to a categorical variable</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#reflect-4"><i class="fa fa-check"></i>5. Reflect</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#code-for-practical-5"><i class="fa fa-check"></i>Code for Practical #5</a>
+<ul>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#generate-data-1"><i class="fa fa-check"></i>Generate data</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#transform"><i class="fa fa-check"></i>Transform</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#make-a-bar-graph"><i class="fa fa-check"></i>Make a Bar Graph</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#analyze"><i class="fa fa-check"></i>Analyze</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#category-exmaple"><i class="fa fa-check"></i>3-category exmaple</a></li>
+<li class="chapter" data-level="5.0.1" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#analyze-3-category-example"><i class="fa fa-check"></i><b>5.0.1</b> Analyze 3-category example</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html"><i class="fa fa-check"></i>Capstone Project: A Simulated Research Paper</a>
+<ul>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#overview-1"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#methods"><i class="fa fa-check"></i>Methods</a></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#results"><i class="fa fa-check"></i>Results</a>
+<ul>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#correlation-analysis"><i class="fa fa-check"></i>Correlation Analysis</a></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#one-way-analysis"><i class="fa fa-check"></i>One-Way Analysis</a></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#factorial-anova"><i class="fa fa-check"></i>Factorial ANOVA</a></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#follow-up-pair-wise-comparisons"><i class="fa fa-check"></i>Follow up pair-wise comparisons</a></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#linear-regression"><i class="fa fa-check"></i>Linear Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#discussion"><i class="fa fa-check"></i>Discussion</a>
+<ul>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#conclusions"><i class="fa fa-check"></i>Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html"><i class="fa fa-check"></i>TA Responsibilities</a>
+<ul>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#overview-2"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#course-deliverables"><i class="fa fa-check"></i>Course Deliverables</a>
+<ul>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#x-3-practical-assignments"><i class="fa fa-check"></i>1. 5x 3% “Practical” assignments</a></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#x-25-tests"><i class="fa fa-check"></i>2. 2x 25% Tests</a></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#poster-presentation"><i class="fa fa-check"></i>3. 5% Poster Presentation</a></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#paper"><i class="fa fa-check"></i>3. 20% Paper</a></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#in-class-participation"><i class="fa fa-check"></i>4. 10% In-class participation</a></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#ta-student-contact"><i class="fa fa-check"></i>TA Student contact</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#course-responsibilities"><i class="fa fa-check"></i>Course Responsibilities</a>
+<ul>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#reminders"><i class="fa fa-check"></i>Reminders</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A book of Practical Assignments for Psy309 at UTM Fall 2024</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="manipulations-and-covariates" class="section level1 hasAnchor" number="3">
+<h1><span class="header-section-number">Practical #3</span> Manipulations and Covariates<a href="manipulations-and-covariates.html#manipulations-and-covariates" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="connecting-covariates-to-your-topic-of-interest" class="section level2 unnumbered hasAnchor">
+<h2>1. Connecting covariates to your topic of interest<a href="manipulations-and-covariates.html#connecting-covariates-to-your-topic-of-interest" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>By this point, you’ve had a chance to develop your ideas around how to measure a construct within your research topic of interest. The simplest thing to do with such information is just to report its properties, like the average grade in a class, or frequencies, like how many people sign up for different classes. These are known as descriptive statistics.</p>
+<p>But if we want to go further and understand why the world is the way that it is, we may try to see how things we can measure are linked together. If we are going to observe more than one variable of interest and see how closely linked these variables are, we are beginning to engage association claims, which often involves a <em>correlational</em> approach. When one variable is correlated with another variable of interest, we call it a <em>covariate</em>.</p>
+<p>For your topic of interest, <strong>describe a second construct / covariate that you suspect is linked (either positively or negatively) to your main variable of interest</strong>. What is your reasoning for selecting this variable? Is there an obvious reason that it is relevant, or, even better- is it mentioned as being related in the research literature? <strong>In a short paragraph (3-5 sentences), describe:</strong></p>
+<ul>
+<li>Discuss your idea for why the two variables might be related.</li>
+<li>Be clear if the proposed relationship is positive or negative, and speculate about the strength.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-1"></span>
+<img src="Figs/strength.jpg" alt="Figure 1. A reminder about the data patterns that correspond to various correlation coefficients"  />
+<p class="caption">
+Figure 3.1: Figure 1. A reminder about the data patterns that correspond to various correlation coefficients
+</p>
+</div>
+<ul>
+<li>Provide an in-text citation to (at least) one peer-reviewed article that shows that the constructs might be related.
+<ul>
+<li>If there is no direct evidence or reporting of this relationship, then cite an article that shows that show some sort of peripheral evidence that could support the relationship that you are proposing.</li>
+</ul></li>
+<li>Below the paragraph, provide an APA style reference to the paper that you cited.</li>
+</ul>
+</div>
+<div id="experiments-manipulating-independent-variables" class="section level2 unnumbered hasAnchor">
+<h2>2. Experiments: Manipulating Independent Variable(s)<a href="manipulations-and-covariates.html#experiments-manipulating-independent-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>If we want to go further from just showing an association to establishing that one construct directly influences or <em>causes</em> changes in another, we need to do experiments. In an experiments, we <em>manipulate</em> one variable to see if those unpredictable/independent manipulations create predictable effects on the dependent variable.</p>
+<p>Think of a way in which you could manipulate an independent variable to create changes in your dependent variable of interest. In a short paragraph (3-5 sentences):</p>
+<ul>
+<li>Discuss your idea for how you could manipulate one thing (the independent variable) to change the dependent variable.</li>
+<li>Be clear on the direction of manipulation, e.g., if one increases how much an assignment is worth, a student’s nervous level will also increase</li>
+<li>Provide an in-text citation to (at least) one peer-reviewed article that shows that the constructs might be related. If you can’t find evidence of the exact same manipulation, show an association and describe how you could change it into a manipulation, or show how the manipulation has been used in another context but could be applied here.</li>
+<li>If there is no direct evidence or reporting of this relationship, then cite an article that shows that these constructs could be related.</li>
+<li>Below the paragraph, provide an APA style reference to the paper that you cited.</li>
+</ul>
+</div>
+<div id="connect-the-theory-to-computation-in-r" class="section level2 unnumbered hasAnchor">
+<h2>3. Connect the theory to computation in R!<a href="manipulations-and-covariates.html#connect-the-theory-to-computation-in-r" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Generate</strong> an example mock data set that includes the variables that you described in part 2 (above) with 100 participants per group. <strong>Print out a nice looking table that shows</strong> the <strong>n</strong>, <strong>mean</strong>, <strong>min</strong>, <strong>max</strong>, and <strong>standard error of the mean</strong> for the key dependent variable that you are interested in measuring. Make sure that your table is organized to show these descriptive statistics for each of the experimental conditions that you proposed in part (2) above.</p>
+<ul>
+<li><p>Creating a reproducible data set will require using functions in <code>Rstudio</code>. For this reason <strong><em>this assignment must be generated using <code>Rstudio</code></em></strong>.</p></li>
+<li><p>Make sure to watch Jennet’s videos (on Quercus) about how to generate data and tables through <code>Rstudio</code>.</p></li>
+<li><p>Make sure that you have <code>echo = TRUE, warning = FALSE, message = FALSE</code> set for your code blocks so that the output shows your code, but not the messages or warnings that R sends (and watch the tutorial video to get info on what this means).</p>
+<ul>
+<li>Don’t print the whole data-set that you’ve created in-line, or your output document will be really long.</li>
+</ul></li>
+</ul>
+</div>
+<div id="reflect-2" class="section level2 unnumbered hasAnchor">
+<h2>4. Reflect<a href="manipulations-and-covariates.html#reflect-2" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Write a closing paragraph (3-5 sentences) summarizing what it is like learning to work with R and what it is like to see all the variables visualized. What questions and/or difficulties have arisen? Do you think it is helpful to be able to simulate your data ahead of time? What do you think about the group size of n = 100 (e.g., should it be increased or decreased?).</p>
+<p>Additionally, feel free to reflect on the process of using Rstudio to generate data - Is there anything that would have improved your experience doing this lab?</p>
+</div>
+<div id="code-for-practical-3" class="section level2 unnumbered hasAnchor">
+<h2>Code For Practical #3<a href="manipulations-and-covariates.html#code-for-practical-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="object-oriented-programming" class="section level3 unnumbered hasAnchor">
+<h3>Object-oriented programming<a href="manipulations-and-covariates.html#object-oriented-programming" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Examples of how Rstudio can be used to assign single values, lists of values, or 2-D arrays of Data.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="manipulations-and-covariates.html#cb1-1" tabindex="-1"></a><span class="co"># Notes </span></span>
+<span id="cb1-2"><a href="manipulations-and-covariates.html#cb1-2" tabindex="-1"></a></span>
+<span id="cb1-3"><a href="manipulations-and-covariates.html#cb1-3" tabindex="-1"></a><span class="co"># text will cause problems </span></span>
+<span id="cb1-4"><a href="manipulations-and-covariates.html#cb1-4" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="manipulations-and-covariates.html#cb1-5" tabindex="-1"></a><span class="co"># First example </span></span>
+<span id="cb1-6"><a href="manipulations-and-covariates.html#cb1-6" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="manipulations-and-covariates.html#cb1-7" tabindex="-1"></a><span class="dv">67</span> <span class="sc">*</span> <span class="dv">88</span></span></code></pre></div>
+<pre><code>## [1] 5896</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="manipulations-and-covariates.html#cb3-1" tabindex="-1"></a><span class="co"># Object-oriented programming </span></span>
+<span id="cb3-2"><a href="manipulations-and-covariates.html#cb3-2" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="manipulations-and-covariates.html#cb3-3" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">67</span> <span class="sc">*</span> <span class="dv">88</span> <span class="co"># Assign the result of the function onto the object &quot;a&quot;</span></span>
+<span id="cb3-4"><a href="manipulations-and-covariates.html#cb3-4" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="manipulations-and-covariates.html#cb3-5" tabindex="-1"></a><span class="co"># Example 2 </span></span>
+<span id="cb3-6"><a href="manipulations-and-covariates.html#cb3-6" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="manipulations-and-covariates.html#cb3-7" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="co"># Assign a list onto the object &quot;b&quot;</span></span>
+<span id="cb3-8"><a href="manipulations-and-covariates.html#cb3-8" tabindex="-1"></a></span>
+<span id="cb3-9"><a href="manipulations-and-covariates.html#cb3-9" tabindex="-1"></a><span class="co"># Example 3 - DATA FAME </span></span>
+<span id="cb3-10"><a href="manipulations-and-covariates.html#cb3-10" tabindex="-1"></a></span>
+<span id="cb3-11"><a href="manipulations-and-covariates.html#cb3-11" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="co"># Assign a 2-D data frame onto the object &quot;c&quot;</span></span>
+<span id="cb3-12"><a href="manipulations-and-covariates.html#cb3-12" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), </span>
+<span id="cb3-13"><a href="manipulations-and-covariates.html#cb3-13" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">c</span>(<span class="dv">100</span>,<span class="dv">110</span>,<span class="dv">90</span>,<span class="dv">95</span>,<span class="dv">107</span>)</span>
+<span id="cb3-14"><a href="manipulations-and-covariates.html#cb3-14" tabindex="-1"></a>)</span></code></pre></div>
+</div>
+<div id="random-number-generation" class="section level3 unnumbered hasAnchor">
+<h3>Random number generation<a href="manipulations-and-covariates.html#random-number-generation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="manipulations-and-covariates.html#cb4-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># Beginning of the random process</span></span>
+<span id="cb4-2"><a href="manipulations-and-covariates.html#cb4-2" tabindex="-1"></a></span>
+<span id="cb4-3"><a href="manipulations-and-covariates.html#cb4-3" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-4"><a href="manipulations-and-covariates.html#cb4-4" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>), <span class="co"># 100 IDs</span></span>
+<span id="cb4-5"><a href="manipulations-and-covariates.html#cb4-5" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">runif</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">10</span>) <span class="co"># 100 random scores</span></span>
+<span id="cb4-6"><a href="manipulations-and-covariates.html#cb4-6" tabindex="-1"></a>)</span>
+<span id="cb4-7"><a href="manipulations-and-covariates.html#cb4-7" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="manipulations-and-covariates.html#cb4-8" tabindex="-1"></a><span class="fu">head</span>(d) <span class="co"># show me the first 6 rows</span></span></code></pre></div>
+<pre><code>##   ID    Score
+## 1  1 3.588198
+## 2  2 8.094746
+## 3  3 4.680792
+## 4  4 8.947157
+## 5  5 9.464206
+## 6  6 1.410008</code></pre>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="manipulations-and-covariates.html#cb6-1" tabindex="-1"></a><span class="fu">tail</span>(d) <span class="co"># show me the last 6 rows</span></span></code></pre></div>
+<pre><code>##      ID    Score
+## 95   95 3.883359
+## 96   96 2.689220
+## 97   97 8.040649
+## 98   98 1.842355
+## 99   99 5.201011
+## 100 100 5.603549</code></pre>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="manipulations-and-covariates.html#cb8-1" tabindex="-1"></a><span class="fu">hist</span>(d<span class="sc">$</span>Score, <span class="at">xlab =</span> <span class="st">&quot;Random value (x)&quot;</span>, <span class="at">col =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">cex.lab =</span> <span class="fl">1.5</span>, <span class="at">cex.axis =</span> <span class="fl">1.5</span>) <span class="co"># print out a quick histogram of the data</span></span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-4-1.png" width="672" /></p>
+</div>
+<div id="sample-from-the-normal-distribution" class="section level3 unnumbered hasAnchor">
+<h3>Sample from the normal distribution<a href="manipulations-and-covariates.html#sample-from-the-normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="manipulations-and-covariates.html#cb9-1" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb9-2"><a href="manipulations-and-covariates.html#cb9-2" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>),</span>
+<span id="cb9-3"><a href="manipulations-and-covariates.html#cb9-3" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">15</span>) <span class="co"># sample from normal distribution</span></span>
+<span id="cb9-4"><a href="manipulations-and-covariates.html#cb9-4" tabindex="-1"></a>)</span>
+<span id="cb9-5"><a href="manipulations-and-covariates.html#cb9-5" tabindex="-1"></a></span>
+<span id="cb9-6"><a href="manipulations-and-covariates.html#cb9-6" tabindex="-1"></a><span class="fu">hist</span>(e<span class="sc">$</span>Score, <span class="at">xlab =</span> <span class="st">&quot;Random value (x)&quot;</span>, <span class="at">col =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">cex.lab =</span> <span class="fl">1.5</span>, <span class="at">cex.axis =</span> <span class="fl">1.5</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-5-1.png" width="672" /></p>
+</div>
+<div id="sampling-from-a-list-of-values" class="section level3 unnumbered hasAnchor">
+<h3>Sampling from a list of values<a href="manipulations-and-covariates.html#sampling-from-a-list-of-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="manipulations-and-covariates.html#cb10-1" tabindex="-1"></a><span class="co"># Example 1: sample randomly from the values 1:7</span></span>
+<span id="cb10-2"><a href="manipulations-and-covariates.html#cb10-2" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb10-3"><a href="manipulations-and-covariates.html#cb10-3" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>),</span>
+<span id="cb10-4"><a href="manipulations-and-covariates.html#cb10-4" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">sample</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>),<span class="at">size=</span><span class="dv">100</span>,<span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb10-5"><a href="manipulations-and-covariates.html#cb10-5" tabindex="-1"></a>)</span>
+<span id="cb10-6"><a href="manipulations-and-covariates.html#cb10-6" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="manipulations-and-covariates.html#cb10-7" tabindex="-1"></a></span>
+<span id="cb10-8"><a href="manipulations-and-covariates.html#cb10-8" tabindex="-1"></a><span class="co"># Example 2: set the probabilities for the possible responses</span></span>
+<span id="cb10-9"><a href="manipulations-and-covariates.html#cb10-9" tabindex="-1"></a>Prob_info <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.02</span>, <span class="fl">0.03</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.4</span>, <span class="fl">0.4</span>)</span>
+<span id="cb10-10"><a href="manipulations-and-covariates.html#cb10-10" tabindex="-1"></a></span>
+<span id="cb10-11"><a href="manipulations-and-covariates.html#cb10-11" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb10-12"><a href="manipulations-and-covariates.html#cb10-12" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>),</span>
+<span id="cb10-13"><a href="manipulations-and-covariates.html#cb10-13" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">sample</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>),<span class="at">size=</span><span class="dv">100</span>,<span class="at">replace =</span> <span class="cn">TRUE</span>,<span class="at">prob =</span> Prob_info) <span class="co"># use prob info</span></span>
+<span id="cb10-14"><a href="manipulations-and-covariates.html#cb10-14" tabindex="-1"></a>)</span>
+<span id="cb10-15"><a href="manipulations-and-covariates.html#cb10-15" tabindex="-1"></a></span>
+<span id="cb10-16"><a href="manipulations-and-covariates.html#cb10-16" tabindex="-1"></a><span class="fu">hist</span>(g<span class="sc">$</span>Score, <span class="at">xlab =</span> <span class="st">&quot;Random value (x)&quot;</span>, <span class="at">col =</span> <span class="st">&quot;grey&quot;</span>, <span class="at">main =</span> <span class="st">&quot;&quot;</span>, <span class="at">cex.lab =</span> <span class="fl">1.5</span>, <span class="at">cex.axis =</span> <span class="fl">1.5</span>)</span></code></pre></div>
+<p><img src="_main_files/figure-html/unnamed-chunk-6-1.png" width="672" /></p>
+</div>
+<div id="example-of-a-complete-dataset" class="section level3 unnumbered hasAnchor">
+<h3>Example of a complete dataset<a href="manipulations-and-covariates.html#example-of-a-complete-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="manipulations-and-covariates.html#cb11-1" tabindex="-1"></a><span class="co"># Make data for a ctl group</span></span>
+<span id="cb11-2"><a href="manipulations-and-covariates.html#cb11-2" tabindex="-1"></a>Control_group <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb11-3"><a href="manipulations-and-covariates.html#cb11-3" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>),</span>
+<span id="cb11-4"><a href="manipulations-and-covariates.html#cb11-4" tabindex="-1"></a>  <span class="at">Condition =</span> <span class="st">&quot;Placebo&quot;</span>,</span>
+<span id="cb11-5"><a href="manipulations-and-covariates.html#cb11-5" tabindex="-1"></a>  <span class="at">Baseline_IQ =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">mean=</span><span class="dv">100</span>,<span class="at">sd=</span><span class="dv">15</span>),</span>
+<span id="cb11-6"><a href="manipulations-and-covariates.html#cb11-6" tabindex="-1"></a>  <span class="at">Post_IQ =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">mean=</span><span class="dv">100</span>,<span class="at">sd=</span><span class="dv">15</span>)</span>
+<span id="cb11-7"><a href="manipulations-and-covariates.html#cb11-7" tabindex="-1"></a>)</span>
+<span id="cb11-8"><a href="manipulations-and-covariates.html#cb11-8" tabindex="-1"></a></span>
+<span id="cb11-9"><a href="manipulations-and-covariates.html#cb11-9" tabindex="-1"></a><span class="co"># And experimental data with the exact same column headers</span></span>
+<span id="cb11-10"><a href="manipulations-and-covariates.html#cb11-10" tabindex="-1"></a>Experimental_group <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb11-11"><a href="manipulations-and-covariates.html#cb11-11" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">101</span><span class="sc">:</span><span class="dv">200</span>),</span>
+<span id="cb11-12"><a href="manipulations-and-covariates.html#cb11-12" tabindex="-1"></a>  <span class="at">Condition =</span> <span class="st">&quot;Drug&quot;</span>,</span>
+<span id="cb11-13"><a href="manipulations-and-covariates.html#cb11-13" tabindex="-1"></a>  <span class="at">Baseline_IQ =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">mean=</span><span class="dv">100</span>,<span class="at">sd=</span><span class="dv">15</span>),</span>
+<span id="cb11-14"><a href="manipulations-and-covariates.html#cb11-14" tabindex="-1"></a>  <span class="at">Post_IQ =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">mean=</span><span class="dv">130</span>,<span class="at">sd=</span><span class="dv">15</span>)</span>
+<span id="cb11-15"><a href="manipulations-and-covariates.html#cb11-15" tabindex="-1"></a>)</span>
+<span id="cb11-16"><a href="manipulations-and-covariates.html#cb11-16" tabindex="-1"></a></span>
+<span id="cb11-17"><a href="manipulations-and-covariates.html#cb11-17" tabindex="-1"></a><span class="co"># attach them together</span></span>
+<span id="cb11-18"><a href="manipulations-and-covariates.html#cb11-18" tabindex="-1"></a>JLB_data <span class="ot">&lt;-</span> <span class="fu">rbind</span>(Control_group,Experimental_group)</span></code></pre></div>
+</div>
+<div id="aggregate-table-of-data" class="section level3 unnumbered hasAnchor">
+<h3>Aggregate table of data<a href="manipulations-and-covariates.html#aggregate-table-of-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="manipulations-and-covariates.html#cb12-1" tabindex="-1"></a><span class="co"># step 1 install packages </span></span>
+<span id="cb12-2"><a href="manipulations-and-covariates.html#cb12-2" tabindex="-1"></a><span class="do">## Do once per computer</span></span>
+<span id="cb12-3"><a href="manipulations-and-covariates.html#cb12-3" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="manipulations-and-covariates.html#cb12-4" tabindex="-1"></a><span class="co"># install.packages(c(&quot;tidyverse&quot;,&quot;reshape2&quot;))</span></span>
+<span id="cb12-5"><a href="manipulations-and-covariates.html#cb12-5" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="manipulations-and-covariates.html#cb12-6" tabindex="-1"></a><span class="co"># Call the packages </span></span>
+<span id="cb12-7"><a href="manipulations-and-covariates.html#cb12-7" tabindex="-1"></a><span class="do">## Do this every session</span></span>
+<span id="cb12-8"><a href="manipulations-and-covariates.html#cb12-8" tabindex="-1"></a></span>
+<span id="cb12-9"><a href="manipulations-and-covariates.html#cb12-9" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># Call the tidyverse</span></span>
+<span id="cb12-10"><a href="manipulations-and-covariates.html#cb12-10" tabindex="-1"></a><span class="fu">library</span>(reshape2) <span class="co"># Call reshape2 (for the &quot;melt&quot; function)</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="manipulations-and-covariates.html#cb13-1" tabindex="-1"></a><span class="co"># An example of &quot;tidy text&quot; (from the tidyverse):</span></span>
+<span id="cb13-2"><a href="manipulations-and-covariates.html#cb13-2" tabindex="-1"></a>table <span class="ot">&lt;-</span> JLB_data <span class="sc">%&gt;%</span> <span class="co"># Take the data AND THEN</span></span>
+<span id="cb13-3"><a href="manipulations-and-covariates.html#cb13-3" tabindex="-1"></a>  <span class="fu">melt</span>(<span class="at">id.vars =</span> <span class="fu">c</span>(<span class="st">&quot;ID&quot;</span>,<span class="st">&quot;Condition&quot;</span>)) <span class="sc">%&gt;%</span> <span class="co"># Switch to long form AND THEN</span></span>
+<span id="cb13-4"><a href="manipulations-and-covariates.html#cb13-4" tabindex="-1"></a>  <span class="fu">group_by</span>(Condition,variable) <span class="sc">%&gt;%</span> <span class="co"># Group by the IVs</span></span>
+<span id="cb13-5"><a href="manipulations-and-covariates.html#cb13-5" tabindex="-1"></a>  <span class="fu">summarise</span>( <span class="co"># Calculate descriptive stats</span></span>
+<span id="cb13-6"><a href="manipulations-and-covariates.html#cb13-6" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb13-7"><a href="manipulations-and-covariates.html#cb13-7" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(value),</span>
+<span id="cb13-8"><a href="manipulations-and-covariates.html#cb13-8" tabindex="-1"></a>    <span class="at">sd =</span> <span class="fu">sd</span>(value),</span>
+<span id="cb13-9"><a href="manipulations-and-covariates.html#cb13-9" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(value),</span>
+<span id="cb13-10"><a href="manipulations-and-covariates.html#cb13-10" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(value)</span>
+<span id="cb13-11"><a href="manipulations-and-covariates.html#cb13-11" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">se =</span> sd <span class="sc">/</span> <span class="fu">sqrt</span>(n)) <span class="co"># Create a column for SE, and compute it</span></span>
+<span id="cb13-12"><a href="manipulations-and-covariates.html#cb13-12" tabindex="-1"></a></span>
+<span id="cb13-13"><a href="manipulations-and-covariates.html#cb13-13" tabindex="-1"></a><span class="co"># Rename the columns for a better looking table</span></span>
+<span id="cb13-14"><a href="manipulations-and-covariates.html#cb13-14" tabindex="-1"></a><span class="fu">colnames</span>(table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Condition&quot;</span>,<span class="st">&quot;Timepoint&quot;</span>,<span class="st">&quot;n&quot;</span>,<span class="st">&quot;mean&quot;</span>,<span class="st">&quot;sd&quot;</span>,<span class="st">&quot;min&quot;</span>,<span class="st">&quot;max&quot;</span>,<span class="st">&quot;se&quot;</span>)</span>
+<span id="cb13-15"><a href="manipulations-and-covariates.html#cb13-15" tabindex="-1"></a></span>
+<span id="cb13-16"><a href="manipulations-and-covariates.html#cb13-16" tabindex="-1"></a><span class="co"># a regular table</span></span>
+<span id="cb13-17"><a href="manipulations-and-covariates.html#cb13-17" tabindex="-1"></a>table</span></code></pre></div>
+<pre><code>## # A tibble: 4 × 8
+## # Groups:   Condition [2]
+##   Condition Timepoint       n  mean    sd   min   max    se
+##   &lt;chr&gt;     &lt;fct&gt;       &lt;int&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;
+## 1 Drug      Baseline_IQ   100  96.8  13.9  63.1  137.  1.39
+## 2 Drug      Post_IQ       100 131.   14.7  84.3  176.  1.47
+## 3 Placebo   Baseline_IQ   100  99.3  14.5  67.9  137.  1.45
+## 4 Placebo   Post_IQ       100  98.9  15.8  54.4  136.  1.58</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="manipulations-and-covariates.html#cb15-1" tabindex="-1"></a><span class="co"># a pretty table </span></span>
+<span id="cb15-2"><a href="manipulations-and-covariates.html#cb15-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(table)</span></code></pre></div>
+<table>
+<colgroup>
+<col width="13%" />
+<col width="16%" />
+<col width="5%" />
+<col width="13%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Condition</th>
+<th align="left">Timepoint</th>
+<th align="right">n</th>
+<th align="right">mean</th>
+<th align="right">sd</th>
+<th align="right">min</th>
+<th align="right">max</th>
+<th align="right">se</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Drug</td>
+<td align="left">Baseline_IQ</td>
+<td align="right">100</td>
+<td align="right">96.79806</td>
+<td align="right">13.87755</td>
+<td align="right">63.13986</td>
+<td align="right">136.5700</td>
+<td align="right">1.387755</td>
+</tr>
+<tr class="even">
+<td align="left">Drug</td>
+<td align="left">Post_IQ</td>
+<td align="right">100</td>
+<td align="right">131.05099</td>
+<td align="right">14.66883</td>
+<td align="right">84.29550</td>
+<td align="right">175.8569</td>
+<td align="right">1.466883</td>
+</tr>
+<tr class="odd">
+<td align="left">Placebo</td>
+<td align="left">Baseline_IQ</td>
+<td align="right">100</td>
+<td align="right">99.33318</td>
+<td align="right">14.50270</td>
+<td align="right">67.89372</td>
+<td align="right">136.8935</td>
+<td align="right">1.450270</td>
+</tr>
+<tr class="even">
+<td align="left">Placebo</td>
+<td align="left">Post_IQ</td>
+<td align="right">100</td>
+<td align="right">98.91235</td>
+<td align="right">15.79230</td>
+<td align="right">54.43327</td>
+<td align="right">135.5055</td>
+<td align="right">1.579230</td>
+</tr>
+</tbody>
+</table>
+
+<p><em>Please submit a single document for practical #4. A .docx file is the preferred format.</em></p>
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="exploring-types-of-measurement-in-research.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="correlation-statistics-and-plots.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/03-Practical_3.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

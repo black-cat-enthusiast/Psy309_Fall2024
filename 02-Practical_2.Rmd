@@ -1,0 +1,69 @@
+---
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+# Exploring Types of Measurement in Research
+
+Unlike other ways of knowing (epistemologies), the scientific method requires that we specify a way of measuring things in the world. It is important that the specified set of methods is described in such a way that other people could *replicate* the experiment, assuming that they have access to the necessary resources and training. 
+
+## 1. Identify dependent variable(s) {-}
+
+Think back to your submission from practical #1 (where you selected a general research topic and found some articles, with at least one of the articles performing empirical measurement).
+
+Remind us about the research topic that you have chosen to focus on. This time, **use a _single sentence_ that cites the empirical article in APA style**. Please also provide the full citation for the paper as well, in APA format (make sure that the components of the citation are written using APA standard, but **do not worry** about formatting the citation with a hanging indent). 
+
+For example: 
+
+> On the topic of factors people’s enjoyment of meditation, researchers have observed that while most people expect to enjoy breath-focused meditation more than visualization or mantra practices, but approximately half of all participants change their minds after trying all three practices (Anderson & Farb, 2018).
+
+> Anderson, T., & Farb, N. A. (2018). Personalizing practice using preferences for meditation anchor modality. *Frontiers in psychology*, *9*, 1-10.
+
+**Describe the primary dependent variable in the research paper**. Remember that a *dependent variable* is something that is observed (or measured), and is outside of the researcher's direct control (i.e., the dependent variable is not manipulated). If your paper has multiple dependent variables, you can mention that, but please tell us which variable you consider to be the most important. 
+
+## 2. Identify claim(s) made by the paper {-}
+
+One of the main reasons that we measure things is to make a claim about a broader population or about future events. Remember that the three main types of claims we make are: *frequency*, *association*, or *causal* claims. Make sure that you connect the DV to the IV(s) here to explain the parameters of the research finding. 
+
+**Describe which of the three claims is / are being made** in the paper that you outlined above and explain how you know (i.e., your reasoning). Could the DV be used to make the other two types of claims? What sort of study would be needed for each?
+
+## 3. Critically Evaluate the Measuement Approach {-}
+
+In class and in the textbook, we have begun to explore the idea that not all measures are equally *valid* and *reliable* for making inferences. We discussed four forms of validity in class: construct, statistical, internal, and external.
+
+Consider the validity of the empirical paper that you have selected. Please **define each of the four validities in your own words** using 1-2 sentences each. Then **write 3-4 sentences discussing the validity of the paper**. You may not feel super confident on the statistical validity, but you can discuss the others. For example, does the dependent variable accurately represent the construct that you are interested in exploring? Does the way they studied the construct make sense? Do the data come from a sample that has a good chance of generalizing to other people and other situations? 
+
+## 4. Develop a Research Idea  {-}
+
+Now that you have reviewed the kinds of studies that are published in your field of interest and taken a look a the types of variables they use, expand on the existing work. **Write 2-3 paragraphs describing a novel study idea** that would produce data to support at least two of the "types of claims" that we have discussed in class (e.g., Frequency AND Association). Make sure that you clearly describe the independent and dependent variables in the study. 
+
+What ideas do you have, either about re-using a measure you’ve read about, or improving / creating a new measure to investigate your topic? What sort of inference are you hoping to make? To describe something that we know little about? To look at the relationship between two or more constructs? Or to show that changing something about the situation causes changes in your dependent variable? 
+
+Please specify the **rationale** for the study (why would this research be important?), the **primary research question** (what is the primary thing these data will tell you?) and the **hypothesis** / **predicted results** (what sort of results are you predicting and WHY?). 
+
+## 5. Reflect {-}
+
+**Write a closing paragraph (3-5 sentences) describing how you are thinking about measuring the construct of interest in your research topic**. Remember that we will be creating and analyzing fictitious data over the next few weeks to further explore the research process. Would the study that you are conceptualizing be feasible in the real world? Why or why not? What processes would you need to follow in order to actually conduct this study (e.g., REB approval..)
+
+*Submissions should be 2-3 pages in length. References don't need to be written on a separate page. No marks for APA format, so please feel free to make use of various levels of headings to enhance readability.*
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

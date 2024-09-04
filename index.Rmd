@@ -1,0 +1,22 @@
+--- 
+title: "A book of Practical Assignments for Psy309 at UTM Fall 2024"
+site: bookdown::bookdown_site
+documentclass: book
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is an organized index of the 5 practical assignments and the final writing project that PSY309 students at UTM will complete during the Fall 2024 semester. 
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+# About {-}
+
+This is a series of assignments intended to help third year UTM students transfer their theoretical knowledge of using the general linear model from Psy201/202 to a computational approach in `Rstudio`. 
+
+- 5 "practical" assignments help students to refine a research question, then generate fictitious data to represent their hypothesized effect.
+
+- The final project involves synthesis of the practical assignments with additional analyses (3-way ANOVA and multiple linear regression).
+
+- As they complete the assignments, students learn to think critically about research design and construct opperationalization. They also develop basic coding skills, which are combined with their theoretical understanding of statistics in the final written assignment. 
+
