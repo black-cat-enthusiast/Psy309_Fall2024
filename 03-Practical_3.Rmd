@@ -116,7 +116,7 @@ histogram <- d %>%
   theme_classic()
 
 # Save the histogram as a high quality .png image
-ggsave("Figs/hist_1.png",height = 4, width = 5, dpi = 300)
+ggsave("Figs/hist_1.png",histogram,height = 3, width = 5, dpi = 300)
 
 # Call back the high quality image 
 knitr::include_graphics("Figs/hist_1.png")
@@ -131,7 +131,17 @@ e <- data.frame(
   Score = rnorm(n = 100, mean = 100, sd = 15) # sample from normal distribution
 )
 
-hist(e$Score, xlab = "Random value (x)", col = "grey", main = "", cex.lab = 1.5, cex.axis = 1.5)
+# Generate the chart
+histogram <- e %>%
+  ggplot(aes(x=Score))+
+  geom_histogram(bins = 8, alpha=0.2, colour = "black")+
+  theme_classic()
+
+# Save the histogram as a high quality .png image
+ggsave("Figs/hist_2.png",histogram,height = 3, width = 5, dpi = 300)
+
+# Call back the high quality image 
+knitr::include_graphics("Figs/hist_2.png")
 ```
 
 ### Sampling from a list of values {-}
@@ -152,7 +162,17 @@ g <- data.frame(
   Score = sample(x=c(1:7),size=100,replace = TRUE,prob = Prob_info) # use prob info
 )
 
-hist(g$Score, xlab = "Random value (x)", col = "grey", main = "", cex.lab = 1.5, cex.axis = 1.5)
+# Generate the chart
+histogram <- g %>%
+  ggplot(aes(x=Score))+
+  geom_histogram(bins = 8, alpha=0.2, colour = "black")+
+  theme_classic()
+
+# Save the histogram as a high quality .png image
+ggsave("Figs/hist_3.png",histogram,height = 3, width = 5, dpi = 300)
+
+# Call back the high quality image 
+knitr::include_graphics("Figs/hist_3.png")
 ```
 
 ### Example of a complete dataset {-}

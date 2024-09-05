@@ -450,7 +450,7 @@ Examples of how Rstudio can be used to assign single values, lists of values, or
   \FunctionTok{theme\_classic}\NormalTok{()}
 
 \CommentTok{\# Save the histogram as a high quality .png image}
-\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/hist\_1.png"}\NormalTok{,}\AttributeTok{height =} \DecValTok{4}\NormalTok{, }\AttributeTok{width =} \DecValTok{5}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
+\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/hist\_1.png"}\NormalTok{,histogram,}\AttributeTok{height =} \DecValTok{3}\NormalTok{, }\AttributeTok{width =} \DecValTok{5}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
 
 \CommentTok{\# Call back the high quality image }
 \NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"Figs/hist\_1.png"}\NormalTok{)}
@@ -469,11 +469,21 @@ Examples of how Rstudio can be used to assign single values, lists of values, or
   \AttributeTok{Score =} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n =} \DecValTok{100}\NormalTok{, }\AttributeTok{mean =} \DecValTok{100}\NormalTok{, }\AttributeTok{sd =} \DecValTok{15}\NormalTok{) }\CommentTok{\# sample from normal distribution}
 \NormalTok{)}
 
-\FunctionTok{hist}\NormalTok{(e}\SpecialCharTok{$}\NormalTok{Score, }\AttributeTok{xlab =} \StringTok{"Random value (x)"}\NormalTok{, }\AttributeTok{col =} \StringTok{"grey"}\NormalTok{, }\AttributeTok{main =} \StringTok{""}\NormalTok{, }\AttributeTok{cex.lab =} \FloatTok{1.5}\NormalTok{, }\AttributeTok{cex.axis =} \FloatTok{1.5}\NormalTok{)}
+\CommentTok{\# Generate the chart}
+\NormalTok{histogram }\OtherTok{\textless{}{-}}\NormalTok{ e }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Score))}\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{8}\NormalTok{, }\AttributeTok{alpha=}\FloatTok{0.2}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{theme\_classic}\NormalTok{()}
+
+\CommentTok{\# Save the histogram as a high quality .png image}
+\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/hist\_2.png"}\NormalTok{,histogram,}\AttributeTok{height =} \DecValTok{3}\NormalTok{, }\AttributeTok{width =} \DecValTok{5}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
+
+\CommentTok{\# Call back the high quality image }
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"Figs/hist\_2.png"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-5-1.pdf}
+\includegraphics[width=20.83in]{Figs/hist_2}
 
 \subsection*{Sampling from a list of values}\label{sampling-from-a-list-of-values}
 \addcontentsline{toc}{subsection}{Sampling from a list of values}
@@ -495,11 +505,21 @@ Examples of how Rstudio can be used to assign single values, lists of values, or
   \AttributeTok{Score =} \FunctionTok{sample}\NormalTok{(}\AttributeTok{x=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{7}\NormalTok{),}\AttributeTok{size=}\DecValTok{100}\NormalTok{,}\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}\AttributeTok{prob =}\NormalTok{ Prob\_info) }\CommentTok{\# use prob info}
 \NormalTok{)}
 
-\FunctionTok{hist}\NormalTok{(g}\SpecialCharTok{$}\NormalTok{Score, }\AttributeTok{xlab =} \StringTok{"Random value (x)"}\NormalTok{, }\AttributeTok{col =} \StringTok{"grey"}\NormalTok{, }\AttributeTok{main =} \StringTok{""}\NormalTok{, }\AttributeTok{cex.lab =} \FloatTok{1.5}\NormalTok{, }\AttributeTok{cex.axis =} \FloatTok{1.5}\NormalTok{)}
+\CommentTok{\# Generate the chart}
+\NormalTok{histogram }\OtherTok{\textless{}{-}}\NormalTok{ g }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Score))}\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{8}\NormalTok{, }\AttributeTok{alpha=}\FloatTok{0.2}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{theme\_classic}\NormalTok{()}
+
+\CommentTok{\# Save the histogram as a high quality .png image}
+\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/hist\_3.png"}\NormalTok{,histogram,}\AttributeTok{height =} \DecValTok{3}\NormalTok{, }\AttributeTok{width =} \DecValTok{5}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
+
+\CommentTok{\# Call back the high quality image }
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"Figs/hist\_3.png"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-6-1.pdf}
+\includegraphics[width=20.83in]{Figs/hist_3}
 
 \subsection*{Example of a complete dataset}\label{example-of-a-complete-dataset}
 \addcontentsline{toc}{subsection}{Example of a complete dataset}
@@ -743,14 +763,21 @@ Write a closing paragraph (3-5 sentences) summarizing what it is like trying to 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{data }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{basic }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Age, }\AttributeTok{y =}\NormalTok{ IQ))}\SpecialCharTok{+}
   \FunctionTok{geom\_point}\NormalTok{()}\SpecialCharTok{+}
   \FunctionTok{geom\_smooth}\NormalTok{(}\AttributeTok{method =} \StringTok{"lm"}\NormalTok{)}
+
+\CommentTok{\# Save a high quality .png image}
+\DocumentationTok{\#\# Default size is 7 inches x 7 seven inches}
+\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/scatter\_1.png"}\NormalTok{,basic, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
+
+\CommentTok{\# Call back the high quality image }
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"Figs/scatter\_1.png"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-15-1.pdf}
+\includegraphics[width=27.08in]{Figs/scatter_1}
 
 \subsection*{A fancier, better looking scatterplot:}\label{a-fancier-better-looking-scatterplot}
 \addcontentsline{toc}{subsection}{A fancier, better looking scatterplot:}
