@@ -287,7 +287,8 @@ d <- data.frame(
 head(d) # show me the first 6 rows
 tail(d) # show me the last 6 rows
 
-hist(d$Score, xlab = "Random value (x)", col = "grey", main = "", cex.lab = 1.5, cex.axis = 1.5) 
+# Quick histogram of the data
+hist(d$Score) 
 ```
 
 ### Sample from the normal distribution {-}
