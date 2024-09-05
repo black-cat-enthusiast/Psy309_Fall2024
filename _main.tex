@@ -440,8 +440,13 @@ Examples of how Rstudio can be used to assign single values, lists of values, or
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# Quick histogram of the data}
-\FunctionTok{hist}\NormalTok{(d}\SpecialCharTok{$}\NormalTok{Score) }
+\CommentTok{\# Make a quick histogram of the data}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+
+\NormalTok{d }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Score))}\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{8}\NormalTok{, }\AttributeTok{alpha=}\FloatTok{0.2}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{theme\_classic}\NormalTok{()}
 \end{Highlighting}
 \end{Shaded}
 
