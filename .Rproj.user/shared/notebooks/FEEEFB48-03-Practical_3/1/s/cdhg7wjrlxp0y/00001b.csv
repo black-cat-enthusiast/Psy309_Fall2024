@@ -1,0 +1,8 @@
+"0","set.seed(123) # Beginning of the random process"
+"0",""
+"0","d <- data.frame("
+"0","  ID = c(1:100), # 100 IDs"
+"0","  Score = runif(n=100,min=1,max=10) # 100 random scores"
+"0",")"
+"0",""
+"0","head(d) # show me the first 6 rows"
