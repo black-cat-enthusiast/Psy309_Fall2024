@@ -356,6 +356,30 @@ Additionally, feel free to reflect on the process of using Rstudio to generate d
 \section*{Code For Practical \#3}\label{code-for-practical-3}
 \addcontentsline{toc}{section}{Code For Practical \#3}
 
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# this is the "setup" chunk. Info here will apply to all code blocks in the document. }
+\NormalTok{knitr}\SpecialCharTok{::}\NormalTok{opts\_chunk}\SpecialCharTok{$}\FunctionTok{set}\NormalTok{(}\AttributeTok{echo =} \ConstantTok{TRUE}\NormalTok{, }\CommentTok{\# Show the code}
+                      \AttributeTok{warning =} \ConstantTok{FALSE}\NormalTok{, }\CommentTok{\# Hide warnings from R}
+                      \AttributeTok{message =} \ConstantTok{FALSE}\NormalTok{) }\CommentTok{\# Hide messages from R}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\# step 1 install packages }
+\DocumentationTok{\#\# Do once per computer}
+
+\CommentTok{\# install.packages(c("tidyverse","reshape2"))}
+
+\CommentTok{\# Call the packages }
+\DocumentationTok{\#\# Do this every session}
+
+\FunctionTok{library}\NormalTok{(tidyverse) }\CommentTok{\# Call the tidyverse}
+\FunctionTok{library}\NormalTok{(reshape2) }\CommentTok{\# Call reshape2 (for the "melt" function)}
+\end{Highlighting}
+\end{Shaded}
+
 \subsection*{Object-oriented programming}\label{object-oriented-programming}
 \addcontentsline{toc}{subsection}{Object-oriented programming}
 
@@ -441,16 +465,13 @@ Examples of how Rstudio can be used to assign single values, lists of values, or
 \begin{Shaded}
 \begin{Highlighting}[]
 \CommentTok{\# Make a quick histogram of the data}
-\FunctionTok{library}\NormalTok{(tidyverse)}
-
-\CommentTok{\# Generate the chart}
 \NormalTok{histogram }\OtherTok{\textless{}{-}}\NormalTok{ d }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Score))}\SpecialCharTok{+}
   \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{8}\NormalTok{, }\AttributeTok{alpha=}\FloatTok{0.2}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
   \FunctionTok{theme\_classic}\NormalTok{()}
 
 \CommentTok{\# Save the histogram as a high quality .png image}
-\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/hist\_1.png"}\NormalTok{,histogram,}\AttributeTok{height =} \DecValTok{3}\NormalTok{, }\AttributeTok{width =} \DecValTok{5}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
+\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/hist\_1.png"}\NormalTok{,histogram,}\AttributeTok{height =} \FloatTok{2.5}\NormalTok{, }\AttributeTok{width =} \DecValTok{5}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
 
 \CommentTok{\# Call back the high quality image }
 \NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"Figs/hist\_1.png"}\NormalTok{)}
@@ -476,7 +497,7 @@ Examples of how Rstudio can be used to assign single values, lists of values, or
   \FunctionTok{theme\_classic}\NormalTok{()}
 
 \CommentTok{\# Save the histogram as a high quality .png image}
-\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/hist\_2.png"}\NormalTok{,histogram,}\AttributeTok{height =} \DecValTok{3}\NormalTok{, }\AttributeTok{width =} \DecValTok{5}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
+\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/hist\_2.png"}\NormalTok{,histogram,}\AttributeTok{height =} \FloatTok{2.5}\NormalTok{, }\AttributeTok{width =} \DecValTok{5}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
 
 \CommentTok{\# Call back the high quality image }
 \NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"Figs/hist\_2.png"}\NormalTok{)}
@@ -508,11 +529,12 @@ Examples of how Rstudio can be used to assign single values, lists of values, or
 \CommentTok{\# Generate the chart}
 \NormalTok{histogram }\OtherTok{\textless{}{-}}\NormalTok{ g }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Score))}\SpecialCharTok{+}
-  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{8}\NormalTok{, }\AttributeTok{alpha=}\FloatTok{0.2}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
-  \FunctionTok{theme\_classic}\NormalTok{()}
+  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{7}\NormalTok{, }\AttributeTok{alpha=}\FloatTok{0.2}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
+  \FunctionTok{theme\_classic}\NormalTok{()}\SpecialCharTok{+}
+  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{7}\NormalTok{))}
 
 \CommentTok{\# Save the histogram as a high quality .png image}
-\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/hist\_3.png"}\NormalTok{,histogram,}\AttributeTok{height =} \DecValTok{3}\NormalTok{, }\AttributeTok{width =} \DecValTok{5}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
+\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/hist\_3.png"}\NormalTok{,histogram,}\AttributeTok{height =} \FloatTok{2.5}\NormalTok{, }\AttributeTok{width =} \DecValTok{5}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
 
 \CommentTok{\# Call back the high quality image }
 \NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"Figs/hist\_3.png"}\NormalTok{)}
@@ -549,21 +571,6 @@ Examples of how Rstudio can be used to assign single values, lists of values, or
 
 \subsection*{Aggregate table of data}\label{aggregate-table-of-data}
 \addcontentsline{toc}{subsection}{Aggregate table of data}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# step 1 install packages }
-\DocumentationTok{\#\# Do once per computer}
-
-\CommentTok{\# install.packages(c("tidyverse","reshape2"))}
-
-\CommentTok{\# Call the packages }
-\DocumentationTok{\#\# Do this every session}
-
-\FunctionTok{library}\NormalTok{(tidyverse) }\CommentTok{\# Call the tidyverse}
-\FunctionTok{library}\NormalTok{(reshape2) }\CommentTok{\# Call reshape2 (for the "melt" function)}
-\end{Highlighting}
-\end{Shaded}
 
 \begin{Shaded}
 \begin{Highlighting}[]

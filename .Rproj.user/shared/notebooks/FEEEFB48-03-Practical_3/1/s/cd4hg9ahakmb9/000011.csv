@@ -1,6 +1,0 @@
-"0","e <- data.frame("
-"0","  ID = c(1:100),"
-"0","  Score = rnorm(n = 100, mean = 100, sd = 15) # sample from normal distribution"
-"0",")"
-"0",""
-"0","hist(e$Score, xlab = ""Random value (x)"", col = ""grey"", main = """", cex.lab = 1.5, cex.axis = 1.5)"

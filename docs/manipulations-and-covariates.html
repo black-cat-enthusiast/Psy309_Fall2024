@@ -315,42 +315,56 @@ Figure 3.1: Figure 1. A reminder about the data patterns that correspond to vari
 </div>
 <div id="code-for-practical-3" class="section level2 unnumbered hasAnchor">
 <h2>Code For Practical #3<a href="manipulations-and-covariates.html#code-for-practical-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="manipulations-and-covariates.html#cb1-1" tabindex="-1"></a><span class="co"># this is the &quot;setup&quot; chunk. Info here will apply to all code blocks in the document. </span></span>
+<span id="cb1-2"><a href="manipulations-and-covariates.html#cb1-2" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="co"># Show the code</span></span>
+<span id="cb1-3"><a href="manipulations-and-covariates.html#cb1-3" tabindex="-1"></a>                      <span class="at">warning =</span> <span class="cn">FALSE</span>, <span class="co"># Hide warnings from R</span></span>
+<span id="cb1-4"><a href="manipulations-and-covariates.html#cb1-4" tabindex="-1"></a>                      <span class="at">message =</span> <span class="cn">FALSE</span>) <span class="co"># Hide messages from R</span></span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="manipulations-and-covariates.html#cb2-1" tabindex="-1"></a><span class="co"># step 1 install packages </span></span>
+<span id="cb2-2"><a href="manipulations-and-covariates.html#cb2-2" tabindex="-1"></a><span class="do">## Do once per computer</span></span>
+<span id="cb2-3"><a href="manipulations-and-covariates.html#cb2-3" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="manipulations-and-covariates.html#cb2-4" tabindex="-1"></a><span class="co"># install.packages(c(&quot;tidyverse&quot;,&quot;reshape2&quot;))</span></span>
+<span id="cb2-5"><a href="manipulations-and-covariates.html#cb2-5" tabindex="-1"></a></span>
+<span id="cb2-6"><a href="manipulations-and-covariates.html#cb2-6" tabindex="-1"></a><span class="co"># Call the packages </span></span>
+<span id="cb2-7"><a href="manipulations-and-covariates.html#cb2-7" tabindex="-1"></a><span class="do">## Do this every session</span></span>
+<span id="cb2-8"><a href="manipulations-and-covariates.html#cb2-8" tabindex="-1"></a></span>
+<span id="cb2-9"><a href="manipulations-and-covariates.html#cb2-9" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># Call the tidyverse</span></span>
+<span id="cb2-10"><a href="manipulations-and-covariates.html#cb2-10" tabindex="-1"></a><span class="fu">library</span>(reshape2) <span class="co"># Call reshape2 (for the &quot;melt&quot; function)</span></span></code></pre></div>
 <div id="object-oriented-programming" class="section level3 unnumbered hasAnchor">
 <h3>Object-oriented programming<a href="manipulations-and-covariates.html#object-oriented-programming" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Examples of how Rstudio can be used to assign single values, lists of values, or 2-D arrays of Data.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="manipulations-and-covariates.html#cb1-1" tabindex="-1"></a><span class="co"># Notes </span></span>
-<span id="cb1-2"><a href="manipulations-and-covariates.html#cb1-2" tabindex="-1"></a></span>
-<span id="cb1-3"><a href="manipulations-and-covariates.html#cb1-3" tabindex="-1"></a><span class="co"># text will cause problems </span></span>
-<span id="cb1-4"><a href="manipulations-and-covariates.html#cb1-4" tabindex="-1"></a></span>
-<span id="cb1-5"><a href="manipulations-and-covariates.html#cb1-5" tabindex="-1"></a><span class="co"># First example </span></span>
-<span id="cb1-6"><a href="manipulations-and-covariates.html#cb1-6" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="manipulations-and-covariates.html#cb1-7" tabindex="-1"></a><span class="dv">67</span> <span class="sc">*</span> <span class="dv">88</span></span></code></pre></div>
-<pre><code>## [1] 5896</code></pre>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="manipulations-and-covariates.html#cb3-1" tabindex="-1"></a><span class="co"># Object-oriented programming </span></span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="manipulations-and-covariates.html#cb3-1" tabindex="-1"></a><span class="co"># Notes </span></span>
 <span id="cb3-2"><a href="manipulations-and-covariates.html#cb3-2" tabindex="-1"></a></span>
-<span id="cb3-3"><a href="manipulations-and-covariates.html#cb3-3" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">67</span> <span class="sc">*</span> <span class="dv">88</span> <span class="co"># Assign the result of the function onto the object &quot;a&quot;</span></span>
+<span id="cb3-3"><a href="manipulations-and-covariates.html#cb3-3" tabindex="-1"></a><span class="co"># text will cause problems </span></span>
 <span id="cb3-4"><a href="manipulations-and-covariates.html#cb3-4" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="manipulations-and-covariates.html#cb3-5" tabindex="-1"></a><span class="co"># Example 2 </span></span>
+<span id="cb3-5"><a href="manipulations-and-covariates.html#cb3-5" tabindex="-1"></a><span class="co"># First example </span></span>
 <span id="cb3-6"><a href="manipulations-and-covariates.html#cb3-6" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="manipulations-and-covariates.html#cb3-7" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="co"># Assign a list onto the object &quot;b&quot;</span></span>
-<span id="cb3-8"><a href="manipulations-and-covariates.html#cb3-8" tabindex="-1"></a></span>
-<span id="cb3-9"><a href="manipulations-and-covariates.html#cb3-9" tabindex="-1"></a><span class="co"># Example 3 - DATA FAME </span></span>
-<span id="cb3-10"><a href="manipulations-and-covariates.html#cb3-10" tabindex="-1"></a></span>
-<span id="cb3-11"><a href="manipulations-and-covariates.html#cb3-11" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="co"># Assign a 2-D data frame onto the object &quot;c&quot;</span></span>
-<span id="cb3-12"><a href="manipulations-and-covariates.html#cb3-12" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), </span>
-<span id="cb3-13"><a href="manipulations-and-covariates.html#cb3-13" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">c</span>(<span class="dv">100</span>,<span class="dv">110</span>,<span class="dv">90</span>,<span class="dv">95</span>,<span class="dv">107</span>)</span>
-<span id="cb3-14"><a href="manipulations-and-covariates.html#cb3-14" tabindex="-1"></a>)</span></code></pre></div>
+<span id="cb3-7"><a href="manipulations-and-covariates.html#cb3-7" tabindex="-1"></a><span class="dv">67</span> <span class="sc">*</span> <span class="dv">88</span></span></code></pre></div>
+<pre><code>## [1] 5896</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="manipulations-and-covariates.html#cb5-1" tabindex="-1"></a><span class="co"># Object-oriented programming </span></span>
+<span id="cb5-2"><a href="manipulations-and-covariates.html#cb5-2" tabindex="-1"></a></span>
+<span id="cb5-3"><a href="manipulations-and-covariates.html#cb5-3" tabindex="-1"></a>a <span class="ot">&lt;-</span> <span class="dv">67</span> <span class="sc">*</span> <span class="dv">88</span> <span class="co"># Assign the result of the function onto the object &quot;a&quot;</span></span>
+<span id="cb5-4"><a href="manipulations-and-covariates.html#cb5-4" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="manipulations-and-covariates.html#cb5-5" tabindex="-1"></a><span class="co"># Example 2 </span></span>
+<span id="cb5-6"><a href="manipulations-and-covariates.html#cb5-6" tabindex="-1"></a></span>
+<span id="cb5-7"><a href="manipulations-and-covariates.html#cb5-7" tabindex="-1"></a>b <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="co"># Assign a list onto the object &quot;b&quot;</span></span>
+<span id="cb5-8"><a href="manipulations-and-covariates.html#cb5-8" tabindex="-1"></a></span>
+<span id="cb5-9"><a href="manipulations-and-covariates.html#cb5-9" tabindex="-1"></a><span class="co"># Example 3 - DATA FAME </span></span>
+<span id="cb5-10"><a href="manipulations-and-covariates.html#cb5-10" tabindex="-1"></a></span>
+<span id="cb5-11"><a href="manipulations-and-covariates.html#cb5-11" tabindex="-1"></a>c <span class="ot">&lt;-</span> <span class="fu">data.frame</span>( <span class="co"># Assign a 2-D data frame onto the object &quot;c&quot;</span></span>
+<span id="cb5-12"><a href="manipulations-and-covariates.html#cb5-12" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="dv">3</span>,<span class="dv">4</span>,<span class="dv">5</span>), </span>
+<span id="cb5-13"><a href="manipulations-and-covariates.html#cb5-13" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">c</span>(<span class="dv">100</span>,<span class="dv">110</span>,<span class="dv">90</span>,<span class="dv">95</span>,<span class="dv">107</span>)</span>
+<span id="cb5-14"><a href="manipulations-and-covariates.html#cb5-14" tabindex="-1"></a>)</span></code></pre></div>
 </div>
 <div id="random-number-generation" class="section level3 unnumbered hasAnchor">
 <h3>Random number generation<a href="manipulations-and-covariates.html#random-number-generation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="manipulations-and-covariates.html#cb4-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># Beginning of the random process</span></span>
-<span id="cb4-2"><a href="manipulations-and-covariates.html#cb4-2" tabindex="-1"></a></span>
-<span id="cb4-3"><a href="manipulations-and-covariates.html#cb4-3" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb4-4"><a href="manipulations-and-covariates.html#cb4-4" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>), <span class="co"># 100 IDs</span></span>
-<span id="cb4-5"><a href="manipulations-and-covariates.html#cb4-5" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">runif</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">10</span>) <span class="co"># 100 random scores</span></span>
-<span id="cb4-6"><a href="manipulations-and-covariates.html#cb4-6" tabindex="-1"></a>)</span>
-<span id="cb4-7"><a href="manipulations-and-covariates.html#cb4-7" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="manipulations-and-covariates.html#cb4-8" tabindex="-1"></a><span class="fu">head</span>(d) <span class="co"># show me the first 6 rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="manipulations-and-covariates.html#cb6-1" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># Beginning of the random process</span></span>
+<span id="cb6-2"><a href="manipulations-and-covariates.html#cb6-2" tabindex="-1"></a></span>
+<span id="cb6-3"><a href="manipulations-and-covariates.html#cb6-3" tabindex="-1"></a>d <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb6-4"><a href="manipulations-and-covariates.html#cb6-4" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>), <span class="co"># 100 IDs</span></span>
+<span id="cb6-5"><a href="manipulations-and-covariates.html#cb6-5" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">runif</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">min=</span><span class="dv">1</span>,<span class="at">max=</span><span class="dv">10</span>) <span class="co"># 100 random scores</span></span>
+<span id="cb6-6"><a href="manipulations-and-covariates.html#cb6-6" tabindex="-1"></a>)</span>
+<span id="cb6-7"><a href="manipulations-and-covariates.html#cb6-7" tabindex="-1"></a></span>
+<span id="cb6-8"><a href="manipulations-and-covariates.html#cb6-8" tabindex="-1"></a><span class="fu">head</span>(d) <span class="co"># show me the first 6 rows</span></span></code></pre></div>
 <pre><code>##   ID    Score
 ## 1  1 3.588198
 ## 2  2 8.094746
@@ -358,7 +372,7 @@ Figure 3.1: Figure 1. A reminder about the data patterns that correspond to vari
 ## 4  4 8.947157
 ## 5  5 9.464206
 ## 6  6 1.410008</code></pre>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="manipulations-and-covariates.html#cb6-1" tabindex="-1"></a><span class="fu">tail</span>(d) <span class="co"># show me the last 6 rows</span></span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="manipulations-and-covariates.html#cb8-1" tabindex="-1"></a><span class="fu">tail</span>(d) <span class="co"># show me the last 6 rows</span></span></code></pre></div>
 <pre><code>##      ID    Score
 ## 95   95 3.883359
 ## 96   96 2.689220
@@ -366,122 +380,110 @@ Figure 3.1: Figure 1. A reminder about the data patterns that correspond to vari
 ## 98   98 1.842355
 ## 99   99 5.201011
 ## 100 100 5.603549</code></pre>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="manipulations-and-covariates.html#cb8-1" tabindex="-1"></a><span class="co"># Make a quick histogram of the data</span></span>
-<span id="cb8-2"><a href="manipulations-and-covariates.html#cb8-2" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb8-3"><a href="manipulations-and-covariates.html#cb8-3" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="manipulations-and-covariates.html#cb8-4" tabindex="-1"></a><span class="co"># Generate the chart</span></span>
-<span id="cb8-5"><a href="manipulations-and-covariates.html#cb8-5" tabindex="-1"></a>histogram <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span></span>
-<span id="cb8-6"><a href="manipulations-and-covariates.html#cb8-6" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Score))<span class="sc">+</span></span>
-<span id="cb8-7"><a href="manipulations-and-covariates.html#cb8-7" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">8</span>, <span class="at">alpha=</span><span class="fl">0.2</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb8-8"><a href="manipulations-and-covariates.html#cb8-8" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb8-9"><a href="manipulations-and-covariates.html#cb8-9" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="manipulations-and-covariates.html#cb8-10" tabindex="-1"></a><span class="co"># Save the histogram as a high quality .png image</span></span>
-<span id="cb8-11"><a href="manipulations-and-covariates.html#cb8-11" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/hist_1.png&quot;</span>,histogram,<span class="at">height =</span> <span class="dv">3</span>, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
-<span id="cb8-12"><a href="manipulations-and-covariates.html#cb8-12" tabindex="-1"></a></span>
-<span id="cb8-13"><a href="manipulations-and-covariates.html#cb8-13" tabindex="-1"></a><span class="co"># Call back the high quality image </span></span>
-<span id="cb8-14"><a href="manipulations-and-covariates.html#cb8-14" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/hist_1.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="manipulations-and-covariates.html#cb10-1" tabindex="-1"></a><span class="co"># Make a quick histogram of the data</span></span>
+<span id="cb10-2"><a href="manipulations-and-covariates.html#cb10-2" tabindex="-1"></a>histogram <span class="ot">&lt;-</span> d <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="manipulations-and-covariates.html#cb10-3" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Score))<span class="sc">+</span></span>
+<span id="cb10-4"><a href="manipulations-and-covariates.html#cb10-4" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">8</span>, <span class="at">alpha=</span><span class="fl">0.2</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb10-5"><a href="manipulations-and-covariates.html#cb10-5" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb10-6"><a href="manipulations-and-covariates.html#cb10-6" tabindex="-1"></a></span>
+<span id="cb10-7"><a href="manipulations-and-covariates.html#cb10-7" tabindex="-1"></a><span class="co"># Save the histogram as a high quality .png image</span></span>
+<span id="cb10-8"><a href="manipulations-and-covariates.html#cb10-8" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/hist_1.png&quot;</span>,histogram,<span class="at">height =</span> <span class="fl">2.5</span>, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb10-9"><a href="manipulations-and-covariates.html#cb10-9" tabindex="-1"></a></span>
+<span id="cb10-10"><a href="manipulations-and-covariates.html#cb10-10" tabindex="-1"></a><span class="co"># Call back the high quality image </span></span>
+<span id="cb10-11"><a href="manipulations-and-covariates.html#cb10-11" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/hist_1.png&quot;</span>)</span></code></pre></div>
 <p><img src="Figs/hist_1.png" width="750" /></p>
 </div>
 <div id="sample-from-the-normal-distribution" class="section level3 unnumbered hasAnchor">
 <h3>Sample from the normal distribution<a href="manipulations-and-covariates.html#sample-from-the-normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="manipulations-and-covariates.html#cb9-1" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb9-2"><a href="manipulations-and-covariates.html#cb9-2" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>),</span>
-<span id="cb9-3"><a href="manipulations-and-covariates.html#cb9-3" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">15</span>) <span class="co"># sample from normal distribution</span></span>
-<span id="cb9-4"><a href="manipulations-and-covariates.html#cb9-4" tabindex="-1"></a>)</span>
-<span id="cb9-5"><a href="manipulations-and-covariates.html#cb9-5" tabindex="-1"></a></span>
-<span id="cb9-6"><a href="manipulations-and-covariates.html#cb9-6" tabindex="-1"></a><span class="co"># Generate the chart</span></span>
-<span id="cb9-7"><a href="manipulations-and-covariates.html#cb9-7" tabindex="-1"></a>histogram <span class="ot">&lt;-</span> e <span class="sc">%&gt;%</span></span>
-<span id="cb9-8"><a href="manipulations-and-covariates.html#cb9-8" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Score))<span class="sc">+</span></span>
-<span id="cb9-9"><a href="manipulations-and-covariates.html#cb9-9" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">8</span>, <span class="at">alpha=</span><span class="fl">0.2</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb9-10"><a href="manipulations-and-covariates.html#cb9-10" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb9-11"><a href="manipulations-and-covariates.html#cb9-11" tabindex="-1"></a></span>
-<span id="cb9-12"><a href="manipulations-and-covariates.html#cb9-12" tabindex="-1"></a><span class="co"># Save the histogram as a high quality .png image</span></span>
-<span id="cb9-13"><a href="manipulations-and-covariates.html#cb9-13" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/hist_2.png&quot;</span>,histogram,<span class="at">height =</span> <span class="dv">3</span>, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
-<span id="cb9-14"><a href="manipulations-and-covariates.html#cb9-14" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="manipulations-and-covariates.html#cb9-15" tabindex="-1"></a><span class="co"># Call back the high quality image </span></span>
-<span id="cb9-16"><a href="manipulations-and-covariates.html#cb9-16" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/hist_2.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="manipulations-and-covariates.html#cb11-1" tabindex="-1"></a>e <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb11-2"><a href="manipulations-and-covariates.html#cb11-2" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>),</span>
+<span id="cb11-3"><a href="manipulations-and-covariates.html#cb11-3" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">rnorm</span>(<span class="at">n =</span> <span class="dv">100</span>, <span class="at">mean =</span> <span class="dv">100</span>, <span class="at">sd =</span> <span class="dv">15</span>) <span class="co"># sample from normal distribution</span></span>
+<span id="cb11-4"><a href="manipulations-and-covariates.html#cb11-4" tabindex="-1"></a>)</span>
+<span id="cb11-5"><a href="manipulations-and-covariates.html#cb11-5" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="manipulations-and-covariates.html#cb11-6" tabindex="-1"></a><span class="co"># Generate the chart</span></span>
+<span id="cb11-7"><a href="manipulations-and-covariates.html#cb11-7" tabindex="-1"></a>histogram <span class="ot">&lt;-</span> e <span class="sc">%&gt;%</span></span>
+<span id="cb11-8"><a href="manipulations-and-covariates.html#cb11-8" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Score))<span class="sc">+</span></span>
+<span id="cb11-9"><a href="manipulations-and-covariates.html#cb11-9" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">8</span>, <span class="at">alpha=</span><span class="fl">0.2</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb11-10"><a href="manipulations-and-covariates.html#cb11-10" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
+<span id="cb11-11"><a href="manipulations-and-covariates.html#cb11-11" tabindex="-1"></a></span>
+<span id="cb11-12"><a href="manipulations-and-covariates.html#cb11-12" tabindex="-1"></a><span class="co"># Save the histogram as a high quality .png image</span></span>
+<span id="cb11-13"><a href="manipulations-and-covariates.html#cb11-13" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/hist_2.png&quot;</span>,histogram,<span class="at">height =</span> <span class="fl">2.5</span>, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb11-14"><a href="manipulations-and-covariates.html#cb11-14" tabindex="-1"></a></span>
+<span id="cb11-15"><a href="manipulations-and-covariates.html#cb11-15" tabindex="-1"></a><span class="co"># Call back the high quality image </span></span>
+<span id="cb11-16"><a href="manipulations-and-covariates.html#cb11-16" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/hist_2.png&quot;</span>)</span></code></pre></div>
 <p><img src="Figs/hist_2.png" width="750" /></p>
 </div>
 <div id="sampling-from-a-list-of-values" class="section level3 unnumbered hasAnchor">
 <h3>Sampling from a list of values<a href="manipulations-and-covariates.html#sampling-from-a-list-of-values" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="manipulations-and-covariates.html#cb10-1" tabindex="-1"></a><span class="co"># Example 1: sample randomly from the values 1:7</span></span>
-<span id="cb10-2"><a href="manipulations-and-covariates.html#cb10-2" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb10-3"><a href="manipulations-and-covariates.html#cb10-3" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>),</span>
-<span id="cb10-4"><a href="manipulations-and-covariates.html#cb10-4" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">sample</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>),<span class="at">size=</span><span class="dv">100</span>,<span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb10-5"><a href="manipulations-and-covariates.html#cb10-5" tabindex="-1"></a>)</span>
-<span id="cb10-6"><a href="manipulations-and-covariates.html#cb10-6" tabindex="-1"></a></span>
-<span id="cb10-7"><a href="manipulations-and-covariates.html#cb10-7" tabindex="-1"></a></span>
-<span id="cb10-8"><a href="manipulations-and-covariates.html#cb10-8" tabindex="-1"></a><span class="co"># Example 2: set the probabilities for the possible responses</span></span>
-<span id="cb10-9"><a href="manipulations-and-covariates.html#cb10-9" tabindex="-1"></a>Prob_info <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.02</span>, <span class="fl">0.03</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.4</span>, <span class="fl">0.4</span>)</span>
-<span id="cb10-10"><a href="manipulations-and-covariates.html#cb10-10" tabindex="-1"></a></span>
-<span id="cb10-11"><a href="manipulations-and-covariates.html#cb10-11" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb10-12"><a href="manipulations-and-covariates.html#cb10-12" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>),</span>
-<span id="cb10-13"><a href="manipulations-and-covariates.html#cb10-13" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">sample</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>),<span class="at">size=</span><span class="dv">100</span>,<span class="at">replace =</span> <span class="cn">TRUE</span>,<span class="at">prob =</span> Prob_info) <span class="co"># use prob info</span></span>
-<span id="cb10-14"><a href="manipulations-and-covariates.html#cb10-14" tabindex="-1"></a>)</span>
-<span id="cb10-15"><a href="manipulations-and-covariates.html#cb10-15" tabindex="-1"></a></span>
-<span id="cb10-16"><a href="manipulations-and-covariates.html#cb10-16" tabindex="-1"></a><span class="co"># Generate the chart</span></span>
-<span id="cb10-17"><a href="manipulations-and-covariates.html#cb10-17" tabindex="-1"></a>histogram <span class="ot">&lt;-</span> g <span class="sc">%&gt;%</span></span>
-<span id="cb10-18"><a href="manipulations-and-covariates.html#cb10-18" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Score))<span class="sc">+</span></span>
-<span id="cb10-19"><a href="manipulations-and-covariates.html#cb10-19" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">8</span>, <span class="at">alpha=</span><span class="fl">0.2</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
-<span id="cb10-20"><a href="manipulations-and-covariates.html#cb10-20" tabindex="-1"></a>  <span class="fu">theme_classic</span>()</span>
-<span id="cb10-21"><a href="manipulations-and-covariates.html#cb10-21" tabindex="-1"></a></span>
-<span id="cb10-22"><a href="manipulations-and-covariates.html#cb10-22" tabindex="-1"></a><span class="co"># Save the histogram as a high quality .png image</span></span>
-<span id="cb10-23"><a href="manipulations-and-covariates.html#cb10-23" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/hist_3.png&quot;</span>,histogram,<span class="at">height =</span> <span class="dv">3</span>, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
-<span id="cb10-24"><a href="manipulations-and-covariates.html#cb10-24" tabindex="-1"></a></span>
-<span id="cb10-25"><a href="manipulations-and-covariates.html#cb10-25" tabindex="-1"></a><span class="co"># Call back the high quality image </span></span>
-<span id="cb10-26"><a href="manipulations-and-covariates.html#cb10-26" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/hist_3.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="manipulations-and-covariates.html#cb12-1" tabindex="-1"></a><span class="co"># Example 1: sample randomly from the values 1:7</span></span>
+<span id="cb12-2"><a href="manipulations-and-covariates.html#cb12-2" tabindex="-1"></a>f <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-3"><a href="manipulations-and-covariates.html#cb12-3" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>),</span>
+<span id="cb12-4"><a href="manipulations-and-covariates.html#cb12-4" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">sample</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>),<span class="at">size=</span><span class="dv">100</span>,<span class="at">replace =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb12-5"><a href="manipulations-and-covariates.html#cb12-5" tabindex="-1"></a>)</span>
+<span id="cb12-6"><a href="manipulations-and-covariates.html#cb12-6" tabindex="-1"></a></span>
+<span id="cb12-7"><a href="manipulations-and-covariates.html#cb12-7" tabindex="-1"></a></span>
+<span id="cb12-8"><a href="manipulations-and-covariates.html#cb12-8" tabindex="-1"></a><span class="co"># Example 2: set the probabilities for the possible responses</span></span>
+<span id="cb12-9"><a href="manipulations-and-covariates.html#cb12-9" tabindex="-1"></a>Prob_info <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="fl">0.02</span>, <span class="fl">0.03</span>, <span class="fl">0.05</span>, <span class="fl">0.1</span>, <span class="fl">0.1</span>, <span class="fl">0.4</span>, <span class="fl">0.4</span>)</span>
+<span id="cb12-10"><a href="manipulations-and-covariates.html#cb12-10" tabindex="-1"></a></span>
+<span id="cb12-11"><a href="manipulations-and-covariates.html#cb12-11" tabindex="-1"></a>g <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb12-12"><a href="manipulations-and-covariates.html#cb12-12" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>),</span>
+<span id="cb12-13"><a href="manipulations-and-covariates.html#cb12-13" tabindex="-1"></a>  <span class="at">Score =</span> <span class="fu">sample</span>(<span class="at">x=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>),<span class="at">size=</span><span class="dv">100</span>,<span class="at">replace =</span> <span class="cn">TRUE</span>,<span class="at">prob =</span> Prob_info) <span class="co"># use prob info</span></span>
+<span id="cb12-14"><a href="manipulations-and-covariates.html#cb12-14" tabindex="-1"></a>)</span>
+<span id="cb12-15"><a href="manipulations-and-covariates.html#cb12-15" tabindex="-1"></a></span>
+<span id="cb12-16"><a href="manipulations-and-covariates.html#cb12-16" tabindex="-1"></a><span class="co"># Generate the chart</span></span>
+<span id="cb12-17"><a href="manipulations-and-covariates.html#cb12-17" tabindex="-1"></a>histogram <span class="ot">&lt;-</span> g <span class="sc">%&gt;%</span></span>
+<span id="cb12-18"><a href="manipulations-and-covariates.html#cb12-18" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>Score))<span class="sc">+</span></span>
+<span id="cb12-19"><a href="manipulations-and-covariates.html#cb12-19" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">bins =</span> <span class="dv">7</span>, <span class="at">alpha=</span><span class="fl">0.2</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>)<span class="sc">+</span></span>
+<span id="cb12-20"><a href="manipulations-and-covariates.html#cb12-20" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb12-21"><a href="manipulations-and-covariates.html#cb12-21" tabindex="-1"></a>  <span class="fu">scale_x_continuous</span>(<span class="at">breaks=</span><span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">7</span>))</span>
+<span id="cb12-22"><a href="manipulations-and-covariates.html#cb12-22" tabindex="-1"></a></span>
+<span id="cb12-23"><a href="manipulations-and-covariates.html#cb12-23" tabindex="-1"></a><span class="co"># Save the histogram as a high quality .png image</span></span>
+<span id="cb12-24"><a href="manipulations-and-covariates.html#cb12-24" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/hist_3.png&quot;</span>,histogram,<span class="at">height =</span> <span class="fl">2.5</span>, <span class="at">width =</span> <span class="dv">5</span>, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb12-25"><a href="manipulations-and-covariates.html#cb12-25" tabindex="-1"></a></span>
+<span id="cb12-26"><a href="manipulations-and-covariates.html#cb12-26" tabindex="-1"></a><span class="co"># Call back the high quality image </span></span>
+<span id="cb12-27"><a href="manipulations-and-covariates.html#cb12-27" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/hist_3.png&quot;</span>)</span></code></pre></div>
 <p><img src="Figs/hist_3.png" width="750" /></p>
 </div>
 <div id="example-of-a-complete-dataset" class="section level3 unnumbered hasAnchor">
 <h3>Example of a complete dataset<a href="manipulations-and-covariates.html#example-of-a-complete-dataset" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="manipulations-and-covariates.html#cb11-1" tabindex="-1"></a><span class="co"># Make data for a ctl group</span></span>
-<span id="cb11-2"><a href="manipulations-and-covariates.html#cb11-2" tabindex="-1"></a>Control_group <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb11-3"><a href="manipulations-and-covariates.html#cb11-3" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>),</span>
-<span id="cb11-4"><a href="manipulations-and-covariates.html#cb11-4" tabindex="-1"></a>  <span class="at">Condition =</span> <span class="st">&quot;Placebo&quot;</span>,</span>
-<span id="cb11-5"><a href="manipulations-and-covariates.html#cb11-5" tabindex="-1"></a>  <span class="at">Baseline_IQ =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">mean=</span><span class="dv">100</span>,<span class="at">sd=</span><span class="dv">15</span>),</span>
-<span id="cb11-6"><a href="manipulations-and-covariates.html#cb11-6" tabindex="-1"></a>  <span class="at">Post_IQ =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">mean=</span><span class="dv">100</span>,<span class="at">sd=</span><span class="dv">15</span>)</span>
-<span id="cb11-7"><a href="manipulations-and-covariates.html#cb11-7" tabindex="-1"></a>)</span>
-<span id="cb11-8"><a href="manipulations-and-covariates.html#cb11-8" tabindex="-1"></a></span>
-<span id="cb11-9"><a href="manipulations-and-covariates.html#cb11-9" tabindex="-1"></a><span class="co"># And experimental data with the exact same column headers</span></span>
-<span id="cb11-10"><a href="manipulations-and-covariates.html#cb11-10" tabindex="-1"></a>Experimental_group <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb11-11"><a href="manipulations-and-covariates.html#cb11-11" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">101</span><span class="sc">:</span><span class="dv">200</span>),</span>
-<span id="cb11-12"><a href="manipulations-and-covariates.html#cb11-12" tabindex="-1"></a>  <span class="at">Condition =</span> <span class="st">&quot;Drug&quot;</span>,</span>
-<span id="cb11-13"><a href="manipulations-and-covariates.html#cb11-13" tabindex="-1"></a>  <span class="at">Baseline_IQ =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">mean=</span><span class="dv">100</span>,<span class="at">sd=</span><span class="dv">15</span>),</span>
-<span id="cb11-14"><a href="manipulations-and-covariates.html#cb11-14" tabindex="-1"></a>  <span class="at">Post_IQ =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">mean=</span><span class="dv">130</span>,<span class="at">sd=</span><span class="dv">15</span>)</span>
-<span id="cb11-15"><a href="manipulations-and-covariates.html#cb11-15" tabindex="-1"></a>)</span>
-<span id="cb11-16"><a href="manipulations-and-covariates.html#cb11-16" tabindex="-1"></a></span>
-<span id="cb11-17"><a href="manipulations-and-covariates.html#cb11-17" tabindex="-1"></a><span class="co"># attach them together</span></span>
-<span id="cb11-18"><a href="manipulations-and-covariates.html#cb11-18" tabindex="-1"></a>JLB_data <span class="ot">&lt;-</span> <span class="fu">rbind</span>(Control_group,Experimental_group)</span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="manipulations-and-covariates.html#cb13-1" tabindex="-1"></a><span class="co"># Make data for a ctl group</span></span>
+<span id="cb13-2"><a href="manipulations-and-covariates.html#cb13-2" tabindex="-1"></a>Control_group <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-3"><a href="manipulations-and-covariates.html#cb13-3" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">100</span>),</span>
+<span id="cb13-4"><a href="manipulations-and-covariates.html#cb13-4" tabindex="-1"></a>  <span class="at">Condition =</span> <span class="st">&quot;Placebo&quot;</span>,</span>
+<span id="cb13-5"><a href="manipulations-and-covariates.html#cb13-5" tabindex="-1"></a>  <span class="at">Baseline_IQ =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">mean=</span><span class="dv">100</span>,<span class="at">sd=</span><span class="dv">15</span>),</span>
+<span id="cb13-6"><a href="manipulations-and-covariates.html#cb13-6" tabindex="-1"></a>  <span class="at">Post_IQ =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">mean=</span><span class="dv">100</span>,<span class="at">sd=</span><span class="dv">15</span>)</span>
+<span id="cb13-7"><a href="manipulations-and-covariates.html#cb13-7" tabindex="-1"></a>)</span>
+<span id="cb13-8"><a href="manipulations-and-covariates.html#cb13-8" tabindex="-1"></a></span>
+<span id="cb13-9"><a href="manipulations-and-covariates.html#cb13-9" tabindex="-1"></a><span class="co"># And experimental data with the exact same column headers</span></span>
+<span id="cb13-10"><a href="manipulations-and-covariates.html#cb13-10" tabindex="-1"></a>Experimental_group <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb13-11"><a href="manipulations-and-covariates.html#cb13-11" tabindex="-1"></a>  <span class="at">ID =</span> <span class="fu">c</span>(<span class="dv">101</span><span class="sc">:</span><span class="dv">200</span>),</span>
+<span id="cb13-12"><a href="manipulations-and-covariates.html#cb13-12" tabindex="-1"></a>  <span class="at">Condition =</span> <span class="st">&quot;Drug&quot;</span>,</span>
+<span id="cb13-13"><a href="manipulations-and-covariates.html#cb13-13" tabindex="-1"></a>  <span class="at">Baseline_IQ =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">mean=</span><span class="dv">100</span>,<span class="at">sd=</span><span class="dv">15</span>),</span>
+<span id="cb13-14"><a href="manipulations-and-covariates.html#cb13-14" tabindex="-1"></a>  <span class="at">Post_IQ =</span> <span class="fu">rnorm</span>(<span class="at">n=</span><span class="dv">100</span>,<span class="at">mean=</span><span class="dv">130</span>,<span class="at">sd=</span><span class="dv">15</span>)</span>
+<span id="cb13-15"><a href="manipulations-and-covariates.html#cb13-15" tabindex="-1"></a>)</span>
+<span id="cb13-16"><a href="manipulations-and-covariates.html#cb13-16" tabindex="-1"></a></span>
+<span id="cb13-17"><a href="manipulations-and-covariates.html#cb13-17" tabindex="-1"></a><span class="co"># attach them together</span></span>
+<span id="cb13-18"><a href="manipulations-and-covariates.html#cb13-18" tabindex="-1"></a>JLB_data <span class="ot">&lt;-</span> <span class="fu">rbind</span>(Control_group,Experimental_group)</span></code></pre></div>
 </div>
 <div id="aggregate-table-of-data" class="section level3 unnumbered hasAnchor">
 <h3>Aggregate table of data<a href="manipulations-and-covariates.html#aggregate-table-of-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="manipulations-and-covariates.html#cb12-1" tabindex="-1"></a><span class="co"># step 1 install packages </span></span>
-<span id="cb12-2"><a href="manipulations-and-covariates.html#cb12-2" tabindex="-1"></a><span class="do">## Do once per computer</span></span>
-<span id="cb12-3"><a href="manipulations-and-covariates.html#cb12-3" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="manipulations-and-covariates.html#cb12-4" tabindex="-1"></a><span class="co"># install.packages(c(&quot;tidyverse&quot;,&quot;reshape2&quot;))</span></span>
-<span id="cb12-5"><a href="manipulations-and-covariates.html#cb12-5" tabindex="-1"></a></span>
-<span id="cb12-6"><a href="manipulations-and-covariates.html#cb12-6" tabindex="-1"></a><span class="co"># Call the packages </span></span>
-<span id="cb12-7"><a href="manipulations-and-covariates.html#cb12-7" tabindex="-1"></a><span class="do">## Do this every session</span></span>
-<span id="cb12-8"><a href="manipulations-and-covariates.html#cb12-8" tabindex="-1"></a></span>
-<span id="cb12-9"><a href="manipulations-and-covariates.html#cb12-9" tabindex="-1"></a><span class="fu">library</span>(tidyverse) <span class="co"># Call the tidyverse</span></span>
-<span id="cb12-10"><a href="manipulations-and-covariates.html#cb12-10" tabindex="-1"></a><span class="fu">library</span>(reshape2) <span class="co"># Call reshape2 (for the &quot;melt&quot; function)</span></span></code></pre></div>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="manipulations-and-covariates.html#cb13-1" tabindex="-1"></a><span class="co"># An example of &quot;tidy text&quot; (from the tidyverse):</span></span>
-<span id="cb13-2"><a href="manipulations-and-covariates.html#cb13-2" tabindex="-1"></a>table <span class="ot">&lt;-</span> JLB_data <span class="sc">%&gt;%</span> <span class="co"># Take the data AND THEN</span></span>
-<span id="cb13-3"><a href="manipulations-and-covariates.html#cb13-3" tabindex="-1"></a>  <span class="fu">melt</span>(<span class="at">id.vars =</span> <span class="fu">c</span>(<span class="st">&quot;ID&quot;</span>,<span class="st">&quot;Condition&quot;</span>)) <span class="sc">%&gt;%</span> <span class="co"># Switch to long form AND THEN</span></span>
-<span id="cb13-4"><a href="manipulations-and-covariates.html#cb13-4" tabindex="-1"></a>  <span class="fu">group_by</span>(Condition,variable) <span class="sc">%&gt;%</span> <span class="co"># Group by the IVs</span></span>
-<span id="cb13-5"><a href="manipulations-and-covariates.html#cb13-5" tabindex="-1"></a>  <span class="fu">summarise</span>( <span class="co"># Calculate descriptive stats</span></span>
-<span id="cb13-6"><a href="manipulations-and-covariates.html#cb13-6" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
-<span id="cb13-7"><a href="manipulations-and-covariates.html#cb13-7" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(value),</span>
-<span id="cb13-8"><a href="manipulations-and-covariates.html#cb13-8" tabindex="-1"></a>    <span class="at">sd =</span> <span class="fu">sd</span>(value),</span>
-<span id="cb13-9"><a href="manipulations-and-covariates.html#cb13-9" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(value),</span>
-<span id="cb13-10"><a href="manipulations-and-covariates.html#cb13-10" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(value)</span>
-<span id="cb13-11"><a href="manipulations-and-covariates.html#cb13-11" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">se =</span> sd <span class="sc">/</span> <span class="fu">sqrt</span>(n)) <span class="co"># Create a column for SE, and compute it</span></span>
-<span id="cb13-12"><a href="manipulations-and-covariates.html#cb13-12" tabindex="-1"></a></span>
-<span id="cb13-13"><a href="manipulations-and-covariates.html#cb13-13" tabindex="-1"></a><span class="co"># Rename the columns for a better looking table</span></span>
-<span id="cb13-14"><a href="manipulations-and-covariates.html#cb13-14" tabindex="-1"></a><span class="fu">colnames</span>(table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Condition&quot;</span>,<span class="st">&quot;Timepoint&quot;</span>,<span class="st">&quot;n&quot;</span>,<span class="st">&quot;mean&quot;</span>,<span class="st">&quot;sd&quot;</span>,<span class="st">&quot;min&quot;</span>,<span class="st">&quot;max&quot;</span>,<span class="st">&quot;se&quot;</span>)</span>
-<span id="cb13-15"><a href="manipulations-and-covariates.html#cb13-15" tabindex="-1"></a></span>
-<span id="cb13-16"><a href="manipulations-and-covariates.html#cb13-16" tabindex="-1"></a><span class="co"># a regular table</span></span>
-<span id="cb13-17"><a href="manipulations-and-covariates.html#cb13-17" tabindex="-1"></a>table</span></code></pre></div>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="manipulations-and-covariates.html#cb14-1" tabindex="-1"></a><span class="co"># An example of &quot;tidy text&quot; (from the tidyverse):</span></span>
+<span id="cb14-2"><a href="manipulations-and-covariates.html#cb14-2" tabindex="-1"></a>table <span class="ot">&lt;-</span> JLB_data <span class="sc">%&gt;%</span> <span class="co"># Take the data AND THEN</span></span>
+<span id="cb14-3"><a href="manipulations-and-covariates.html#cb14-3" tabindex="-1"></a>  <span class="fu">melt</span>(<span class="at">id.vars =</span> <span class="fu">c</span>(<span class="st">&quot;ID&quot;</span>,<span class="st">&quot;Condition&quot;</span>)) <span class="sc">%&gt;%</span> <span class="co"># Switch to long form AND THEN</span></span>
+<span id="cb14-4"><a href="manipulations-and-covariates.html#cb14-4" tabindex="-1"></a>  <span class="fu">group_by</span>(Condition,variable) <span class="sc">%&gt;%</span> <span class="co"># Group by the IVs</span></span>
+<span id="cb14-5"><a href="manipulations-and-covariates.html#cb14-5" tabindex="-1"></a>  <span class="fu">summarise</span>( <span class="co"># Calculate descriptive stats</span></span>
+<span id="cb14-6"><a href="manipulations-and-covariates.html#cb14-6" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>(),</span>
+<span id="cb14-7"><a href="manipulations-and-covariates.html#cb14-7" tabindex="-1"></a>    <span class="at">mean =</span> <span class="fu">mean</span>(value),</span>
+<span id="cb14-8"><a href="manipulations-and-covariates.html#cb14-8" tabindex="-1"></a>    <span class="at">sd =</span> <span class="fu">sd</span>(value),</span>
+<span id="cb14-9"><a href="manipulations-and-covariates.html#cb14-9" tabindex="-1"></a>    <span class="at">min =</span> <span class="fu">min</span>(value),</span>
+<span id="cb14-10"><a href="manipulations-and-covariates.html#cb14-10" tabindex="-1"></a>    <span class="at">max =</span> <span class="fu">max</span>(value)</span>
+<span id="cb14-11"><a href="manipulations-and-covariates.html#cb14-11" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">se =</span> sd <span class="sc">/</span> <span class="fu">sqrt</span>(n)) <span class="co"># Create a column for SE, and compute it</span></span>
+<span id="cb14-12"><a href="manipulations-and-covariates.html#cb14-12" tabindex="-1"></a></span>
+<span id="cb14-13"><a href="manipulations-and-covariates.html#cb14-13" tabindex="-1"></a><span class="co"># Rename the columns for a better looking table</span></span>
+<span id="cb14-14"><a href="manipulations-and-covariates.html#cb14-14" tabindex="-1"></a><span class="fu">colnames</span>(table) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Condition&quot;</span>,<span class="st">&quot;Timepoint&quot;</span>,<span class="st">&quot;n&quot;</span>,<span class="st">&quot;mean&quot;</span>,<span class="st">&quot;sd&quot;</span>,<span class="st">&quot;min&quot;</span>,<span class="st">&quot;max&quot;</span>,<span class="st">&quot;se&quot;</span>)</span>
+<span id="cb14-15"><a href="manipulations-and-covariates.html#cb14-15" tabindex="-1"></a></span>
+<span id="cb14-16"><a href="manipulations-and-covariates.html#cb14-16" tabindex="-1"></a><span class="co"># a regular table</span></span>
+<span id="cb14-17"><a href="manipulations-and-covariates.html#cb14-17" tabindex="-1"></a>table</span></code></pre></div>
 <pre><code>## # A tibble: 4 × 8
 ## # Groups:   Condition [2]
 ##   Condition Timepoint       n  mean    sd   min   max    se
@@ -490,8 +492,8 @@ Figure 3.1: Figure 1. A reminder about the data patterns that correspond to vari
 ## 2 Drug      Post_IQ       100 131.   14.7  84.3  176.  1.47
 ## 3 Placebo   Baseline_IQ   100  99.3  14.5  67.9  137.  1.45
 ## 4 Placebo   Post_IQ       100  98.9  15.8  54.4  136.  1.58</code></pre>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="manipulations-and-covariates.html#cb15-1" tabindex="-1"></a><span class="co"># a pretty table </span></span>
-<span id="cb15-2"><a href="manipulations-and-covariates.html#cb15-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(table)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="manipulations-and-covariates.html#cb16-1" tabindex="-1"></a><span class="co"># a pretty table </span></span>
+<span id="cb16-2"><a href="manipulations-and-covariates.html#cb16-2" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(table)</span></code></pre></div>
 <table>
 <colgroup>
 <col width="13%" />

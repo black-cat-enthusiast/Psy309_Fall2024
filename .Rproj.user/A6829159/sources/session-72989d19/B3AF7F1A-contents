@@ -3,6 +3,8 @@ output:
   html_document: default
   pdf_document: default
   word_document: default
+editor_options: 
+  chunk_output_type: console
 ---
 
 # Manipulations and Covariates
@@ -57,11 +59,24 @@ Additionally, feel free to reflect on the process of using Rstudio to generate d
 
 ## Code For Practical #3 {-}
 
-```{r,include=FALSE}
+```{r,include=TRUE}
 # this is the "setup" chunk. Info here will apply to all code blocks in the document. 
-knitr::opts_chunk$set(echo = TRUE, 
-                      warning = FALSE,
-                      message = FALSE)
+knitr::opts_chunk$set(echo = TRUE, # Show the code
+                      warning = FALSE, # Hide warnings from R
+                      message = FALSE) # Hide messages from R
+```
+
+```{r}
+# step 1 install packages 
+## Do once per computer
+
+# install.packages(c("tidyverse","reshape2"))
+
+# Call the packages 
+## Do this every session
+
+library(tidyverse) # Call the tidyverse
+library(reshape2) # Call reshape2 (for the "melt" function)
 ```
 
 ### Object-oriented programming {-}
@@ -107,16 +122,13 @@ head(d) # show me the first 6 rows
 tail(d) # show me the last 6 rows
 
 # Make a quick histogram of the data
-library(tidyverse)
-
-# Generate the chart
 histogram <- d %>%
   ggplot(aes(x=Score))+
   geom_histogram(bins = 8, alpha=0.2, colour = "black")+
   theme_classic()
 
 # Save the histogram as a high quality .png image
-ggsave("Figs/hist_1.png",histogram,height = 3, width = 5, dpi = 300)
+ggsave("Figs/hist_1.png",histogram,height = 2.5, width = 5, dpi = 300)
 
 # Call back the high quality image 
 knitr::include_graphics("Figs/hist_1.png")
@@ -138,7 +150,7 @@ histogram <- e %>%
   theme_classic()
 
 # Save the histogram as a high quality .png image
-ggsave("Figs/hist_2.png",histogram,height = 3, width = 5, dpi = 300)
+ggsave("Figs/hist_2.png",histogram,height = 2.5, width = 5, dpi = 300)
 
 # Call back the high quality image 
 knitr::include_graphics("Figs/hist_2.png")
@@ -165,11 +177,12 @@ g <- data.frame(
 # Generate the chart
 histogram <- g %>%
   ggplot(aes(x=Score))+
-  geom_histogram(bins = 8, alpha=0.2, colour = "black")+
-  theme_classic()
+  geom_histogram(bins = 7, alpha=0.2, colour = "black")+
+  theme_classic()+
+  scale_x_continuous(breaks=c(1:7))
 
 # Save the histogram as a high quality .png image
-ggsave("Figs/hist_3.png",histogram,height = 3, width = 5, dpi = 300)
+ggsave("Figs/hist_3.png",histogram,height = 2.5, width = 5, dpi = 300)
 
 # Call back the high quality image 
 knitr::include_graphics("Figs/hist_3.png")
@@ -199,19 +212,6 @@ JLB_data <- rbind(Control_group,Experimental_group)
 ```
 
 ### Aggregate table of data {-}
-
-```{r}
-# step 1 install packages 
-## Do once per computer
-
-# install.packages(c("tidyverse","reshape2"))
-
-# Call the packages 
-## Do this every session
-
-library(tidyverse) # Call the tidyverse
-library(reshape2) # Call reshape2 (for the "melt" function)
-```
 
 ```{r}
 # An example of "tidy text" (from the tidyverse):
