@@ -443,14 +443,21 @@ Examples of how Rstudio can be used to assign single values, lists of values, or
 \CommentTok{\# Make a quick histogram of the data}
 \FunctionTok{library}\NormalTok{(tidyverse)}
 
-\NormalTok{d }\SpecialCharTok{\%\textgreater{}\%}
+\CommentTok{\# Generate the chart}
+\NormalTok{histogram }\OtherTok{\textless{}{-}}\NormalTok{ d }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Score))}\SpecialCharTok{+}
   \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{8}\NormalTok{, }\AttributeTok{alpha=}\FloatTok{0.2}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
   \FunctionTok{theme\_classic}\NormalTok{()}
+
+\CommentTok{\# Save the histogram as a high quality .png image}
+\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/hist\_1.png"}\NormalTok{,}\AttributeTok{height =} \DecValTok{4}\NormalTok{, }\AttributeTok{width =} \DecValTok{5}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
+
+\CommentTok{\# Call back the high quality image }
+\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"Figs/hist\_1.png"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
-\includegraphics{_main_files/figure-latex/unnamed-chunk-4-1.pdf}
+\includegraphics[width=20.83in]{Figs/hist_1}
 
 \subsection*{Sample from the normal distribution}\label{sample-from-the-normal-distribution}
 \addcontentsline{toc}{subsection}{Sample from the normal distribution}

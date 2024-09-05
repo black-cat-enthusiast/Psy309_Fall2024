@@ -292,10 +292,17 @@ tail(d) # show me the last 6 rows
 # Make a quick histogram of the data
 library(tidyverse)
 
-d %>%
+# Generate the chart
+histogram <- d %>%
   ggplot(aes(x=Score))+
   geom_histogram(bins = 8, alpha=0.2, colour = "black")+
   theme_classic()
+
+# Save the histogram as a high quality .png image
+ggsave("Figs/hist_1.png",height = 4, width = 5, dpi = 300)
+
+# Call back the high quality image 
+knitr::include_graphics("Figs/hist_1.png")
 ```
 
 
