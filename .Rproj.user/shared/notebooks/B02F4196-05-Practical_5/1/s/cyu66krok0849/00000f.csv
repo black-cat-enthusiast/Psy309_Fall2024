@@ -1,0 +1,6 @@
+"0","# Transform the continuous variable into categories"
+"0","data$age_cat <- cut(data$Age,"
+"0","                    breaks = c(-Inf, 65, Inf), # cut points"
+"0","                    labels = c(""Under 65"", ""Over 65"")) # labels"
+"0",""
+"0","head(data) # Check out the data frame with the new column"

@@ -770,7 +770,7 @@ When there are more than two groups, use ANOVA instead of a t-test. If the resul
 ```{r}
 # Run a one-way ANOVA
 res <- aov(data = data, IQ ~ age_cat)
-summary(res)
+
 
 # Follow up to find out which groups differ from one-another. 
 TukeyHSD(res)
@@ -799,6 +799,7 @@ library(reshape2)
 library(rstatix) # for anova_test
 library(ggpubr) # to make nice panels
 options(scipen = 999) # Hide scientific notation
+library(tinytable) # To make tables from stats results
 ```
 
 # Capstone Project: A Simulated Research Paper {-}
@@ -1000,9 +1001,11 @@ get_anova_table(a)
 
 ```{r}
 ## Always two ways to follow up: #1:
-long_data %>%
+a <- long_data %>%
   group_by(age_cat) %>%
   pairwise_t_test(value~Drug)
+
+tt(a)
 ```
 
 - There was no effect of the drug on IQ scores for people that were under 65 (p = 0.58).
@@ -1010,9 +1013,11 @@ long_data %>%
 
 ```{r}
 ## Number 2: 
-long_data %>%
+a <- long_data %>%
   group_by(variable) %>%
   pairwise_t_test(value~Drug)
+
+tt(a)
 ```
 
 - There was no difference in IQ scores between the experimental groups before treatment (i.e., at the first IQ measurement p = 0.51)
@@ -1212,6 +1217,8 @@ ggsave("Psy309_deliverables.png",a,height=4,width=5,dpi=300)
 
 knitr::include_graphics("Psy309_deliverables.png")
 ```
+
+
 
 ### Reminders {-}
 

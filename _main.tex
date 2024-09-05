@@ -104,6 +104,16 @@
   \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
 \setcounter{secnumdepth}{5}
 \usepackage{booktabs}
+\usepackage{float}
+\usepackage{tabularray}
+\usepackage[normalem]{ulem}
+\usepackage{graphicx}
+\UseTblrLibrary{booktabs}
+\UseTblrLibrary{rotating}
+\UseTblrLibrary{siunitx}
+\NewTableCommand{\tinytableDefineColor}[3]{\definecolor{#1}{#2}{#3}}
+\newcommand{\tinytableTabularrayUnderline}[1]{\underline{#1}}
+\newcommand{\tinytableTabularrayStrikeout}[1]{\sout{#1}}
 \ifLuaTeX
   \usepackage{selnolig}  % disable illegal ligatures
 \fi
@@ -1057,20 +1067,8 @@ When there are more than two groups, use ANOVA instead of a t-test. If the resul
 \begin{Highlighting}[]
 \CommentTok{\# Run a one{-}way ANOVA}
 \NormalTok{res }\OtherTok{\textless{}{-}} \FunctionTok{aov}\NormalTok{(}\AttributeTok{data =}\NormalTok{ data, IQ }\SpecialCharTok{\textasciitilde{}}\NormalTok{ age\_cat)}
-\FunctionTok{summary}\NormalTok{(res)}
-\end{Highlighting}
-\end{Shaded}
 
-\begin{verbatim}
-##             Df Sum Sq Mean Sq F value  Pr(>F)   
-## age_cat      2   1996   998.2   6.218 0.00306 **
-## Residuals   82  13163   160.5                   
-## ---
-## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
-\end{verbatim}
 
-\begin{Shaded}
-\begin{Highlighting}[]
 \CommentTok{\# Follow up to find out which groups differ from one{-}another. }
 \FunctionTok{TukeyHSD}\NormalTok{(res)}
 \end{Highlighting}
@@ -1443,19 +1441,28 @@ Drug & Over 65 & 22 & 106.40972 & 13.09813 & 2.792530\\
 \begin{Shaded}
 \begin{Highlighting}[]
 \DocumentationTok{\#\# Always two ways to follow up: \#1:}
-\NormalTok{long\_data }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{a }\OtherTok{\textless{}{-}}\NormalTok{ long\_data }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{group\_by}\NormalTok{(age\_cat) }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{pairwise\_t\_test}\NormalTok{(value}\SpecialCharTok{\textasciitilde{}}\NormalTok{Drug)}
+
+\FunctionTok{tt}\NormalTok{(a)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## # A tibble: 2 x 10
-##   age_cat  .y.   group1 group2    n1    n2       p p.signif   p.adj p.adj.signif
-## * <fct>    <chr> <chr>  <chr>  <int> <int>   <dbl> <chr>      <dbl> <chr>       
-## 1 Under 65 value Contr~ Drug      42    42 0.583   ns       0.583   ns          
-## 2 Over 65  value Contr~ Drug      42    44 0.00155 **       0.00155 **
-\end{verbatim}
+\begin{table}
+\centering
+\begin{tblr}[         %% tabularray outer open
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]},
+}                     %% tabularray inner close
+\toprule
+age_cat & .y. & group1 & group2 & n1 & n2 & p & p.signif & p.adj & p.adj.signif \\ \midrule %% TinyTableHeader
+Under 65 & value & Control & Drug & 42 & 42 & 0.58300 & ns & 0.58300 & ns \\
+Over 65  & value & Control & Drug & 42 & 44 & 0.00155 & ** & 0.00155 & ** \\
+\bottomrule
+\end{tblr}
+\end{table}
 
 \begin{itemize}
 \tightlist
@@ -1468,19 +1475,28 @@ Drug & Over 65 & 22 & 106.40972 & 13.09813 & 2.792530\\
 \begin{Shaded}
 \begin{Highlighting}[]
 \DocumentationTok{\#\# Number 2: }
-\NormalTok{long\_data }\SpecialCharTok{\%\textgreater{}\%}
+\NormalTok{a }\OtherTok{\textless{}{-}}\NormalTok{ long\_data }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{group\_by}\NormalTok{(variable) }\SpecialCharTok{\%\textgreater{}\%}
   \FunctionTok{pairwise\_t\_test}\NormalTok{(value}\SpecialCharTok{\textasciitilde{}}\NormalTok{Drug)}
+
+\FunctionTok{tt}\NormalTok{(a)}
 \end{Highlighting}
 \end{Shaded}
 
-\begin{verbatim}
-## # A tibble: 2 x 10
-##   variable .y.   group1 group2    n1    n2       p p.signif   p.adj p.adj.signif
-## * <fct>    <chr> <chr>  <chr>  <int> <int>   <dbl> <chr>      <dbl> <chr>       
-## 1 IQ       value Contr~ Drug      42    43 0.514   ns       0.514   ns          
-## 2 Post_IQ  value Contr~ Drug      42    43 0.00383 **       0.00383 **
-\end{verbatim}
+\begin{table}
+\centering
+\begin{tblr}[         %% tabularray outer open
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]},
+}                     %% tabularray inner close
+\toprule
+variable & .y. & group1 & group2 & n1 & n2 & p & p.signif & p.adj & p.adj.signif \\ \midrule %% TinyTableHeader
+IQ      & value & Control & Drug & 42 & 43 & 0.51400 & ns & 0.51400 & ns \\
+Post_IQ & value & Control & Drug & 42 & 43 & 0.00383 & ** & 0.00383 & ** \\
+\bottomrule
+\end{tblr}
+\end{table}
 
 \begin{itemize}
 \tightlist

@@ -1,0 +1,14 @@
+"0","# Set up how the code chunks will print"
+"0","knitr::opts_chunk$set(echo = TRUE, # Show the code"
+"0","                      warning = FALSE, # Hide the warnings"
+"0","                      message = FALSE) # Hide the messages"
+"0",""
+"0","library(faux)"
+"2","
+************
+Welcome to faux. For support and examples visit:
+https://debruine.github.io/faux/
+- Get and set global package options with: faux_options()
+************
+"
+"0","library(tidyverse)"

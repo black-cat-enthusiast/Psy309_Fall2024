@@ -1,0 +1,6 @@
+"0","library(tinytable)"
+"0","# Run a one-way ANOVA"
+"0","res <- aov(data = data, IQ ~ age_cat)"
+"0","tt(res)"
+"2","Error: `x` must be a data.frame.
+"

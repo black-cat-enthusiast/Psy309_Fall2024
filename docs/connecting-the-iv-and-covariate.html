@@ -438,14 +438,10 @@ Figure 5.1: First example: Here, I divided the continuous covariate into two cat
 <p>When there are more than two groups, use ANOVA instead of a t-test. If the results from the omnibus test of significance indicate p &lt; 0.05, run Tukey’s honestly significant difference test to figure out <em>where</em> the group differences are.</p>
 <div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="connecting-the-iv-and-covariate.html#cb36-1" tabindex="-1"></a><span class="co"># Run a one-way ANOVA</span></span>
 <span id="cb36-2"><a href="connecting-the-iv-and-covariate.html#cb36-2" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="at">data =</span> data, IQ <span class="sc">~</span> age_cat)</span>
-<span id="cb36-3"><a href="connecting-the-iv-and-covariate.html#cb36-3" tabindex="-1"></a><span class="fu">summary</span>(res)</span></code></pre></div>
-<pre><code>##             Df Sum Sq Mean Sq F value  Pr(&gt;F)   
-## age_cat      2   1996   998.2   6.218 0.00306 **
-## Residuals   82  13163   160.5                   
-## ---
-## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1</code></pre>
-<div class="sourceCode" id="cb38"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb38-1"><a href="connecting-the-iv-and-covariate.html#cb38-1" tabindex="-1"></a><span class="co"># Follow up to find out which groups differ from one-another. </span></span>
-<span id="cb38-2"><a href="connecting-the-iv-and-covariate.html#cb38-2" tabindex="-1"></a><span class="fu">TukeyHSD</span>(res)</span></code></pre></div>
+<span id="cb36-3"><a href="connecting-the-iv-and-covariate.html#cb36-3" tabindex="-1"></a></span>
+<span id="cb36-4"><a href="connecting-the-iv-and-covariate.html#cb36-4" tabindex="-1"></a></span>
+<span id="cb36-5"><a href="connecting-the-iv-and-covariate.html#cb36-5" tabindex="-1"></a><span class="co"># Follow up to find out which groups differ from one-another. </span></span>
+<span id="cb36-6"><a href="connecting-the-iv-and-covariate.html#cb36-6" tabindex="-1"></a><span class="fu">TukeyHSD</span>(res)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
 ## 
