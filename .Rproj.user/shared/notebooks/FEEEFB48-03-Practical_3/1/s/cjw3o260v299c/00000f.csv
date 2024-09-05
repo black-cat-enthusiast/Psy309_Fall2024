@@ -1,0 +1,2 @@
+"0","# this is the ""setup"" chunk. Info here will apply to all code blocks in the document. "
+"0","knitr::opts_chunk$set(echo = TRUE, warning = FALSE,message = FALSE)"

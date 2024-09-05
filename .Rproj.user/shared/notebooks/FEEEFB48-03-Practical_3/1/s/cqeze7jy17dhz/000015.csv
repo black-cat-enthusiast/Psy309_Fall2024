@@ -1,0 +1,2 @@
+"0",""
+"0","histogram <- hist(d$Score, xlab = ""Random value (x)"", col = ""grey"", main = """", cex.lab = 1.5, cex.axis = 1.5) # print out a quick histogram of the data"

@@ -1,0 +1,76 @@
+h1:url-your-book-url-like-httpsbookdown.orgyihuibookdown url: your book url like https://bookdown.org/yihui/bookdown
+h1:cover-image-path-to-the-social-sharing-image-like-imagescover.jpg cover-image: path to the social sharing image like images/cover.jpg
+h1:about About
+h1:asking-scientific-questions-and-literature-review Asking Scientific Questions and Literature Review
+h2:overview Overview
+h2:choose-a-reasearch-topic-in-psychology 1. Choose a Reasearch Topic in Psychology
+h2:see-whats-out-there 2. See What’s Out There
+h2:reflect 3. Reflect
+h1:exploring-types-of-measurement-in-research Exploring Types of Measurement in Research
+h2:identify-dependent-variables 1. Identify dependent variable(s)
+h2:identify-claims-made-by-the-paper 2. Identify claim(s) made by the paper
+h2:critically-evaluate-the-measuement-approach 3. Critically Evaluate the Measuement Approach
+h2:develop-a-research-idea 4. Develop a Research Idea
+h2:reflect-1 5. Reflect
+h1:manipulations-and-covariates Manipulations and Covariates
+h2:connecting-covariates-to-your-topic-of-interest 1. Connecting covariates to your topic of interest
+h2:experiments-manipulating-independent-variables 2. Experiments: Manipulating Independent Variable(s)
+h2:connect-the-theory-to-computation-in-r 3. Connect the theory to computation in R!
+h2:reflect-2 4. Reflect
+h2:code-for-practical-3 Code For Practical #3
+h3:object-oriented-programming Object-oriented programming
+h3:random-number-generation Random number generation
+h3:sample-from-the-normal-distribution Sample from the normal distribution
+h3:sampling-from-a-list-of-values Sampling from a list of values
+h3:example-of-a-complete-dataset Example of a complete dataset
+h3:aggregate-table-of-data Aggregate table of data
+h1:correlation-statistics-and-plots Correlation Statistics and Plots
+h2:thinking-about-association 1. Thinking About Association
+h2:what-is-already-known-about-these-varaibles 2. What is already known about these varaibles?
+h2:power-analysis-what-sample-size-should-you-use 3. Power Analysis: what sample size should you use?
+h2:a-picture-is-worth-100-words 4. A picture is worth 100 words…
+h2:reflect-3 5. Reflect
+h2:code-for-practical-4 Code for Practical #4
+h3:generate-data Generate Data
+h3:check-out-the-data Check out the data
+h3:check-the-correlation Check the correlation
+h3:code-to-generate-a-basic-scatterplot Code to generate a basic scatterplot:
+h3:a-fancier-better-looking-scatterplot A fancier, better looking scatterplot:
+h1:connecting-the-iv-and-covariate Connecting the IV and Covariate
+h2:thinking-about-causality 1. Thinking About Causality
+h2:what-is-already-known 2. What is already known?
+h2:connect-the-theory-of-the-iv-dv-relationship-to-your-proposed-covariate. 3. Connect the theory of the IV-DV relationship to your proposed covariate.
+h2:transform-the-continuous-covariate-to-a-categorical-variable 4. Transform the continuous covariate to a categorical variable
+h2:reflect-4 5. Reflect
+h2:code-for-practical-5 Code for Practical #5
+h3:generate-data-1 Generate data
+h3:transform Transform
+h3:make-a-bar-graph Make a Bar Graph
+h3:analyze Analyze
+h3:category-exmaple 3-category exmaple
+h3:analyze-3-category-example Analyze 3-category example
+h1:capstone-project-a-simulated-research-paper Capstone Project: A Simulated Research Paper
+h2:overview-1 Overview
+h2:introduction Introduction
+h2:methods Methods
+h2:results Results
+h3:correlation-analysis Correlation Analysis
+h3:one-way-analysis One-Way Analysis
+h3:factorial-anova Factorial ANOVA
+h3:follow-up-pair-wise-comparisons Follow up pair-wise comparisons
+h3:linear-regression Linear Regression
+h2:discussion Discussion
+h3:conclusions Conclusions
+h2:references References
+h1:ta-responsibilities TA Responsibilities
+h2:overview-2 Overview
+h2:course-deliverables Course Deliverables
+h3:x-3-practical-assignments 1. 5x 3%  assignments
+h3:x-25-tests 2. 2x 25% Tests
+h3:poster-presentation 3. 5% Poster Presentation
+h3:paper 3. 20% Paper
+h3:in-class-participation 4. 10% In-class participation
+h3:ta-student-contact TA Student contact
+h2:course-responsibilities Course Responsibilities
+h3:reminders Reminders
+
