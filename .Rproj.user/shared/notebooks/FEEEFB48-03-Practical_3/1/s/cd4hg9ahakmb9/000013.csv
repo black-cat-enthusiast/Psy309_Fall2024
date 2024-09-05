@@ -1,0 +1,7 @@
+"2","Warning in gzfile(file, ""wb"") :"
+"2","
+ "
+"2"," cannot open compressed file 'C:/Users/jenne/OneDrive - University of Toronto/TAing/Fall 2024/PSY_309 - INSTRUCTOR/Book_Of_Practicals/Psy309_Fall2024/Psy309_Fall2024/.Rproj.user/shared/notebooks/FEEEFB48-03-Practical_3/1/A682915972989d19/cd4hg9ahakmb9_t/fbff2f4e953744f888eb693b0ab2ed0c.snapshot', probable reason 'No such file or directory'
+"
+"2","Error in gzfile(file, ""wb"") : cannot open the connection
+"

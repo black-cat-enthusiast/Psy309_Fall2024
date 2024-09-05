@@ -242,7 +242,9 @@ Additionally, feel free to reflect on the process of using Rstudio to generate d
 
 ```{r,include=FALSE}
 # this is the "setup" chunk. Info here will apply to all code blocks in the document. 
-knitr::opts_chunk$set(echo = TRUE, warning = FALSE,message = FALSE)
+knitr::opts_chunk$set(echo = TRUE, 
+                      warning = FALSE,
+                      message = FALSE)
 ```
 
 ### Object-oriented programming {-}
@@ -287,9 +289,15 @@ d <- data.frame(
 head(d) # show me the first 6 rows
 tail(d) # show me the last 6 rows
 
-# Quick histogram of the data
-hist(d$Score) 
+# Make a quick histogram of the data
+library(tidyverse)
+
+d %>%
+  ggplot(aes(x=Score))+
+  geom_histogram(bins = 8, alpha=0.2, colour = "black")+
+  theme_classic()
 ```
+
 
 ### Sample from the normal distribution {-}
 
