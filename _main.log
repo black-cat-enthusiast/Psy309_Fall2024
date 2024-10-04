@@ -542,8 +542,7 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 28
 ) (c:/Users/jenne/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/bookmark/bkm-dvipdfm.def
 File: bkm-dvipdfm.def 2023-12-10 v1.31 bookmark driver for dvipdfm (HO)
 \BKM@id=\count363
-))
-No file _main.aux.
+)) (./_main.aux)
 \openout1 = `_main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 134.
@@ -790,25 +789,338 @@ LaTeX Font Info:    Encoding `OMX' has changed to `TU' for symbol font
 (Font)              `largesymbols' in the math version `bold' on input line 134.
 LaTeX Font Info:    Overwriting symbol font `largesymbols' in version `bold'
 (Font)                  OMX/lmex/m/n --> TU/latinmodern-math.otf(3)/b/n on input line 134.
+(c:/Users/jenne/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/ninecolors/ninecolors.sty
+Package: ninecolors 2022-02-13 v2022D Select colors with proper color contrast
+)
+Package hyperref Info: Link coloring OFF on input line 134.
 
-! LaTeX Error: File `ninecolors.sty' not found.
+Package hyperref Warning: Rerun to get /PageLabels entry.
 
-Type X to quit or <RETURN> to proceed,
-or enter new name. (Default extension: sty)
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 12.0pt on input line 136.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 136.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 136.
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 136.
+(c:/Users/jenne/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/lm/omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 12.0011pt on input line 136.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 8.00073pt on input line 136.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 6.00055pt on input line 136.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 11.99872pt on input line 136.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 7.99915pt on input line 136.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 5.99936pt on input line 136.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 136.
+(c:/Users/jenne/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 136.
+(c:/Users/jenne/AppData/Roaming/TinyTeX/texmf-dist/tex/latex/amsfonts/umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+)
 
-Enter file name: 
-! Emergency stop.
-<read *> 
-         
-l.134 \begin{document}
-                      ^^M 
+[1
+
+
+]
+
+[2
+
+]
+No file _main.toc.
+\tf@toc=\write4
+\openout4 = `_main.toc'.
+
+
+
+[3]
+
+[4
+
+]
+
+[5]
+
+[6
+
+]
+Chapter 1.
+
+
+[7]
+
+
+Overfull \hbox (27.63452pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 8 \TU/lmr/m/sl/10 CHAPTER 1.  ASKING SCIENTIFIC QUESTIONS AND LITERATURE REVIEW
+ []
+
+[8]
+
+[9]
+
+
+Overfull \hbox (32.63452pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 10 \TU/lmr/m/sl/10 CHAPTER 1.  ASKING SCIENTIFIC QUESTIONS AND LITERATURE REVIEW
+ []
+
+[10
+
+]
+Chapter 2.
+
+
+[11]
+
+
+Overfull \hbox (0.84453pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 12 \TU/lmr/m/sl/10 CHAPTER 2.  EXPLORING TYPES OF MEASUREMENT IN RESEARCH
+ []
+
+[12]
+
+[13]
+
+
+Overfull \hbox (0.84453pt too wide) has occurred while \output is active
+\TU/lmr/m/n/10 14 \TU/lmr/m/sl/10 CHAPTER 2.  EXPLORING TYPES OF MEASUREMENT IN RESEARCH
+ []
+
+[14
+
+]
+Chapter 3.
+
+Underfull \hbox (badness 1024) in paragraph at lines 281--281
+[][]\TU/lmr/bx/n/14.4 1. Experiments: Manipulating Independent
+ []
+
+
+
+[15]
+
+LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/sl' tried instead on input line 326.
+
+
+
+[16]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 352.
+
+
+[17]
+
+[18]
+File: Figs/hist_1.png Graphic file (type bmp)
+<Figs/hist_1.png>
+
+Overfull \hbox (16.35533pt too wide) in paragraph at lines 471--472
+[][] 
+ []
+
+
+
+[19]
+File: Figs/hist_2.png Graphic file (type bmp)
+<Figs/hist_2.png>
+
+Overfull \hbox (16.35533pt too wide) in paragraph at lines 497--498
+[][] 
+ []
+
+
+
+[20]
+File: Figs/hist_3.png Graphic file (type bmp)
+<Figs/hist_3.png>
+
+Overfull \hbox (16.35533pt too wide) in paragraph at lines 534--535
+[][] 
+ []
+
+
+
+[21]
+
+[22]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 605.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 605.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00092pt on input line 605.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00064pt on input line 605.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00046pt on input line 605.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 605.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 605.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 605.
+
+Overfull \hbox (60.96008pt too wide) in paragraph at lines 605--618
+[][] 
+ []
+
+
+
+[23]
+
+[24
+
+]
+Chapter 4.
+
+
+[25]
+File: Figs/effect_size.jpg Graphic file (type bmp)
+<Figs/effect_size.jpg>
+
+
+[26]
+
+[27]
+
+[28]
+File: Figs/scatter_1.png Graphic file (type bmp)
+<Figs/scatter_1.png>
+
+Overfull \hbox (124.76195pt too wide) in paragraph at lines 777--778
+[][] 
+ []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[29]
+
+[30]
+File: JLB_graph.png Graphic file (type bmp)
+<JLB_graph.png>
+
+
+[31]
+
+[32
+
+]
+Chapter 5.
+Missing character: There is no η (U+03B7) in font [lmroman10-regular]:mapping=tex-text;!
+
+
+[33]
+
+[34]
+
+[35]
+File: 2_bars.png Graphic file (type bmp)
+<2_bars.png>
+
+
+[36]
+
+[37]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 975--975
+[]\TU/lmtt/m/n/10 ## alternative hypothesis: true ratio of variances is not equal to 1[] 
+ []
+
+
+Overfull \hbox (232.5pt too wide) in paragraph at lines 996--996
+[]\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means between group Under 65 and group Over 65 is not equal to 0[] 
+ []
+
+
+
+[38]
+File: JLB_prc_5.png Graphic file (type bmp)
+<JLB_prc_5.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[39]
+
+[40]
+
+[41]
+
+[42
+
+]
+
+[43]
+
+[44]
+
+[45]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1201--1201
+[]\TU/lmtt/m/n/10 ## alternative hypothesis: true ratio of variances is not equal to 1[] 
+ []
+
+
+Overfull \hbox (232.5pt too wide) in paragraph at lines 1222--1222
+[]\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means between group Under 65 and group Over 65 is not equal to 0[] 
+ []
+
+
+
+[46]
+
+[47]
+
+[48]
+Underfull \vbox (badness 10000) detected at line 1383
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1383
+ []
+
+
+
+[49]
+File: graph_1.png Graphic file (type bmp)
+<graph_1.png>
+
+Overfull \hbox (160.89748pt too wide) in paragraph at lines 1385--1386
+[][] 
+ []
+
+
+
+[50]
+> Step: init table outer spec.
+> Step: parse table options.
+> Step: split table.
+> Step: init table inner spec.
+> Step: parse table inner spec.
+> Step: execute table commands.
+> Step: calculate cell and line sizes.
+! Missing $ inserted.
+<inserted text> 
+                $
+l.1444 \end
+           {tblr} 
 Here is how much of TeX's memory you used:
- 22032 strings out of 476233
- 453100 string characters out of 5785007
- 946969 words of memory out of 5000000
- 44421 multiletter control sequences out of 15000+600000
- 558811 words of font info for 44 fonts, out of 8000000 for 9000
+ 22970 strings out of 476233
+ 475356 string characters out of 5785007
+ 975936 words of memory out of 5000000
+ 45277 multiletter control sequences out of 15000+600000
+ 566072 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 90i,1n,123p,404b,274s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,6n,123p,814b,939s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-No pages of output.
+Output written on _main.pdf (50 pages).
