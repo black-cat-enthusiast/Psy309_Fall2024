@@ -9,36 +9,35 @@ editor_options:
 
 # Manipulations and Covariates
 
-## 1. Connecting covariates to your topic of interest {-}
-
-By this point, you’ve had a chance to develop your ideas around how to measure a construct within your research topic of interest. The simplest thing to do with such information is just to report its properties, like the average grade in a class, or frequencies, like how many people sign up for different classes. These are known as descriptive statistics.
-
-But if we want to go further and understand why the world is the way that it is, we may try to see how things we can measure are linked together. If we are going to observe more than one variable of interest and see how closely linked these variables are, we are beginning to engage association claims, which often involves a *correlational* approach. When one variable is correlated with another variable of interest, we call it a *covariate*.
-
-For your topic of interest, **describe a second construct / covariate that you suspect is linked (either positively or negatively) to your main variable of interest**. What is your reasoning for selecting this variable? Is there an obvious reason that it is relevant, or, even better- is it mentioned as being related in the research literature? **In a short paragraph (3-5 sentences), describe:**
-  
--	Discuss your idea for why the two variables might be related.
--	Be clear if the proposed relationship is positive or negative, and speculate about the strength.
-
-```{r,echo=FALSE,fig.cap="Figure 1. A reminder about the data patterns that correspond to various correlation coefficients"}
-knitr::include_graphics("Figs/strength.jpg")
-```
-
--	Provide an in-text citation to (at least) one peer-reviewed article that shows that the constructs might be related.
-    + If there is no direct evidence or reporting of this relationship, then cite an article that shows that show some sort of peripheral evidence that could support the relationship that you are proposing. 
--	Below the paragraph, provide an APA style reference to the paper that you cited.
-
-## 2. Experiments: Manipulating Independent Variable(s) {-}
+## 1. Experiments: Manipulating Independent Variable(s) {-}
 
 If we want to go further from just showing an association to establishing that one construct directly influences or *causes* changes in another, we need to do experiments. In an experiments, we *manipulate* one variable to see if those unpredictable/independent manipulations create predictable effects on the dependent variable. 
 
 Think of a way in which you could manipulate an independent variable to create changes in your dependent variable of interest. In a short paragraph (3-5 sentences):
 
 -	Discuss your idea for how you could manipulate one thing (the independent variable) to change the dependent variable. 
+
 -	Be clear on the direction of manipulation, e.g., if one increases how much an assignment is worth, a student’s nervous level will also increase
+
 -	Provide an in-text citation to (at least) one peer-reviewed article that shows that the constructs might be related. If you can’t find evidence of the exact same manipulation, show an association and describe how you could change it into a manipulation, or show how the manipulation has been used in another context but could be applied here. 
+
 -	If there is no direct evidence or reporting of this relationship, then cite an article that shows that these constructs could be related. 
+
 -	Below the paragraph, provide an APA style reference to the paper that you cited.
+
+## 2. Proposed Magnitude of the effect of your IV on the DV {-}
+
+When designing an experiment, the **predicted magnitude of an effect** is a key factor, as this can be used to determine the most appropriate amount of participants (the larger the proposed effect, the fewer participants would be needed to detect it). 
+
+Based on your literature searches, how big of an effect are you predicting the experimental manipulation that you outlined above would produce on the DV of interest? 
+
+- Using numeric values and descriptive language, **explain the predicted magnitude of your proposed IV on the DV of interest**. 
+
+- A good place to start would be to review findings using your DV in the literature. How varied are responses using your chosen measure? Do participants usually respond / perform in consistent ways? Or is there a lot of variability in responses? Do different studies that report this measure have similar mean values in their control groups? Understanding how much spread of scores you might expect to see in your control condition could help you think critically about what you would expect data from your experimental group to look like.
+
+- Remember, that the magnitude of the effect does not determine the importance of your findings - many important findings from the field of psychology involve quantification of small effects. 
+
+- Use at least one peer-reviewed reference to support the proposed magnitude of the relationship between your IV and DV. 
 
 ## 3. Connect the theory to computation in R! {-}
 
@@ -56,6 +55,7 @@ Think of a way in which you could manipulate an independent variable to create c
 Write a closing paragraph (3-5 sentences) summarizing what it is like learning to work with R and what it is like to see all the variables visualized. What questions and/or difficulties have arisen? Do you think it is helpful to be able to simulate your data ahead of time? What do you think about the group size of n = 100 (e.g., should it be increased or decreased?). 
 
 Additionally, feel free to reflect on the process of using Rstudio to generate data - Is there anything that would have improved your experience doing this lab?
+
 
 ## Code For Practical #3 {-}
 

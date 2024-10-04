@@ -242,14 +242,16 @@ Additionally, feel free to reflect on the process of using Rstudio to generate d
 
 ## Code For Practical #3 {-}
 
-```{r,include=TRUE}
+
+``` r
 # this is the "setup" chunk. Info here will apply to all code blocks in the document. 
 knitr::opts_chunk$set(echo = TRUE, # Show the code
                       warning = FALSE, # Hide warnings from R
                       message = FALSE) # Hide messages from R
 ```
 
-```{r}
+
+``` r
 # step 1 install packages 
 ## Do once per computer
 
@@ -266,7 +268,8 @@ library(reshape2) # Call reshape2 (for the "melt" function)
 
 Examples of how Rstudio can be used to assign single values, lists of values, or 2-D arrays of Data. 
 
-```{r}
+
+``` r
 # Notes 
 
 # text will cause problems 
@@ -274,7 +277,13 @@ Examples of how Rstudio can be used to assign single values, lists of values, or
 # First example 
 
 67 * 88
+```
 
+```
+## [1] 5896
+```
+
+``` r
 # Object-oriented programming 
 
 a <- 67 * 88 # Assign the result of the function onto the object "a"
@@ -293,7 +302,8 @@ c <- data.frame( # Assign a 2-D data frame onto the object "c"
 
 ### Random number generation {-}
 
-```{r}
+
+``` r
 set.seed(123) # Beginning of the random process
 
 d <- data.frame(
@@ -302,8 +312,33 @@ d <- data.frame(
 )
 
 head(d) # show me the first 6 rows
-tail(d) # show me the last 6 rows
+```
 
+```
+##   ID    Score
+## 1  1 3.588198
+## 2  2 8.094746
+## 3  3 4.680792
+## 4  4 8.947157
+## 5  5 9.464206
+## 6  6 1.410008
+```
+
+``` r
+tail(d) # show me the last 6 rows
+```
+
+```
+##      ID    Score
+## 95   95 3.883359
+## 96   96 2.689220
+## 97   97 8.040649
+## 98   98 1.842355
+## 99   99 5.201011
+## 100 100 5.603549
+```
+
+``` r
 # Make a quick histogram of the data
 histogram <- d %>%
   ggplot(aes(x=Score))+
@@ -318,9 +353,13 @@ knitr::include_graphics("Figs/hist_1.png")
 ```
 
 
+\includegraphics[width=20.83in]{Figs/hist_1} 
+
+
 ### Sample from the normal distribution {-}
 
-```{r}
+
+``` r
 e <- data.frame(
   ID = c(1:100),
   Score = rnorm(n = 100, mean = 100, sd = 15) # sample from normal distribution
@@ -339,9 +378,13 @@ ggsave("Figs/hist_2.png",histogram,height = 2.5, width = 5, dpi = 300)
 knitr::include_graphics("Figs/hist_2.png")
 ```
 
+
+\includegraphics[width=20.83in]{Figs/hist_2} 
+
 ### Sampling from a list of values {-}
 
-```{r}
+
+``` r
 # Example 1: sample randomly from the values 1:7
 f <- data.frame(
   ID = c(1:100),
@@ -371,9 +414,13 @@ ggsave("Figs/hist_3.png",histogram,height = 2.5, width = 5, dpi = 300)
 knitr::include_graphics("Figs/hist_3.png")
 ```
 
+
+\includegraphics[width=20.83in]{Figs/hist_3} 
+
 ### Example of a complete dataset {-}
 
-```{r}
+
+``` r
 # Make data for a ctl group
 Control_group <- data.frame(
   ID = c(1:100),
@@ -396,7 +443,8 @@ JLB_data <- rbind(Control_group,Experimental_group)
 
 ### Aggregate table of data {-}
 
-```{r}
+
+``` r
 # An example of "tidy text" (from the tidyverse):
 table <- JLB_data %>% # Take the data AND THEN
   melt(id.vars = c("ID","Condition")) %>% # Switch to long form AND THEN
@@ -414,10 +462,38 @@ colnames(table) <- c("Condition","Timepoint","n","mean","sd","min","max","se")
 
 # a regular table
 table
+```
 
+```
+## # A tibble: 4 x 8
+## # Groups:   Condition [2]
+##   Condition Timepoint       n  mean    sd   min   max    se
+##   <chr>     <fct>       <int> <dbl> <dbl> <dbl> <dbl> <dbl>
+## 1 Drug      Baseline_IQ   100  96.8  13.9  63.1  137.  1.39
+## 2 Drug      Post_IQ       100 131.   14.7  84.3  176.  1.47
+## 3 Placebo   Baseline_IQ   100  99.3  14.5  67.9  137.  1.45
+## 4 Placebo   Post_IQ       100  98.9  15.8  54.4  136.  1.58
+```
+
+``` r
 # a pretty table 
 knitr::kable(table)
 ```
+
+
+\begin{tabular}{l|l|r|r|r|r|r|r}
+\hline
+Condition & Timepoint & n & mean & sd & min & max & se\\
+\hline
+Drug & Baseline\_IQ & 100 & 96.79806 & 13.87755 & 63.13986 & 136.5700 & 1.387755\\
+\hline
+Drug & Post\_IQ & 100 & 131.05099 & 14.66883 & 84.29550 & 175.8569 & 1.466883\\
+\hline
+Placebo & Baseline\_IQ & 100 & 99.33318 & 14.50270 & 67.89372 & 136.8935 & 1.450270\\
+\hline
+Placebo & Post\_IQ & 100 & 98.91235 & 15.79230 & 54.43327 & 135.5055 & 1.579230\\
+\hline
+\end{tabular}
 
 
 <!--chapter:end:03-Practical_3.Rmd-->
@@ -446,9 +522,7 @@ Most importantly, we need to get specific about the expect association value. In
 
 If you cannot find any reports of correlation values in the literature, then you will have to argue from theory about your predicted effect size:
 
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
-knitr::include_graphics("Figs/effect_size.jpg")
-```
+![](Figs/effect_size.jpg)<!-- --> 
 
 Please note that finding correlations >.30 (or < -.30) is rare in a lot of psychology (especially human research; animal studies tend to yield larger effect sizes), so you will need to justify the effect size you expect to find. 
 
@@ -474,8 +548,8 @@ Write a closing paragraph (3-5 sentences) summarizing what it is like trying to 
 
 ## Code for Practical #4 {-}
 
-```{r, include=TRUE}
 
+``` r
 # Set up how the code chunks will print
 knitr::opts_chunk$set(echo = TRUE, # Show the code
                       warning = FALSE, # Hide the warnings
@@ -484,7 +558,8 @@ knitr::opts_chunk$set(echo = TRUE, # Show the code
 
 ### Generate Data {-}
 
-```{r}
+
+``` r
 # You must install packages before you can use them.
 # You only needd to install once per computer. 
 
@@ -509,25 +584,54 @@ data <- rnorm_multi(n = 85, vars = 2, mu = c(65,100), sd = c(10,15), r = -0.3)
 
 ### Check out the data {-}
 
-```{r}
+
+``` r
 # Show me the first 6 rows of data: 
 head(data)
+```
 
+```
+##         X1        X2
+## 1 64.74322  90.80306
+## 2 56.44198  93.49663
+## 3 53.76554 121.72313
+## 4 67.53304 101.96359
+## 5 54.27693  98.64371
+## 6 48.10980 122.44146
+```
+
+``` r
 # Rename the columns to represent your variables 
 colnames(data) <- c("Age","IQ")
 ```
 
 ### Check the correlation {-}
 
-```{r}
+
+``` r
 # Check the correlation between the two columns 
 # If you don't like it, play around with the value in set.seed until you are happy. 
 cor.test(data$Age,data$IQ)
 ```
 
+```
+## 
+## 	Pearson's product-moment correlation
+## 
+## data:  data$Age and data$IQ
+## t = -2.5503, df = 83, p-value = 0.0126
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.45646873 -0.05988606
+## sample estimates:
+##        cor 
+## -0.2695696
+```
+
 ### Code to generate a basic scatterplot: {-}
 
-```{r}
+
+``` r
 basic <- data %>%
   ggplot(aes(x = Age, y = IQ))+
   geom_point()+
@@ -541,9 +645,13 @@ ggsave("Figs/scatter_1.png",basic, dpi = 300)
 knitr::include_graphics("Figs/scatter_1.png")
 ```
 
+
+\includegraphics[width=27.08in]{Figs/scatter_1} 
+
 ### A fancier, better looking scatterplot: {-}
 
-```{r,fig.cap="ADD A FIGURE CAPTION HERE"}
+
+``` r
 a <- data %>%
   ggplot(aes(x = Age, y = IQ))+
   geom_point(size = 4, alpha = 0.5, colour = "#800020")+
@@ -564,6 +672,10 @@ ggsave("JLB_graph.png",a,height=4,width=4,dpi = 300)
 # Add in the high quality image saved above 
 knitr::include_graphics("JLB_graph.png")
 ```
+
+\begin{figure}
+\includegraphics[width=16.67in]{JLB_graph} \caption{ADD A FIGURE CAPTION HERE}(\#fig:unnamed-chunk-15)
+\end{figure}
 
 
 
@@ -598,9 +710,7 @@ output:
   html_document: default
 ---
 
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
+
 
 # Connecting the IV and Covariate
 
@@ -638,7 +748,8 @@ What are the advantageous and disadvantages to transforming the continuous covar
 
 ## Code for Practical #5 {-}
 
-```{r, include=TRUE}
+
+``` r
 # Set up how the code chunks will print
 knitr::opts_chunk$set(echo = TRUE, # Show the code
                       warning = FALSE, # Hide the warnings
@@ -652,7 +763,8 @@ library(tidyverse)
 
 The block of code below is the same as what was computed in practical #4. Here, the theory is to generate two columns of data of a given n (i.e., number of rows) with an approximate correlation between the columns specified. The two columns should represent your chosen covariate and dependent variable. 
 
-```{r}
+
+``` r
 # Set a consistent start point for "random" data generation
 # Makes it so the output will be consistent
 
@@ -672,7 +784,8 @@ colnames(data) <- c("Age","IQ")
 
 Generate a 3rd column of data that will represent a categorized version of the covariate. Divite the participants into categories based on specified cut points. 
 
-```{r}
+
+``` r
 # Transform the continuous variable into categories
 data$age_cat <- cut(data$Age,
                     breaks = c(-Inf, 65, Inf), # cut points
@@ -681,9 +794,20 @@ data$age_cat <- cut(data$Age,
 head(data) # Check out the data frame with the new column
 ```
 
+```
+##        Age        IQ  age_cat
+## 1 64.74322  90.80306 Under 65
+## 2 56.44198  93.49663 Under 65
+## 3 53.76554 121.72313 Under 65
+## 4 67.53304 101.96359  Over 65
+## 5 54.27693  98.64371 Under 65
+## 6 48.10980 122.44146 Under 65
+```
+
 ### Make a Bar Graph {-}
 
-```{r,fig.cap="First example: Here, I divided the continuous covariate into two categories."}
+
+``` r
 # A bar graph
 a <- data %>%
   group_by(age_cat) %>%
@@ -712,21 +836,57 @@ ggsave("2_bars.png",a,height=4,width=3,dpi=300)
 knitr::include_graphics("2_bars.png")
 ```
 
+\begin{figure}
+\includegraphics[width=12.5in]{2_bars} \caption{First example: Here, I divided the continuous covariate into two categories.}(\#fig:unnamed-chunk-19)
+\end{figure}
+
 ### Analyze {-}
 
 Run a t-test because there are only two groups here. 
 
-```{r}
+
+``` r
 # Levigne's test for equity of variances
 var.test(data = data, IQ ~ age_cat)
+```
 
+```
+## 
+## 	F test to compare two variances
+## 
+## data:  IQ by age_cat
+## F = 1.1772, num df = 41, denom df = 42, p-value = 0.6007
+## alternative hypothesis: true ratio of variances is not equal to 1
+## 95 percent confidence interval:
+##  0.6359244 2.1842525
+## sample estimates:
+## ratio of variances 
+##           1.177203
+```
+
+``` r
 # A t.test when variances are not unequal
 t.test(data = data, IQ ~ age_cat, var.equal = TRUE)
 ```
 
+```
+## 
+## 	Two Sample t-test
+## 
+## data:  IQ by age_cat
+## t = 2.8695, df = 83, p-value = 0.005214
+## alternative hypothesis: true difference in means between group Under 65 and group Over 65 is not equal to 0
+## 95 percent confidence interval:
+##   2.462339 13.586680
+## sample estimates:
+## mean in group Under 65  mean in group Over 65 
+##              104.45180               96.42729
+```
+
 ### 3-category exmaple  {-}
 
-```{r}
+
+``` r
 # An example of how to divide the continuous variable into 3 categories
 data$age_cat <- cut(data$Age,
                     breaks = c(-Inf, 60, 70, Inf),
@@ -763,17 +923,34 @@ ggsave("JLB_prc_5.png",JLB_garph,height=4,width=4,dpi=300)
 knitr::include_graphics("JLB_prc_5.png")
 ```
 
+
+\includegraphics[width=16.67in]{JLB_prc_5} 
+
 ### Analyze 3-category example
 
 When there are more than two groups, use ANOVA instead of a t-test. If the results from the omnibus test of significance indicate p < 0.05, run Tukey's honestly significant difference test to figure out *where* the group differences are. 
 
-```{r}
+
+``` r
 # Run a one-way ANOVA
 res <- aov(data = data, IQ ~ age_cat)
 
 
 # Follow up to find out which groups differ from one-another. 
 TukeyHSD(res)
+```
+
+```
+##   Tukey multiple comparisons of means
+##     95% family-wise confidence level
+## 
+## Fit: aov(formula = IQ ~ age_cat, data = data)
+## 
+## $age_cat
+##                        diff        lwr       upr     p adj
+## 60-70-Under 60     1.205088  -6.882959  9.293134 0.9327115
+## Over 70-Under 60  -9.545689 -17.633735 -1.457642 0.0165397
+## Over 70-60-70    -10.750776 -18.693080 -2.808472 0.0050015
 ```
 
 
@@ -787,20 +964,7 @@ TukeyHSD(res)
 output: html_document
 ---
 
-```{r, include=FALSE}
-# Set up how the code chunks will print
-knitr::opts_chunk$set(echo = TRUE, # Show the code
-                      warning = FALSE, # Hide the warnings
-                      message = FALSE) # Hide the messages
 
-library(faux)
-library(tidyverse)
-library(reshape2)
-library(rstatix) # for anova_test
-library(ggpubr) # to make nice panels
-options(scipen = 999) # Hide scientific notation
-library(tinytable) # To make tables from stats results
-```
 
 # Capstone Project: A Simulated Research Paper {-}
 
@@ -822,7 +986,8 @@ In the final paragraph of the introduction section, you should explain the purpo
 
 Divide your methods into "participants", "materials", "procedure", "statistical analyses" (or similar) subheadings. Explain transparently that you will be simulating data using Rstudio to demonstrate the theoretical study that you have designed. Describe the method for determining your sample size and the final number of participants you will simulate. Provide descriptions of the methods and procedure so that an new reader that is knowledgeable about experimental design and Rstudio would be able to recreate your simulated experiment exactly.  
 
-```{r}
+
+``` r
 ### Use code from Practical 4: 
 
 # Set a consistent start point for "random" data generation
@@ -839,6 +1004,16 @@ colnames(data) <- c("Age","IQ")
 head(data)
 ```
 
+```
+##        Age        IQ
+## 1 64.74322  90.80306
+## 2 56.44198  93.49663
+## 3 53.76554 121.72313
+## 4 67.53304 101.96359
+## 5 54.27693  98.64371
+## 6 48.10980 122.44146
+```
+
 *Do not worry about the length of your methods or results section, just take the space that you need to fully describe your experimental proceedings / findings.*
 
 ## Results {-}
@@ -851,33 +1026,92 @@ Think about keeping your analysis strategy **succinct** and **logical**. You nee
 
 Analyze, interpret, discuss, and plot the continuous relationship between the covariate and the dependent variable (practical #4).
 
-```{r}
+
+``` r
 cor.test(data$Age,data$IQ)
+```
+
+```
+## 
+## 	Pearson's product-moment correlation
+## 
+## data:  data$Age and data$IQ
+## t = -2.5503, df = 83, p-value = 0.0126
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.45646873 -0.05988606
+## sample estimates:
+##        cor 
+## -0.2695696
 ```
 
 ### One-Way Analysis  {-}
 
 Explain, perform, graph, analyze, and interpret the transformation of the continuous covariate to a categorical variable (practical #5). Make sure that you are clear about the number of levels that you are using, and the rationale for this choice. Test whether there is a "basal" difference between the groups using the appropriate analysis (t-test or ANOVA) and interpret the results. 
 
-```{r}
+
+``` r
 # Transform the continuous variable into categories
 data$age_cat <- cut(data$Age,
                     breaks = c(-Inf, 65, Inf), # cut points
                     labels = c("Under 65", "Over 65")) # labels
 head(data)
+```
 
+```
+##        Age        IQ  age_cat
+## 1 64.74322  90.80306 Under 65
+## 2 56.44198  93.49663 Under 65
+## 3 53.76554 121.72313 Under 65
+## 4 67.53304 101.96359  Over 65
+## 5 54.27693  98.64371 Under 65
+## 6 48.10980 122.44146 Under 65
+```
+
+``` r
 # Levigne's test for equity of variances
 var.test(data = data, IQ ~ age_cat)
+```
 
+```
+## 
+## 	F test to compare two variances
+## 
+## data:  IQ by age_cat
+## F = 1.1772, num df = 41, denom df = 42, p-value = 0.6007
+## alternative hypothesis: true ratio of variances is not equal to 1
+## 95 percent confidence interval:
+##  0.6359244 2.1842525
+## sample estimates:
+## ratio of variances 
+##           1.177203
+```
+
+``` r
 # A t.test when variances are not unequal
 t.test(data = data, IQ ~ age_cat, var.equal = TRUE)
+```
+
+```
+## 
+## 	Two Sample t-test
+## 
+## data:  IQ by age_cat
+## t = 2.8695, df = 83, p-value = 0.005214
+## alternative hypothesis: true difference in means between group Under 65 and group Over 65 is not equal to 0
+## 95 percent confidence interval:
+##   2.462339 13.586680
+## sample estimates:
+## mean in group Under 65  mean in group Over 65 
+##              104.45180               96.42729
 ```
 
 ### Factorial ANOVA  {-}
 
 Compute, interpret, and graph the results of the factorial ANOVA. Make sure that you run ALL of the appropriate follow-up comparisons, and explain what the results of each analysis means. You can graph the same data multiple ways if that helps tell the story of the various comparisons. Each project will look different - focus on conveying your data in the way that makes the most sense given your design. 
 
-```{r}
+
+``` r
 ## Generate Final Dataset: 
 
 set.seed(426)
@@ -911,7 +1145,19 @@ Over_65_drug$Post_IQ <- rnorm(n = 22, mean = 100, sd = 15)
 final_data <- rbind(Under_65_control,Under_65_drug,Over_65_control,Over_65_drug)
 
 head(final_data)
+```
 
+```
+##        Age        IQ  age_cat    Drug   Post_IQ
+## 1 64.74322  90.80306 Under 65 Control 115.36923
+## 2 56.44198  93.49663 Under 65 Control 131.36582
+## 3 53.76554 121.72313 Under 65 Control 103.77843
+## 5 54.27693  98.64371 Under 65 Control  95.39799
+## 6 48.10980 122.44146 Under 65 Control 113.34786
+## 7 57.98470 105.23238 Under 65 Control 116.07211
+```
+
+``` r
 # Aggregate your final data to check it out: 
 knitr::kable(final_data %>%
   group_by(Drug,age_cat) %>%
@@ -923,14 +1169,42 @@ knitr::kable(final_data %>%
 )
 ```
 
-```{r}
+
+\begin{tabular}{l|l|r|r|r|r}
+\hline
+Drug & age\_cat & n & mean & sd & se\\
+\hline
+Control & Under 65 & 21 & 100.20596 & 14.62407 & 3.191234\\
+\hline
+Control & Over 65 & 21 & 88.54052 & 12.04785 & 2.629057\\
+\hline
+Drug & Under 65 & 21 & 101.12417 & 16.27543 & 3.551591\\
+\hline
+Drug & Over 65 & 22 & 106.40972 & 13.09813 & 2.792530\\
+\hline
+\end{tabular}
+
+
+``` r
 # Switch to long-form
 long_data <- final_data %>% 
   mutate(ID = c(1:85)) %>% # Add an ID column
   melt(id.vars=c("ID","Drug","age_cat","Age"))
 
 head(long_data)
+```
 
+```
+##   ID    Drug  age_cat      Age variable     value
+## 1  1 Control Under 65 64.74322       IQ  90.80306
+## 2  2 Control Under 65 56.44198       IQ  93.49663
+## 3  3 Control Under 65 53.76554       IQ 121.72313
+## 4  4 Control Under 65 54.27693       IQ  98.64371
+## 5  5 Control Under 65 48.10980       IQ 122.44146
+## 6  6 Control Under 65 57.98470       IQ 105.23238
+```
+
+``` r
 # I'm making 2 graphs to show the same data two ways
 ## You choose one way that makes the most sense given your design.
 A <- long_data %>%
@@ -987,10 +1261,27 @@ ggsave("graph_1.png",panel,height=3.5,width=7,dpi=300)
 knitr::include_graphics("graph_1.png")
 ```
 
-```{r}
+
+\includegraphics[width=29.17in]{graph_1} 
+
+
+``` r
 # Run a 3-way ANOVA to analyze your variables: 
 a <- anova_test(data = long_data, dv = value, within = variable, wid = ID, between = c(age_cat,Drug))
 get_anova_table(a)
+```
+
+```
+## ANOVA Table (type III tests)
+## 
+##                  Effect DFn DFd     F     p p<.05   ges
+## 1               age_cat   1  81 7.917 0.006     * 0.043
+## 2                  Drug   1  81 3.576 0.062       0.020
+## 3              variable   1  81 0.401 0.528       0.003
+## 4          age_cat:Drug   1  81 7.639 0.007     * 0.042
+## 5      age_cat:variable   1  81 1.263 0.264       0.008
+## 6         Drug:variable   1  81 6.808 0.011     * 0.043
+## 7 age_cat:Drug:variable   1  81 1.892 0.173       0.012
 ```
 
 - There is a significant main effect of age (F (1,81) = 7.92, p = 0.006). 
@@ -999,7 +1290,8 @@ get_anova_table(a)
 
 ### Follow up pair-wise comparisons {-}
 
-```{r}
+
+``` r
 ## Always two ways to follow up: #1:
 a <- long_data %>%
   group_by(age_cat) %>%
@@ -1008,10 +1300,26 @@ a <- long_data %>%
 tt(a)
 ```
 
+\begin{table}
+\centering
+\begin{tblr}[         %% tabularray outer open
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]},
+}                     %% tabularray inner close
+\toprule
+age_cat & .y. & group1 & group2 & n1 & n2 & p & p.signif & p.adj & p.adj.signif \\ \midrule %% TinyTableHeader
+Under 65 & value & Control & Drug & 42 & 42 & 0.58300 & ns & 0.58300 & ns \\
+Over 65  & value & Control & Drug & 42 & 44 & 0.00155 & ** & 0.00155 & ** \\
+\bottomrule
+\end{tblr}
+\end{table}
+
 - There was no effect of the drug on IQ scores for people that were under 65 (p = 0.58).
 - There was a significant effect of the drug treatment on IQ scores for people that were over 65 (p = 0.0016).
 
-```{r}
+
+``` r
 ## Number 2: 
 a <- long_data %>%
   group_by(variable) %>%
@@ -1019,6 +1327,21 @@ a <- long_data %>%
 
 tt(a)
 ```
+
+\begin{table}
+\centering
+\begin{tblr}[         %% tabularray outer open
+]                     %% tabularray outer close
+{                     %% tabularray inner open
+colspec={Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]Q[]},
+}                     %% tabularray inner close
+\toprule
+variable & .y. & group1 & group2 & n1 & n2 & p & p.signif & p.adj & p.adj.signif \\ \midrule %% TinyTableHeader
+IQ      & value & Control & Drug & 42 & 43 & 0.51400 & ns & 0.51400 & ns \\
+Post_IQ & value & Control & Drug & 42 & 43 & 0.00383 & ** & 0.00383 & ** \\
+\bottomrule
+\end{tblr}
+\end{table}
 
 - There was no difference in IQ scores between the experimental groups before treatment (i.e., at the first IQ measurement p = 0.51)
 - At the second IQ test, participants in the "Drug" group had higher IQ scores than participants in the control group p = 0.0039. 
@@ -1029,7 +1352,8 @@ Compute, interpret, and graph the results of a multiple regression where the con
 
 So far, we've worked with categorized versions of the covariate. But this was based on a construct that exists on a continuous scale in the real world (e.g., age, in my case). Now, run a linear regression of model the continuous relationship at the different levels of your independent variable. 
 
-```{r, fig.cap="Side-by-side comparisons of continuous relationships at each level of the moderator."}
+
+``` r
 # Plot correlations between the continuous covariate and the DV for the two levels of your IV
 A <- final_data %>%
   group_by(Drug) %>%
@@ -1043,7 +1367,12 @@ ggsave("graph_2.png",A,height=3.5,width=6,dpi=300)
 knitr::include_graphics("graph_2.png")
 ```
 
-```{r, fig.cap="Overlapping lines show the different linear relationships for the two levels of the moderator variable."}
+\begin{figure}
+\includegraphics[width=25in]{graph_2} \caption{Side-by-side comparisons of continuous relationships at each level of the moderator.}(\#fig:unnamed-chunk-32)
+\end{figure}
+
+
+``` r
 # Be creative and choose a visual depiction that works for you! 
 B <- final_data %>%
   group_by(Drug) %>%
@@ -1057,18 +1386,68 @@ ggsave("graph_3.png",B,height=4,width=4,dpi=300)
 knitr::include_graphics("graph_3.png")
 ```
 
-```{r}
+\begin{figure}
+\includegraphics[width=16.67in]{graph_3} \caption{Overlapping lines show the different linear relationships for the two levels of the moderator variable.}(\#fig:unnamed-chunk-33)
+\end{figure}
+
+
+``` r
 # Run a linear regression to measure whether the continuous relationship between the covariate and the DV differs at the two levels of your independent variable during the "post-test" measurement. 
 baseline_model <- lm(data = final_data, IQ ~ Age)
 summary(baseline_model)
 ```
 
+```
+## 
+## Call:
+## lm(formula = IQ ~ Age, data = final_data)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -33.851  -7.613  -0.847  10.302  33.607 
+## 
+## Coefficients:
+##             Estimate Std. Error t value            Pr(>|t|)    
+## (Intercept) 123.8054     9.2884   13.33 <0.0000000000000002 ***
+## Age          -0.3600     0.1412   -2.55              0.0126 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 13.01 on 83 degrees of freedom
+## Multiple R-squared:  0.07267,	Adjusted R-squared:  0.0615 
+## F-statistic: 6.504 on 1 and 83 DF,  p-value: 0.0126
+```
+
 - At the baseline IQ test, the model predicts that a 1-year increase in age is associated with a 0.32-point decrease in IQ score. 
 
-```{r}
+
+``` r
 # Run a linear regression to measure whether the continuous relationship between the covariate and the DV differs at the two levels of your independent variable during the "post-test" measurement. 
 a <- lm(data = final_data, Post_IQ ~ Age * Drug)
 summary(a)
+```
+
+```
+## 
+## Call:
+## lm(formula = Post_IQ ~ Age * Drug, data = final_data)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -32.131  -6.764  -0.849   7.384  31.873 
+## 
+## Coefficients:
+##              Estimate Std. Error t value          Pr(>|t|)    
+## (Intercept)  134.4990    15.7772   8.525 0.000000000000691 ***
+## Age           -0.6202     0.2415  -2.568           0.01207 *  
+## DrugDrug     -47.2863    20.5379  -2.302           0.02388 *  
+## Age:DrugDrug   0.8744     0.3126   2.797           0.00643 ** 
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 14.13 on 81 degrees of freedom
+## Multiple R-squared:  0.1798,	Adjusted R-squared:  0.1494 
+## F-statistic: 5.917 on 3 and 81 DF,  p-value: 0.001057
 ```
 
 - The model accounts for ~18% of the variability in IQ scores (F(3,81) = 5.92, p = 0.001). 
@@ -1076,7 +1455,8 @@ summary(a)
 - A 1-year increase in age is associated with a 0.62-point decrease in IQ score among participants in the control group (t = 2.57, p = 0.012)
 - The relationship between age and IQ score was different at the two levels of drug treatment (t = 2.80, p = 0.006). 
 
-```{r}
+
+``` r
 # Check out the nature of the linear relationship between the continuous covariate and the DV at each level of your IV:
 ## Control group first:
 control_only <- final_data[final_data$Drug == "Control", ]
@@ -1084,15 +1464,58 @@ c <- lm(data = control_only, Post_IQ ~ Age)
 summary(c)
 ```
 
+```
+## 
+## Call:
+## lm(formula = Post_IQ ~ Age, data = control_only)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -25.418  -6.565   1.707   6.598  31.873 
+## 
+## Coefficients:
+##             Estimate Std. Error t value        Pr(>|t|)    
+## (Intercept) 134.4990    15.0797   8.919 0.0000000000469 ***
+## Age          -0.6202     0.2308  -2.687          0.0105 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 13.5 on 40 degrees of freedom
+## Multiple R-squared:  0.1529,	Adjusted R-squared:  0.1317 
+## F-statistic: 7.218 on 1 and 40 DF,  p-value: 0.01046
+```
+
 - Variability in age accounts for a statistically significant 15% of the variability in IQ scores (R^2 = 0.153, p = 0.01). 
 - Same result as in the multiple regression model above :) 
 - Information about the relationship between X & Y in the "reference" group.
 
-```{r}
+
+``` r
 ## Then the drug group: 
 Drug_only <- final_data[final_data$Drug == "Drug", ]
 d <- lm(data = Drug_only, Post_IQ ~ Age)
 summary(d)
+```
+
+```
+## 
+## Call:
+## lm(formula = Post_IQ ~ Age, data = Drug_only)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -32.131  -6.412  -1.443   9.133  31.348 
+## 
+## Coefficients:
+##             Estimate Std. Error t value    Pr(>|t|)    
+## (Intercept)  87.2127    13.6920    6.37 0.000000129 ***
+## Age           0.2542     0.2066    1.23       0.226    
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 14.71 on 41 degrees of freedom
+## Multiple R-squared:  0.0356,	Adjusted R-squared:  0.01207 
+## F-statistic: 1.513 on 1 and 41 DF,  p-value: 0.2256
 ```
 
 - Variability in age only accounts for 3% of variability in IQ scores, which is not statistically significant (p = 0.226). 
@@ -1175,48 +1598,41 @@ The assignments build across the term, so it makes the most sense for **each TA 
 
 - In any situation where students are hostile or you don't know how to respond to them, feel free to forward their correspondences along to me to deal with. *You can count on me to back up your calls!* 
 
-```{r, include=FALSE}
-knitr::opts_chunk$set(echo = FALSE,message=FALSE,warning=FALSE)
 
-library(tidyverse)
-library(reshape2)
-
-data <- read_csv("Breakdown.csv")
-```
 
 ## Course Responsibilities {-}
 
 All of your TA responsibilities can be completed virtually. Psy309 will involve two in-class tests that  will be completed on Quercus. 
 
-```{r}
-knitr::kable(data)
-```
+
+\begin{tabular}{l|l|l|l}
+\hline
+Assignment & Due\_Date & Format & Size\\
+\hline
+Practical 1 & 2024-09-13 & Online & Small\\
+\hline
+Practical 2 & 2024-09-27 & Online & Small\\
+\hline
+Test \#1 & 2024-10-04 & Online & Med\\
+\hline
+Practical 3 & 2024-10-11 & Online & Small\\
+\hline
+Practical 4 & 2024-10-25 & Online & Small\\
+\hline
+Practical 5 & 2024-11-08 & Online & Small\\
+\hline
+Poster & 2024-11-15 & Online & Small\\
+\hline
+Test \#2 & 2024-11-22 & Online & Med\\
+\hline
+Paper & 2024-12-03 & Online & Largest\\
+\hline
+\end{tabular}
 
 *Note* That there will be late / deferred submissions for all of the assignments.
 
-```{r}
-data$Assignment <- as.character(data$Assignment)
-data$Assignment <- factor(data$Assignment,levels=unique(data$Assignment))
 
-data$Size <- as.character(data$Size)
-data$Size <- factor(data$Size, levels=c("Small","Med","Largest"))
-
-a <- data %>%
-  ggplot(aes(x=Due_Date,y=Assignment,colour=Size,size=Size))+
-  geom_point(alpha=0.5)+
-  theme_classic()+
-  scale_x_continuous(labels = as.character(data$Due_Date),breaks=data$Due_Date)+
-  theme(axis.text.x = element_text(angle = 45,vjust=1,hjust=1))+
-  labs(
-    x="Assignment Due Dates",
-    y="PSY 309 Deliverables"
-  )+
-  guides(size="none")
-
-ggsave("Psy309_deliverables.png",a,height=4,width=5,dpi=300)
-
-knitr::include_graphics("Psy309_deliverables.png")
-```
+\includegraphics[width=20.83in]{Psy309_deliverables} 
 
 
 

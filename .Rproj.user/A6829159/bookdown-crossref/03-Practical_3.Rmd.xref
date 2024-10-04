@@ -1,6 +1,6 @@
 h1:manipulations-and-covariates Manipulations and Covariates
-h2:connecting-covariates-to-your-topic-of-interest 1. Connecting covariates to your topic of interest
-h2:experiments-manipulating-independent-variables 2. Experiments: Manipulating Independent Variable(s)
+h2:experiments-manipulating-independent-variables 1. Experiments: Manipulating Independent Variable(s)
+h2:proposed-magnitude-of-the-effect-of-your-iv-on-the-dv 2. Proposed Magnitude of the effect of your IV on the DV
 h2:connect-the-theory-to-computation-in-r 3. Connect the theory to computation in R!
 h2:reflect 4. Reflect
 h2:code-for-practical-3 Code For Practical #3
