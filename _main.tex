@@ -276,7 +276,7 @@ Please specify the \textbf{rationale} for the study (why would this research be 
 
 \emph{Submissions should be 2-3 pages in length. References don't need to be written on a separate page. No marks for APA format, so please feel free to make use of various levels of headings to enhance readability.}
 
-\chapter{Manipulations and Covariates}\label{manipulations-and-covariates}
+\chapter{Magnitude of Manipulations}\label{magnitude-of-manipulations}
 
 \section*{1. Experiments: Manipulating Independent Variable(s)}\label{experiments-manipulating-independent-variables}
 \addcontentsline{toc}{section}{1. Experiments: Manipulating Independent Variable(s)}
@@ -342,279 +342,6 @@ Based on your literature searches, how big of an effect are you predicting the e
 Write a closing paragraph (3-5 sentences) summarizing what it is like learning to work with R and what it is like to see all the variables visualized. What questions and/or difficulties have arisen? Do you think it is helpful to be able to simulate your data ahead of time? What do you think about the group size of n = 100 (e.g., should it be increased or decreased?).
 
 Additionally, feel free to reflect on the process of using Rstudio to generate data - Is there anything that would have improved your experience doing this lab?
-
-\section*{Code For Practical \#3}\label{code-for-practical-3}
-\addcontentsline{toc}{section}{Code For Practical \#3}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# this is the "setup" chunk. Info here will apply to all code blocks in the document. }
-\NormalTok{knitr}\SpecialCharTok{::}\NormalTok{opts\_chunk}\SpecialCharTok{$}\FunctionTok{set}\NormalTok{(}\AttributeTok{echo =} \ConstantTok{TRUE}\NormalTok{, }\CommentTok{\# Show the code}
-                      \AttributeTok{warning =} \ConstantTok{FALSE}\NormalTok{, }\CommentTok{\# Hide warnings from R}
-                      \AttributeTok{message =} \ConstantTok{FALSE}\NormalTok{) }\CommentTok{\# Hide messages from R}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# step 1 install packages }
-\DocumentationTok{\#\# Do once per computer}
-
-\CommentTok{\# install.packages(c("tidyverse","reshape2"))}
-
-\CommentTok{\# Call the packages }
-\DocumentationTok{\#\# Do this every session}
-
-\FunctionTok{library}\NormalTok{(tidyverse) }\CommentTok{\# Call the tidyverse}
-\FunctionTok{library}\NormalTok{(reshape2) }\CommentTok{\# Call reshape2 (for the "melt" function)}
-\end{Highlighting}
-\end{Shaded}
-
-\subsection*{Object-oriented programming}\label{object-oriented-programming}
-\addcontentsline{toc}{subsection}{Object-oriented programming}
-
-Examples of how Rstudio can be used to assign single values, lists of values, or 2-D arrays of Data.
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Notes }
-
-\CommentTok{\# text will cause problems }
-
-\CommentTok{\# First example }
-
-\DecValTok{67} \SpecialCharTok{*} \DecValTok{88}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## [1] 5896
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Object{-}oriented programming }
-
-\NormalTok{a }\OtherTok{\textless{}{-}} \DecValTok{67} \SpecialCharTok{*} \DecValTok{88} \CommentTok{\# Assign the result of the function onto the object "a"}
-
-\CommentTok{\# Example 2 }
-
-\NormalTok{b }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{) }\CommentTok{\# Assign a list onto the object "b"}
-
-\CommentTok{\# Example 3 {-} DATA FAME }
-
-\NormalTok{c }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{( }\CommentTok{\# Assign a 2{-}D data frame onto the object "c"}
-  \AttributeTok{ID =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\NormalTok{,}\DecValTok{2}\NormalTok{,}\DecValTok{3}\NormalTok{,}\DecValTok{4}\NormalTok{,}\DecValTok{5}\NormalTok{), }
-  \AttributeTok{Score =} \FunctionTok{c}\NormalTok{(}\DecValTok{100}\NormalTok{,}\DecValTok{110}\NormalTok{,}\DecValTok{90}\NormalTok{,}\DecValTok{95}\NormalTok{,}\DecValTok{107}\NormalTok{)}
-\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\subsection*{Random number generation}\label{random-number-generation}
-\addcontentsline{toc}{subsection}{Random number generation}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{) }\CommentTok{\# Beginning of the random process}
-
-\NormalTok{d }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
-  \AttributeTok{ID =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{100}\NormalTok{), }\CommentTok{\# 100 IDs}
-  \AttributeTok{Score =} \FunctionTok{runif}\NormalTok{(}\AttributeTok{n=}\DecValTok{100}\NormalTok{,}\AttributeTok{min=}\DecValTok{1}\NormalTok{,}\AttributeTok{max=}\DecValTok{10}\NormalTok{) }\CommentTok{\# 100 random scores}
-\NormalTok{)}
-
-\FunctionTok{head}\NormalTok{(d) }\CommentTok{\# show me the first 6 rows}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##   ID    Score
-## 1  1 3.588198
-## 2  2 8.094746
-## 3  3 4.680792
-## 4  4 8.947157
-## 5  5 9.464206
-## 6  6 1.410008
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\FunctionTok{tail}\NormalTok{(d) }\CommentTok{\# show me the last 6 rows}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-##      ID    Score
-## 95   95 3.883359
-## 96   96 2.689220
-## 97   97 8.040649
-## 98   98 1.842355
-## 99   99 5.201011
-## 100 100 5.603549
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Make a quick histogram of the data}
-\NormalTok{histogram }\OtherTok{\textless{}{-}}\NormalTok{ d }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Score))}\SpecialCharTok{+}
-  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{8}\NormalTok{, }\AttributeTok{alpha=}\FloatTok{0.2}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
-  \FunctionTok{theme\_classic}\NormalTok{()}
-
-\CommentTok{\# Save the histogram as a high quality .png image}
-\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/hist\_1.png"}\NormalTok{,histogram,}\AttributeTok{height =} \FloatTok{2.5}\NormalTok{, }\AttributeTok{width =} \DecValTok{5}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
-
-\CommentTok{\# Call back the high quality image }
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"Figs/hist\_1.png"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics[width=20.83in]{Figs/hist_1}
-
-\subsection*{Sample from the normal distribution}\label{sample-from-the-normal-distribution}
-\addcontentsline{toc}{subsection}{Sample from the normal distribution}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\NormalTok{e }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
-  \AttributeTok{ID =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{100}\NormalTok{),}
-  \AttributeTok{Score =} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n =} \DecValTok{100}\NormalTok{, }\AttributeTok{mean =} \DecValTok{100}\NormalTok{, }\AttributeTok{sd =} \DecValTok{15}\NormalTok{) }\CommentTok{\# sample from normal distribution}
-\NormalTok{)}
-
-\CommentTok{\# Generate the chart}
-\NormalTok{histogram }\OtherTok{\textless{}{-}}\NormalTok{ e }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Score))}\SpecialCharTok{+}
-  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{8}\NormalTok{, }\AttributeTok{alpha=}\FloatTok{0.2}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
-  \FunctionTok{theme\_classic}\NormalTok{()}
-
-\CommentTok{\# Save the histogram as a high quality .png image}
-\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/hist\_2.png"}\NormalTok{,histogram,}\AttributeTok{height =} \FloatTok{2.5}\NormalTok{, }\AttributeTok{width =} \DecValTok{5}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
-
-\CommentTok{\# Call back the high quality image }
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"Figs/hist\_2.png"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics[width=20.83in]{Figs/hist_2}
-
-\subsection*{Sampling from a list of values}\label{sampling-from-a-list-of-values}
-\addcontentsline{toc}{subsection}{Sampling from a list of values}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Example 1: sample randomly from the values 1:7}
-\NormalTok{f }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
-  \AttributeTok{ID =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{100}\NormalTok{),}
-  \AttributeTok{Score =} \FunctionTok{sample}\NormalTok{(}\AttributeTok{x=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{7}\NormalTok{),}\AttributeTok{size=}\DecValTok{100}\NormalTok{,}\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{)}
-\NormalTok{)}
-
-
-\CommentTok{\# Example 2: set the probabilities for the possible responses}
-\NormalTok{Prob\_info }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\FloatTok{0.02}\NormalTok{, }\FloatTok{0.03}\NormalTok{, }\FloatTok{0.05}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\FloatTok{0.1}\NormalTok{, }\FloatTok{0.4}\NormalTok{, }\FloatTok{0.4}\NormalTok{)}
-
-\NormalTok{g }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
-  \AttributeTok{ID =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{100}\NormalTok{),}
-  \AttributeTok{Score =} \FunctionTok{sample}\NormalTok{(}\AttributeTok{x=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{7}\NormalTok{),}\AttributeTok{size=}\DecValTok{100}\NormalTok{,}\AttributeTok{replace =} \ConstantTok{TRUE}\NormalTok{,}\AttributeTok{prob =}\NormalTok{ Prob\_info) }\CommentTok{\# use prob info}
-\NormalTok{)}
-
-\CommentTok{\# Generate the chart}
-\NormalTok{histogram }\OtherTok{\textless{}{-}}\NormalTok{ g }\SpecialCharTok{\%\textgreater{}\%}
-  \FunctionTok{ggplot}\NormalTok{(}\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Score))}\SpecialCharTok{+}
-  \FunctionTok{geom\_histogram}\NormalTok{(}\AttributeTok{bins =} \DecValTok{7}\NormalTok{, }\AttributeTok{alpha=}\FloatTok{0.2}\NormalTok{, }\AttributeTok{colour =} \StringTok{"black"}\NormalTok{)}\SpecialCharTok{+}
-  \FunctionTok{theme\_classic}\NormalTok{()}\SpecialCharTok{+}
-  \FunctionTok{scale\_x\_continuous}\NormalTok{(}\AttributeTok{breaks=}\FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{7}\NormalTok{))}
-
-\CommentTok{\# Save the histogram as a high quality .png image}
-\FunctionTok{ggsave}\NormalTok{(}\StringTok{"Figs/hist\_3.png"}\NormalTok{,histogram,}\AttributeTok{height =} \FloatTok{2.5}\NormalTok{, }\AttributeTok{width =} \DecValTok{5}\NormalTok{, }\AttributeTok{dpi =} \DecValTok{300}\NormalTok{)}
-
-\CommentTok{\# Call back the high quality image }
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{include\_graphics}\NormalTok{(}\StringTok{"Figs/hist\_3.png"}\NormalTok{)}
-\end{Highlighting}
-\end{Shaded}
-
-\includegraphics[width=20.83in]{Figs/hist_3}
-
-\subsection*{Example of a complete dataset}\label{example-of-a-complete-dataset}
-\addcontentsline{toc}{subsection}{Example of a complete dataset}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# Make data for a ctl group}
-\NormalTok{Control\_group }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
-  \AttributeTok{ID =} \FunctionTok{c}\NormalTok{(}\DecValTok{1}\SpecialCharTok{:}\DecValTok{100}\NormalTok{),}
-  \AttributeTok{Condition =} \StringTok{"Placebo"}\NormalTok{,}
-  \AttributeTok{Baseline\_IQ =} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n=}\DecValTok{100}\NormalTok{,}\AttributeTok{mean=}\DecValTok{100}\NormalTok{,}\AttributeTok{sd=}\DecValTok{15}\NormalTok{),}
-  \AttributeTok{Post\_IQ =} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n=}\DecValTok{100}\NormalTok{,}\AttributeTok{mean=}\DecValTok{100}\NormalTok{,}\AttributeTok{sd=}\DecValTok{15}\NormalTok{)}
-\NormalTok{)}
-
-\CommentTok{\# And experimental data with the exact same column headers}
-\NormalTok{Experimental\_group }\OtherTok{\textless{}{-}} \FunctionTok{data.frame}\NormalTok{(}
-  \AttributeTok{ID =} \FunctionTok{c}\NormalTok{(}\DecValTok{101}\SpecialCharTok{:}\DecValTok{200}\NormalTok{),}
-  \AttributeTok{Condition =} \StringTok{"Drug"}\NormalTok{,}
-  \AttributeTok{Baseline\_IQ =} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n=}\DecValTok{100}\NormalTok{,}\AttributeTok{mean=}\DecValTok{100}\NormalTok{,}\AttributeTok{sd=}\DecValTok{15}\NormalTok{),}
-  \AttributeTok{Post\_IQ =} \FunctionTok{rnorm}\NormalTok{(}\AttributeTok{n=}\DecValTok{100}\NormalTok{,}\AttributeTok{mean=}\DecValTok{130}\NormalTok{,}\AttributeTok{sd=}\DecValTok{15}\NormalTok{)}
-\NormalTok{)}
-
-\CommentTok{\# attach them together}
-\NormalTok{JLB\_data }\OtherTok{\textless{}{-}} \FunctionTok{rbind}\NormalTok{(Control\_group,Experimental\_group)}
-\end{Highlighting}
-\end{Shaded}
-
-\subsection*{Aggregate table of data}\label{aggregate-table-of-data}
-\addcontentsline{toc}{subsection}{Aggregate table of data}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# An example of "tidy text" (from the tidyverse):}
-\NormalTok{table }\OtherTok{\textless{}{-}}\NormalTok{ JLB\_data }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Take the data AND THEN}
-  \FunctionTok{melt}\NormalTok{(}\AttributeTok{id.vars =} \FunctionTok{c}\NormalTok{(}\StringTok{"ID"}\NormalTok{,}\StringTok{"Condition"}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Switch to long form AND THEN}
-  \FunctionTok{group\_by}\NormalTok{(Condition,variable) }\SpecialCharTok{\%\textgreater{}\%} \CommentTok{\# Group by the IVs}
-  \FunctionTok{summarise}\NormalTok{( }\CommentTok{\# Calculate descriptive stats}
-    \AttributeTok{n =} \FunctionTok{n}\NormalTok{(),}
-    \AttributeTok{mean =} \FunctionTok{mean}\NormalTok{(value),}
-    \AttributeTok{sd =} \FunctionTok{sd}\NormalTok{(value),}
-    \AttributeTok{min =} \FunctionTok{min}\NormalTok{(value),}
-    \AttributeTok{max =} \FunctionTok{max}\NormalTok{(value)}
-\NormalTok{  ) }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{se =}\NormalTok{ sd }\SpecialCharTok{/} \FunctionTok{sqrt}\NormalTok{(n)) }\CommentTok{\# Create a column for SE, and compute it}
-
-\CommentTok{\# Rename the columns for a better looking table}
-\FunctionTok{colnames}\NormalTok{(table) }\OtherTok{\textless{}{-}} \FunctionTok{c}\NormalTok{(}\StringTok{"Condition"}\NormalTok{,}\StringTok{"Timepoint"}\NormalTok{,}\StringTok{"n"}\NormalTok{,}\StringTok{"mean"}\NormalTok{,}\StringTok{"sd"}\NormalTok{,}\StringTok{"min"}\NormalTok{,}\StringTok{"max"}\NormalTok{,}\StringTok{"se"}\NormalTok{)}
-
-\CommentTok{\# a regular table}
-\NormalTok{table}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{verbatim}
-## # A tibble: 4 x 8
-## # Groups:   Condition [2]
-##   Condition Timepoint       n  mean    sd   min   max    se
-##   <chr>     <fct>       <int> <dbl> <dbl> <dbl> <dbl> <dbl>
-## 1 Drug      Baseline_IQ   100  96.8  13.9  63.1  137.  1.39
-## 2 Drug      Post_IQ       100 131.   14.7  84.3  176.  1.47
-## 3 Placebo   Baseline_IQ   100  99.3  14.5  67.9  137.  1.45
-## 4 Placebo   Post_IQ       100  98.9  15.8  54.4  136.  1.58
-\end{verbatim}
-
-\begin{Shaded}
-\begin{Highlighting}[]
-\CommentTok{\# a pretty table }
-\NormalTok{knitr}\SpecialCharTok{::}\FunctionTok{kable}\NormalTok{(table)}
-\end{Highlighting}
-\end{Shaded}
-
-\begin{tabular}{l|l|r|r|r|r|r|r}
-\hline
-Condition & Timepoint & n & mean & sd & min & max & se\\
-\hline
-Drug & Baseline\_IQ & 100 & 96.79806 & 13.87755 & 63.13986 & 136.5700 & 1.387755\\
-\hline
-Drug & Post\_IQ & 100 & 131.05099 & 14.66883 & 84.29550 & 175.8569 & 1.466883\\
-\hline
-Placebo & Baseline\_IQ & 100 & 99.33318 & 14.50270 & 67.89372 & 136.8935 & 1.450270\\
-\hline
-Placebo & Post\_IQ & 100 & 98.91235 & 15.79230 & 54.43327 & 135.5055 & 1.579230\\
-\hline
-\end{tabular}
 
 \emph{Please submit a single document for practical \#4. A .docx file is the preferred format.}
 
@@ -804,7 +531,7 @@ Write a closing paragraph (3-5 sentences) summarizing what it is like trying to 
 \end{Shaded}
 
 \begin{figure}
-\includegraphics[width=16.67in]{JLB_graph} \caption{ADD A FIGURE CAPTION HERE}\label{fig:unnamed-chunk-15}
+\includegraphics[width=16.67in]{JLB_graph} \caption{ADD A FIGURE CAPTION HERE}\label{fig:unnamed-chunk-7}
 \end{figure}
 
 \chapter{Connecting the IV and Covariate}\label{connecting-the-iv-and-covariate}
@@ -945,7 +672,7 @@ Generate a 3rd column of data that will represent a categorized version of the c
 \end{Shaded}
 
 \begin{figure}
-\includegraphics[width=12.5in]{2_bars} \caption{First example: Here, I divided the continuous covariate into two categories.}\label{fig:unnamed-chunk-19}
+\includegraphics[width=12.5in]{2_bars} \caption{First example: Here, I divided the continuous covariate into two categories.}\label{fig:unnamed-chunk-11}
 \end{figure}
 
 \subsection*{Analyze}\label{analyze}
@@ -1510,7 +1237,7 @@ So far, we've worked with categorized versions of the covariate. But this was ba
 \end{Shaded}
 
 \begin{figure}
-\includegraphics[width=25in]{graph_2} \caption{Side-by-side comparisons of continuous relationships at each level of the moderator.}\label{fig:unnamed-chunk-32}
+\includegraphics[width=25in]{graph_2} \caption{Side-by-side comparisons of continuous relationships at each level of the moderator.}\label{fig:unnamed-chunk-24}
 \end{figure}
 
 \begin{Shaded}
@@ -1530,7 +1257,7 @@ So far, we've worked with categorized versions of the covariate. But this was ba
 \end{Shaded}
 
 \begin{figure}
-\includegraphics[width=16.67in]{graph_3} \caption{Overlapping lines show the different linear relationships for the two levels of the moderator variable.}\label{fig:unnamed-chunk-33}
+\includegraphics[width=16.67in]{graph_3} \caption{Overlapping lines show the different linear relationships for the two levels of the moderator variable.}\label{fig:unnamed-chunk-25}
 \end{figure}
 
 \begin{Shaded}

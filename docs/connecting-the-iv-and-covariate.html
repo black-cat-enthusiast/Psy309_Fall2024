@@ -154,21 +154,12 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="exploring-types-of-measurement-in-research.html"><a href="exploring-types-of-measurement-in-research.html#develop-a-research-idea"><i class="fa fa-check"></i>4. Develop a Research Idea</a></li>
 <li class="chapter" data-level="" data-path="exploring-types-of-measurement-in-research.html"><a href="exploring-types-of-measurement-in-research.html#reflect-1"><i class="fa fa-check"></i>5. Reflect</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html"><i class="fa fa-check"></i><b>3</b> Manipulations and Covariates</a>
+<li class="chapter" data-level="3" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html"><i class="fa fa-check"></i><b>3</b> Magnitude of Manipulations</a>
 <ul>
-<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#experiments-manipulating-independent-variables"><i class="fa fa-check"></i>1. Experiments: Manipulating Independent Variable(s)</a></li>
-<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#proposed-magnitude-of-the-effect-of-your-iv-on-the-dv"><i class="fa fa-check"></i>2. Proposed Magnitude of the effect of your IV on the DV</a></li>
-<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#connect-the-theory-to-computation-in-r"><i class="fa fa-check"></i>3. Connect the theory to computation in R!</a></li>
-<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#reflect-2"><i class="fa fa-check"></i>4. Reflect</a></li>
-<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#code-for-practical-3"><i class="fa fa-check"></i>Code For Practical #3</a>
-<ul>
-<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#object-oriented-programming"><i class="fa fa-check"></i>Object-oriented programming</a></li>
-<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#random-number-generation"><i class="fa fa-check"></i>Random number generation</a></li>
-<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#sample-from-the-normal-distribution"><i class="fa fa-check"></i>Sample from the normal distribution</a></li>
-<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#sampling-from-a-list-of-values"><i class="fa fa-check"></i>Sampling from a list of values</a></li>
-<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#example-of-a-complete-dataset"><i class="fa fa-check"></i>Example of a complete dataset</a></li>
-<li class="chapter" data-level="" data-path="manipulations-and-covariates.html"><a href="manipulations-and-covariates.html#aggregate-table-of-data"><i class="fa fa-check"></i>Aggregate table of data</a></li>
-</ul></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#experiments-manipulating-independent-variables"><i class="fa fa-check"></i>1. Experiments: Manipulating Independent Variable(s)</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#proposed-magnitude-of-the-effect-of-your-iv-on-the-dv"><i class="fa fa-check"></i>2. Proposed Magnitude of the effect of your IV on the DV</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#connect-the-theory-to-computation-in-r"><i class="fa fa-check"></i>3. Connect the theory to computation in R!</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#reflect-2"><i class="fa fa-check"></i>4. Reflect</a></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="correlation-statistics-and-plots.html"><a href="correlation-statistics-and-plots.html"><i class="fa fa-check"></i><b>4</b> Correlation Statistics and Plots</a>
 <ul>
@@ -289,39 +280,39 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="code-for-practical-5" class="section level2 unnumbered hasAnchor">
 <h2>Code for Practical #5<a href="connecting-the-iv-and-covariate.html#code-for-practical-5" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="connecting-the-iv-and-covariate.html#cb26-1" tabindex="-1"></a><span class="co"># Set up how the code chunks will print</span></span>
-<span id="cb26-2"><a href="connecting-the-iv-and-covariate.html#cb26-2" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="co"># Show the code</span></span>
-<span id="cb26-3"><a href="connecting-the-iv-and-covariate.html#cb26-3" tabindex="-1"></a>                      <span class="at">warning =</span> <span class="cn">FALSE</span>, <span class="co"># Hide the warnings</span></span>
-<span id="cb26-4"><a href="connecting-the-iv-and-covariate.html#cb26-4" tabindex="-1"></a>                      <span class="at">message =</span> <span class="cn">FALSE</span>) <span class="co"># Hide the messages</span></span>
-<span id="cb26-5"><a href="connecting-the-iv-and-covariate.html#cb26-5" tabindex="-1"></a></span>
-<span id="cb26-6"><a href="connecting-the-iv-and-covariate.html#cb26-6" tabindex="-1"></a><span class="fu">library</span>(faux)</span>
-<span id="cb26-7"><a href="connecting-the-iv-and-covariate.html#cb26-7" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb10-1"><a href="connecting-the-iv-and-covariate.html#cb10-1" tabindex="-1"></a><span class="co"># Set up how the code chunks will print</span></span>
+<span id="cb10-2"><a href="connecting-the-iv-and-covariate.html#cb10-2" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="co"># Show the code</span></span>
+<span id="cb10-3"><a href="connecting-the-iv-and-covariate.html#cb10-3" tabindex="-1"></a>                      <span class="at">warning =</span> <span class="cn">FALSE</span>, <span class="co"># Hide the warnings</span></span>
+<span id="cb10-4"><a href="connecting-the-iv-and-covariate.html#cb10-4" tabindex="-1"></a>                      <span class="at">message =</span> <span class="cn">FALSE</span>) <span class="co"># Hide the messages</span></span>
+<span id="cb10-5"><a href="connecting-the-iv-and-covariate.html#cb10-5" tabindex="-1"></a></span>
+<span id="cb10-6"><a href="connecting-the-iv-and-covariate.html#cb10-6" tabindex="-1"></a><span class="fu">library</span>(faux)</span>
+<span id="cb10-7"><a href="connecting-the-iv-and-covariate.html#cb10-7" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 <div id="generate-data-1" class="section level3 unnumbered hasAnchor">
 <h3>Generate data<a href="connecting-the-iv-and-covariate.html#generate-data-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The block of code below is the same as what was computed in practical #4. Here, the theory is to generate two columns of data of a given n (i.e., number of rows) with an approximate correlation between the columns specified. The two columns should represent your chosen covariate and dependent variable.</p>
-<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="connecting-the-iv-and-covariate.html#cb27-1" tabindex="-1"></a><span class="co"># Set a consistent start point for &quot;random&quot; data generation</span></span>
-<span id="cb27-2"><a href="connecting-the-iv-and-covariate.html#cb27-2" tabindex="-1"></a><span class="co"># Makes it so the output will be consistent</span></span>
-<span id="cb27-3"><a href="connecting-the-iv-and-covariate.html#cb27-3" tabindex="-1"></a></span>
-<span id="cb27-4"><a href="connecting-the-iv-and-covariate.html#cb27-4" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># Can be any value. </span></span>
-<span id="cb27-5"><a href="connecting-the-iv-and-covariate.html#cb27-5" tabindex="-1"></a></span>
-<span id="cb27-6"><a href="connecting-the-iv-and-covariate.html#cb27-6" tabindex="-1"></a><span class="co"># Generate data. Specify the number of rows, number of variables, means for the columns, sd&#39;s for the columns, and the correlation between the columns.</span></span>
-<span id="cb27-7"><a href="connecting-the-iv-and-covariate.html#cb27-7" tabindex="-1"></a></span>
-<span id="cb27-8"><a href="connecting-the-iv-and-covariate.html#cb27-8" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(<span class="at">n =</span> <span class="dv">85</span>, <span class="at">vars =</span> <span class="dv">2</span>, <span class="at">mu =</span> <span class="fu">c</span>(<span class="dv">65</span>,<span class="dv">100</span>), <span class="at">sd =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>), <span class="at">r =</span> <span class="sc">-</span><span class="fl">0.3</span>)</span>
-<span id="cb27-9"><a href="connecting-the-iv-and-covariate.html#cb27-9" tabindex="-1"></a></span>
-<span id="cb27-10"><a href="connecting-the-iv-and-covariate.html#cb27-10" tabindex="-1"></a><span class="co"># Rename the columns to represent your variables </span></span>
-<span id="cb27-11"><a href="connecting-the-iv-and-covariate.html#cb27-11" tabindex="-1"></a><span class="fu">colnames</span>(data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Age&quot;</span>,<span class="st">&quot;IQ&quot;</span>)</span>
-<span id="cb27-12"><a href="connecting-the-iv-and-covariate.html#cb27-12" tabindex="-1"></a></span>
-<span id="cb27-13"><a href="connecting-the-iv-and-covariate.html#cb27-13" tabindex="-1"></a><span class="do">###### Everything above this point is copy &amp; pasted from practical #4. </span></span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="connecting-the-iv-and-covariate.html#cb11-1" tabindex="-1"></a><span class="co"># Set a consistent start point for &quot;random&quot; data generation</span></span>
+<span id="cb11-2"><a href="connecting-the-iv-and-covariate.html#cb11-2" tabindex="-1"></a><span class="co"># Makes it so the output will be consistent</span></span>
+<span id="cb11-3"><a href="connecting-the-iv-and-covariate.html#cb11-3" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="connecting-the-iv-and-covariate.html#cb11-4" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># Can be any value. </span></span>
+<span id="cb11-5"><a href="connecting-the-iv-and-covariate.html#cb11-5" tabindex="-1"></a></span>
+<span id="cb11-6"><a href="connecting-the-iv-and-covariate.html#cb11-6" tabindex="-1"></a><span class="co"># Generate data. Specify the number of rows, number of variables, means for the columns, sd&#39;s for the columns, and the correlation between the columns.</span></span>
+<span id="cb11-7"><a href="connecting-the-iv-and-covariate.html#cb11-7" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="connecting-the-iv-and-covariate.html#cb11-8" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(<span class="at">n =</span> <span class="dv">85</span>, <span class="at">vars =</span> <span class="dv">2</span>, <span class="at">mu =</span> <span class="fu">c</span>(<span class="dv">65</span>,<span class="dv">100</span>), <span class="at">sd =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>), <span class="at">r =</span> <span class="sc">-</span><span class="fl">0.3</span>)</span>
+<span id="cb11-9"><a href="connecting-the-iv-and-covariate.html#cb11-9" tabindex="-1"></a></span>
+<span id="cb11-10"><a href="connecting-the-iv-and-covariate.html#cb11-10" tabindex="-1"></a><span class="co"># Rename the columns to represent your variables </span></span>
+<span id="cb11-11"><a href="connecting-the-iv-and-covariate.html#cb11-11" tabindex="-1"></a><span class="fu">colnames</span>(data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Age&quot;</span>,<span class="st">&quot;IQ&quot;</span>)</span>
+<span id="cb11-12"><a href="connecting-the-iv-and-covariate.html#cb11-12" tabindex="-1"></a></span>
+<span id="cb11-13"><a href="connecting-the-iv-and-covariate.html#cb11-13" tabindex="-1"></a><span class="do">###### Everything above this point is copy &amp; pasted from practical #4. </span></span></code></pre></div>
 </div>
 <div id="transform" class="section level3 unnumbered hasAnchor">
 <h3>Transform<a href="connecting-the-iv-and-covariate.html#transform" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Generate a 3rd column of data that will represent a categorized version of the covariate. Divite the participants into categories based on specified cut points.</p>
-<div class="sourceCode" id="cb28"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb28-1"><a href="connecting-the-iv-and-covariate.html#cb28-1" tabindex="-1"></a><span class="co"># Transform the continuous variable into categories</span></span>
-<span id="cb28-2"><a href="connecting-the-iv-and-covariate.html#cb28-2" tabindex="-1"></a>data<span class="sc">$</span>age_cat <span class="ot">&lt;-</span> <span class="fu">cut</span>(data<span class="sc">$</span>Age,</span>
-<span id="cb28-3"><a href="connecting-the-iv-and-covariate.html#cb28-3" tabindex="-1"></a>                    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>, <span class="dv">65</span>, <span class="cn">Inf</span>), <span class="co"># cut points</span></span>
-<span id="cb28-4"><a href="connecting-the-iv-and-covariate.html#cb28-4" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Under 65&quot;</span>, <span class="st">&quot;Over 65&quot;</span>)) <span class="co"># labels</span></span>
-<span id="cb28-5"><a href="connecting-the-iv-and-covariate.html#cb28-5" tabindex="-1"></a></span>
-<span id="cb28-6"><a href="connecting-the-iv-and-covariate.html#cb28-6" tabindex="-1"></a><span class="fu">head</span>(data) <span class="co"># Check out the data frame with the new column</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="connecting-the-iv-and-covariate.html#cb12-1" tabindex="-1"></a><span class="co"># Transform the continuous variable into categories</span></span>
+<span id="cb12-2"><a href="connecting-the-iv-and-covariate.html#cb12-2" tabindex="-1"></a>data<span class="sc">$</span>age_cat <span class="ot">&lt;-</span> <span class="fu">cut</span>(data<span class="sc">$</span>Age,</span>
+<span id="cb12-3"><a href="connecting-the-iv-and-covariate.html#cb12-3" tabindex="-1"></a>                    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>, <span class="dv">65</span>, <span class="cn">Inf</span>), <span class="co"># cut points</span></span>
+<span id="cb12-4"><a href="connecting-the-iv-and-covariate.html#cb12-4" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Under 65&quot;</span>, <span class="st">&quot;Over 65&quot;</span>)) <span class="co"># labels</span></span>
+<span id="cb12-5"><a href="connecting-the-iv-and-covariate.html#cb12-5" tabindex="-1"></a></span>
+<span id="cb12-6"><a href="connecting-the-iv-and-covariate.html#cb12-6" tabindex="-1"></a><span class="fu">head</span>(data) <span class="co"># Check out the data frame with the new column</span></span></code></pre></div>
 <pre><code>##        Age        IQ  age_cat
 ## 1 64.74322  90.80306 Under 65
 ## 2 56.44198  93.49663 Under 65
@@ -332,33 +323,33 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="make-a-bar-graph" class="section level3 unnumbered hasAnchor">
 <h3>Make a Bar Graph<a href="connecting-the-iv-and-covariate.html#make-a-bar-graph" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb30"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb30-1"><a href="connecting-the-iv-and-covariate.html#cb30-1" tabindex="-1"></a><span class="co"># A bar graph</span></span>
-<span id="cb30-2"><a href="connecting-the-iv-and-covariate.html#cb30-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb30-3"><a href="connecting-the-iv-and-covariate.html#cb30-3" tabindex="-1"></a>  <span class="fu">group_by</span>(age_cat) <span class="sc">%&gt;%</span></span>
-<span id="cb30-4"><a href="connecting-the-iv-and-covariate.html#cb30-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb30-5"><a href="connecting-the-iv-and-covariate.html#cb30-5" tabindex="-1"></a>    <span class="at">n=</span><span class="fu">n</span>(),</span>
-<span id="cb30-6"><a href="connecting-the-iv-and-covariate.html#cb30-6" tabindex="-1"></a>    <span class="at">mean=</span><span class="fu">mean</span>(IQ),</span>
-<span id="cb30-7"><a href="connecting-the-iv-and-covariate.html#cb30-7" tabindex="-1"></a>    <span class="at">sd=</span><span class="fu">sd</span>(IQ)</span>
-<span id="cb30-8"><a href="connecting-the-iv-and-covariate.html#cb30-8" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">se=</span>sd <span class="sc">/</span> <span class="fu">sqrt</span>(n)) <span class="sc">%&gt;%</span></span>
-<span id="cb30-9"><a href="connecting-the-iv-and-covariate.html#cb30-9" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>age_cat,<span class="at">y=</span>mean, <span class="at">colour =</span> age_cat, <span class="at">fill=</span> age_cat, <span class="at">shape=</span>age_cat)) <span class="sc">+</span></span>
-<span id="cb30-10"><a href="connecting-the-iv-and-covariate.html#cb30-10" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,<span class="at">alpha=</span><span class="fl">0.2</span>)<span class="sc">+</span></span>
-<span id="cb30-11"><a href="connecting-the-iv-and-covariate.html#cb30-11" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">x=</span>age_cat,<span class="at">ymin=</span>mean<span class="sc">-</span>se,<span class="at">ymax=</span>mean<span class="sc">+</span>se),<span class="at">width=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
-<span id="cb30-12"><a href="connecting-the-iv-and-covariate.html#cb30-12" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">data =</span> data,<span class="fu">aes</span>(<span class="at">x=</span>age_cat,<span class="at">y=</span>IQ),<span class="at">height=</span><span class="dv">0</span>, <span class="at">width=</span><span class="fl">0.25</span>, <span class="at">size=</span><span class="dv">3</span>,<span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
-<span id="cb30-13"><a href="connecting-the-iv-and-covariate.html#cb30-13" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>,<span class="st">&quot;black&quot;</span>))<span class="sc">+</span></span>
-<span id="cb30-14"><a href="connecting-the-iv-and-covariate.html#cb30-14" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>,<span class="st">&quot;black&quot;</span>))<span class="sc">+</span></span>
-<span id="cb30-15"><a href="connecting-the-iv-and-covariate.html#cb30-15" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
-<span id="cb30-16"><a href="connecting-the-iv-and-covariate.html#cb30-16" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
-<span id="cb30-17"><a href="connecting-the-iv-and-covariate.html#cb30-17" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>))<span class="sc">+</span></span>
-<span id="cb30-18"><a href="connecting-the-iv-and-covariate.html#cb30-18" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb30-19"><a href="connecting-the-iv-and-covariate.html#cb30-19" tabindex="-1"></a>    <span class="at">x=</span><span class="st">&quot;Age Categories&quot;</span>,</span>
-<span id="cb30-20"><a href="connecting-the-iv-and-covariate.html#cb30-20" tabindex="-1"></a>    <span class="at">y=</span><span class="st">&quot;IQ Score&quot;</span>,</span>
-<span id="cb30-21"><a href="connecting-the-iv-and-covariate.html#cb30-21" tabindex="-1"></a>    <span class="at">title=</span><span class="st">&quot;Effect of Age on </span><span class="sc">\n</span><span class="st"> IQ Scores&quot;</span></span>
-<span id="cb30-22"><a href="connecting-the-iv-and-covariate.html#cb30-22" tabindex="-1"></a>  )</span>
-<span id="cb30-23"><a href="connecting-the-iv-and-covariate.html#cb30-23" tabindex="-1"></a></span>
-<span id="cb30-24"><a href="connecting-the-iv-and-covariate.html#cb30-24" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;2_bars.png&quot;</span>,a,<span class="at">height=</span><span class="dv">4</span>,<span class="at">width=</span><span class="dv">3</span>,<span class="at">dpi=</span><span class="dv">300</span>)</span>
-<span id="cb30-25"><a href="connecting-the-iv-and-covariate.html#cb30-25" tabindex="-1"></a></span>
-<span id="cb30-26"><a href="connecting-the-iv-and-covariate.html#cb30-26" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;2_bars.png&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-19"></span>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="connecting-the-iv-and-covariate.html#cb14-1" tabindex="-1"></a><span class="co"># A bar graph</span></span>
+<span id="cb14-2"><a href="connecting-the-iv-and-covariate.html#cb14-2" tabindex="-1"></a>a <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb14-3"><a href="connecting-the-iv-and-covariate.html#cb14-3" tabindex="-1"></a>  <span class="fu">group_by</span>(age_cat) <span class="sc">%&gt;%</span></span>
+<span id="cb14-4"><a href="connecting-the-iv-and-covariate.html#cb14-4" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb14-5"><a href="connecting-the-iv-and-covariate.html#cb14-5" tabindex="-1"></a>    <span class="at">n=</span><span class="fu">n</span>(),</span>
+<span id="cb14-6"><a href="connecting-the-iv-and-covariate.html#cb14-6" tabindex="-1"></a>    <span class="at">mean=</span><span class="fu">mean</span>(IQ),</span>
+<span id="cb14-7"><a href="connecting-the-iv-and-covariate.html#cb14-7" tabindex="-1"></a>    <span class="at">sd=</span><span class="fu">sd</span>(IQ)</span>
+<span id="cb14-8"><a href="connecting-the-iv-and-covariate.html#cb14-8" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">se=</span>sd <span class="sc">/</span> <span class="fu">sqrt</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb14-9"><a href="connecting-the-iv-and-covariate.html#cb14-9" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>age_cat,<span class="at">y=</span>mean, <span class="at">colour =</span> age_cat, <span class="at">fill=</span> age_cat, <span class="at">shape=</span>age_cat)) <span class="sc">+</span></span>
+<span id="cb14-10"><a href="connecting-the-iv-and-covariate.html#cb14-10" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,<span class="at">alpha=</span><span class="fl">0.2</span>)<span class="sc">+</span></span>
+<span id="cb14-11"><a href="connecting-the-iv-and-covariate.html#cb14-11" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">x=</span>age_cat,<span class="at">ymin=</span>mean<span class="sc">-</span>se,<span class="at">ymax=</span>mean<span class="sc">+</span>se),<span class="at">width=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb14-12"><a href="connecting-the-iv-and-covariate.html#cb14-12" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">data =</span> data,<span class="fu">aes</span>(<span class="at">x=</span>age_cat,<span class="at">y=</span>IQ),<span class="at">height=</span><span class="dv">0</span>, <span class="at">width=</span><span class="fl">0.25</span>, <span class="at">size=</span><span class="dv">3</span>,<span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb14-13"><a href="connecting-the-iv-and-covariate.html#cb14-13" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>,<span class="st">&quot;black&quot;</span>))<span class="sc">+</span></span>
+<span id="cb14-14"><a href="connecting-the-iv-and-covariate.html#cb14-14" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>,<span class="st">&quot;black&quot;</span>))<span class="sc">+</span></span>
+<span id="cb14-15"><a href="connecting-the-iv-and-covariate.html#cb14-15" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb14-16"><a href="connecting-the-iv-and-covariate.html#cb14-16" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
+<span id="cb14-17"><a href="connecting-the-iv-and-covariate.html#cb14-17" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>))<span class="sc">+</span></span>
+<span id="cb14-18"><a href="connecting-the-iv-and-covariate.html#cb14-18" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb14-19"><a href="connecting-the-iv-and-covariate.html#cb14-19" tabindex="-1"></a>    <span class="at">x=</span><span class="st">&quot;Age Categories&quot;</span>,</span>
+<span id="cb14-20"><a href="connecting-the-iv-and-covariate.html#cb14-20" tabindex="-1"></a>    <span class="at">y=</span><span class="st">&quot;IQ Score&quot;</span>,</span>
+<span id="cb14-21"><a href="connecting-the-iv-and-covariate.html#cb14-21" tabindex="-1"></a>    <span class="at">title=</span><span class="st">&quot;Effect of Age on </span><span class="sc">\n</span><span class="st"> IQ Scores&quot;</span></span>
+<span id="cb14-22"><a href="connecting-the-iv-and-covariate.html#cb14-22" tabindex="-1"></a>  )</span>
+<span id="cb14-23"><a href="connecting-the-iv-and-covariate.html#cb14-23" tabindex="-1"></a></span>
+<span id="cb14-24"><a href="connecting-the-iv-and-covariate.html#cb14-24" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;2_bars.png&quot;</span>,a,<span class="at">height=</span><span class="dv">4</span>,<span class="at">width=</span><span class="dv">3</span>,<span class="at">dpi=</span><span class="dv">300</span>)</span>
+<span id="cb14-25"><a href="connecting-the-iv-and-covariate.html#cb14-25" tabindex="-1"></a></span>
+<span id="cb14-26"><a href="connecting-the-iv-and-covariate.html#cb14-26" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;2_bars.png&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-11"></span>
 <img src="2_bars.png" alt="First example: Here, I divided the continuous covariate into two categories." width="450" />
 <p class="caption">
 Figure 5.1: First example: Here, I divided the continuous covariate into two categories.
@@ -368,8 +359,8 @@ Figure 5.1: First example: Here, I divided the continuous covariate into two cat
 <div id="analyze" class="section level3 unnumbered hasAnchor">
 <h3>Analyze<a href="connecting-the-iv-and-covariate.html#analyze" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Run a t-test because there are only two groups here.</p>
-<div class="sourceCode" id="cb31"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb31-1"><a href="connecting-the-iv-and-covariate.html#cb31-1" tabindex="-1"></a><span class="co"># Levigne&#39;s test for equity of variances</span></span>
-<span id="cb31-2"><a href="connecting-the-iv-and-covariate.html#cb31-2" tabindex="-1"></a><span class="fu">var.test</span>(<span class="at">data =</span> data, IQ <span class="sc">~</span> age_cat)</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="connecting-the-iv-and-covariate.html#cb15-1" tabindex="-1"></a><span class="co"># Levigne&#39;s test for equity of variances</span></span>
+<span id="cb15-2"><a href="connecting-the-iv-and-covariate.html#cb15-2" tabindex="-1"></a><span class="fu">var.test</span>(<span class="at">data =</span> data, IQ <span class="sc">~</span> age_cat)</span></code></pre></div>
 <pre><code>## 
 ##  F test to compare two variances
 ## 
@@ -381,8 +372,8 @@ Figure 5.1: First example: Here, I divided the continuous covariate into two cat
 ## sample estimates:
 ## ratio of variances 
 ##           1.177203</code></pre>
-<div class="sourceCode" id="cb33"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb33-1"><a href="connecting-the-iv-and-covariate.html#cb33-1" tabindex="-1"></a><span class="co"># A t.test when variances are not unequal</span></span>
-<span id="cb33-2"><a href="connecting-the-iv-and-covariate.html#cb33-2" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">data =</span> data, IQ <span class="sc">~</span> age_cat, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="connecting-the-iv-and-covariate.html#cb17-1" tabindex="-1"></a><span class="co"># A t.test when variances are not unequal</span></span>
+<span id="cb17-2"><a href="connecting-the-iv-and-covariate.html#cb17-2" tabindex="-1"></a><span class="fu">t.test</span>(<span class="at">data =</span> data, IQ <span class="sc">~</span> age_cat, <span class="at">var.equal =</span> <span class="cn">TRUE</span>)</span></code></pre></div>
 <pre><code>## 
 ##  Two Sample t-test
 ## 
@@ -397,51 +388,51 @@ Figure 5.1: First example: Here, I divided the continuous covariate into two cat
 </div>
 <div id="category-exmaple" class="section level3 unnumbered hasAnchor">
 <h3>3-category exmaple<a href="connecting-the-iv-and-covariate.html#category-exmaple" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb35"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb35-1"><a href="connecting-the-iv-and-covariate.html#cb35-1" tabindex="-1"></a><span class="co"># An example of how to divide the continuous variable into 3 categories</span></span>
-<span id="cb35-2"><a href="connecting-the-iv-and-covariate.html#cb35-2" tabindex="-1"></a>data<span class="sc">$</span>age_cat <span class="ot">&lt;-</span> <span class="fu">cut</span>(data<span class="sc">$</span>Age,</span>
-<span id="cb35-3"><a href="connecting-the-iv-and-covariate.html#cb35-3" tabindex="-1"></a>                    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="cn">Inf</span>),</span>
-<span id="cb35-4"><a href="connecting-the-iv-and-covariate.html#cb35-4" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Under 60&quot;</span>,<span class="st">&quot;60-70&quot;</span>, <span class="st">&quot;Over 70&quot;</span>))</span>
-<span id="cb35-5"><a href="connecting-the-iv-and-covariate.html#cb35-5" tabindex="-1"></a></span>
-<span id="cb35-6"><a href="connecting-the-iv-and-covariate.html#cb35-6" tabindex="-1"></a><span class="co"># Graph for the 3-category data </span></span>
-<span id="cb35-7"><a href="connecting-the-iv-and-covariate.html#cb35-7" tabindex="-1"></a><span class="do">## Only change vs above is the number of coulours! (Robust!!)</span></span>
-<span id="cb35-8"><a href="connecting-the-iv-and-covariate.html#cb35-8" tabindex="-1"></a>JLB_garph <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="co"># Assign the chart to an object</span></span>
-<span id="cb35-9"><a href="connecting-the-iv-and-covariate.html#cb35-9" tabindex="-1"></a>  <span class="fu">group_by</span>(age_cat) <span class="sc">%&gt;%</span></span>
-<span id="cb35-10"><a href="connecting-the-iv-and-covariate.html#cb35-10" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb35-11"><a href="connecting-the-iv-and-covariate.html#cb35-11" tabindex="-1"></a>    <span class="at">n=</span><span class="fu">n</span>(),</span>
-<span id="cb35-12"><a href="connecting-the-iv-and-covariate.html#cb35-12" tabindex="-1"></a>    <span class="at">mean=</span><span class="fu">mean</span>(IQ),</span>
-<span id="cb35-13"><a href="connecting-the-iv-and-covariate.html#cb35-13" tabindex="-1"></a>    <span class="at">sd=</span><span class="fu">sd</span>(IQ)</span>
-<span id="cb35-14"><a href="connecting-the-iv-and-covariate.html#cb35-14" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">se=</span>sd <span class="sc">/</span> <span class="fu">sqrt</span>(n)) <span class="sc">%&gt;%</span></span>
-<span id="cb35-15"><a href="connecting-the-iv-and-covariate.html#cb35-15" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>age_cat,<span class="at">y=</span>mean, <span class="at">colour =</span> age_cat, <span class="at">fill=</span> age_cat, <span class="at">shape=</span>age_cat)) <span class="sc">+</span></span>
-<span id="cb35-16"><a href="connecting-the-iv-and-covariate.html#cb35-16" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,<span class="at">alpha=</span><span class="fl">0.2</span>)<span class="sc">+</span></span>
-<span id="cb35-17"><a href="connecting-the-iv-and-covariate.html#cb35-17" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">x=</span>age_cat,<span class="at">ymin=</span>mean<span class="sc">-</span>se,<span class="at">ymax=</span>mean<span class="sc">+</span>se),<span class="at">width=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
-<span id="cb35-18"><a href="connecting-the-iv-and-covariate.html#cb35-18" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">data =</span> data,<span class="fu">aes</span>(<span class="at">x=</span>age_cat,<span class="at">y=</span>IQ),<span class="at">height=</span><span class="dv">0</span>, <span class="at">width=</span><span class="fl">0.25</span>, <span class="at">size=</span><span class="dv">3</span>,<span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
-<span id="cb35-19"><a href="connecting-the-iv-and-covariate.html#cb35-19" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>,<span class="st">&quot;black&quot;</span>,<span class="st">&quot;blue&quot;</span>))<span class="sc">+</span></span>
-<span id="cb35-20"><a href="connecting-the-iv-and-covariate.html#cb35-20" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>,<span class="st">&quot;black&quot;</span>,<span class="st">&quot;blue&quot;</span>))<span class="sc">+</span></span>
-<span id="cb35-21"><a href="connecting-the-iv-and-covariate.html#cb35-21" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
-<span id="cb35-22"><a href="connecting-the-iv-and-covariate.html#cb35-22" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
-<span id="cb35-23"><a href="connecting-the-iv-and-covariate.html#cb35-23" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>))<span class="sc">+</span></span>
-<span id="cb35-24"><a href="connecting-the-iv-and-covariate.html#cb35-24" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb35-25"><a href="connecting-the-iv-and-covariate.html#cb35-25" tabindex="-1"></a>    <span class="at">x=</span><span class="st">&quot;Age Categories&quot;</span>,</span>
-<span id="cb35-26"><a href="connecting-the-iv-and-covariate.html#cb35-26" tabindex="-1"></a>    <span class="at">y=</span><span class="st">&quot;IQ Score&quot;</span>,</span>
-<span id="cb35-27"><a href="connecting-the-iv-and-covariate.html#cb35-27" tabindex="-1"></a>    <span class="at">title=</span><span class="st">&quot;Effect of Age on </span><span class="sc">\n</span><span class="st"> IQ Scores&quot;</span></span>
-<span id="cb35-28"><a href="connecting-the-iv-and-covariate.html#cb35-28" tabindex="-1"></a>  )</span>
-<span id="cb35-29"><a href="connecting-the-iv-and-covariate.html#cb35-29" tabindex="-1"></a></span>
-<span id="cb35-30"><a href="connecting-the-iv-and-covariate.html#cb35-30" tabindex="-1"></a><span class="co"># Save a high quality .png copy of the image</span></span>
-<span id="cb35-31"><a href="connecting-the-iv-and-covariate.html#cb35-31" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;JLB_prc_5.png&quot;</span>,JLB_garph,<span class="at">height=</span><span class="dv">4</span>,<span class="at">width=</span><span class="dv">4</span>,<span class="at">dpi=</span><span class="dv">300</span>)</span>
-<span id="cb35-32"><a href="connecting-the-iv-and-covariate.html#cb35-32" tabindex="-1"></a></span>
-<span id="cb35-33"><a href="connecting-the-iv-and-covariate.html#cb35-33" tabindex="-1"></a><span class="co"># Call back the high quality image</span></span>
-<span id="cb35-34"><a href="connecting-the-iv-and-covariate.html#cb35-34" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;JLB_prc_5.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="connecting-the-iv-and-covariate.html#cb19-1" tabindex="-1"></a><span class="co"># An example of how to divide the continuous variable into 3 categories</span></span>
+<span id="cb19-2"><a href="connecting-the-iv-and-covariate.html#cb19-2" tabindex="-1"></a>data<span class="sc">$</span>age_cat <span class="ot">&lt;-</span> <span class="fu">cut</span>(data<span class="sc">$</span>Age,</span>
+<span id="cb19-3"><a href="connecting-the-iv-and-covariate.html#cb19-3" tabindex="-1"></a>                    <span class="at">breaks =</span> <span class="fu">c</span>(<span class="sc">-</span><span class="cn">Inf</span>, <span class="dv">60</span>, <span class="dv">70</span>, <span class="cn">Inf</span>),</span>
+<span id="cb19-4"><a href="connecting-the-iv-and-covariate.html#cb19-4" tabindex="-1"></a>                    <span class="at">labels =</span> <span class="fu">c</span>(<span class="st">&quot;Under 60&quot;</span>,<span class="st">&quot;60-70&quot;</span>, <span class="st">&quot;Over 70&quot;</span>))</span>
+<span id="cb19-5"><a href="connecting-the-iv-and-covariate.html#cb19-5" tabindex="-1"></a></span>
+<span id="cb19-6"><a href="connecting-the-iv-and-covariate.html#cb19-6" tabindex="-1"></a><span class="co"># Graph for the 3-category data </span></span>
+<span id="cb19-7"><a href="connecting-the-iv-and-covariate.html#cb19-7" tabindex="-1"></a><span class="do">## Only change vs above is the number of coulours! (Robust!!)</span></span>
+<span id="cb19-8"><a href="connecting-the-iv-and-covariate.html#cb19-8" tabindex="-1"></a>JLB_garph <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span> <span class="co"># Assign the chart to an object</span></span>
+<span id="cb19-9"><a href="connecting-the-iv-and-covariate.html#cb19-9" tabindex="-1"></a>  <span class="fu">group_by</span>(age_cat) <span class="sc">%&gt;%</span></span>
+<span id="cb19-10"><a href="connecting-the-iv-and-covariate.html#cb19-10" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb19-11"><a href="connecting-the-iv-and-covariate.html#cb19-11" tabindex="-1"></a>    <span class="at">n=</span><span class="fu">n</span>(),</span>
+<span id="cb19-12"><a href="connecting-the-iv-and-covariate.html#cb19-12" tabindex="-1"></a>    <span class="at">mean=</span><span class="fu">mean</span>(IQ),</span>
+<span id="cb19-13"><a href="connecting-the-iv-and-covariate.html#cb19-13" tabindex="-1"></a>    <span class="at">sd=</span><span class="fu">sd</span>(IQ)</span>
+<span id="cb19-14"><a href="connecting-the-iv-and-covariate.html#cb19-14" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span> <span class="fu">mutate</span>(<span class="at">se=</span>sd <span class="sc">/</span> <span class="fu">sqrt</span>(n)) <span class="sc">%&gt;%</span></span>
+<span id="cb19-15"><a href="connecting-the-iv-and-covariate.html#cb19-15" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>age_cat,<span class="at">y=</span>mean, <span class="at">colour =</span> age_cat, <span class="at">fill=</span> age_cat, <span class="at">shape=</span>age_cat)) <span class="sc">+</span></span>
+<span id="cb19-16"><a href="connecting-the-iv-and-covariate.html#cb19-16" tabindex="-1"></a>  <span class="fu">geom_bar</span>(<span class="at">stat=</span><span class="st">&quot;identity&quot;</span>,<span class="at">alpha=</span><span class="fl">0.2</span>)<span class="sc">+</span></span>
+<span id="cb19-17"><a href="connecting-the-iv-and-covariate.html#cb19-17" tabindex="-1"></a>  <span class="fu">geom_errorbar</span>(<span class="fu">aes</span>(<span class="at">x=</span>age_cat,<span class="at">ymin=</span>mean<span class="sc">-</span>se,<span class="at">ymax=</span>mean<span class="sc">+</span>se),<span class="at">width=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb19-18"><a href="connecting-the-iv-and-covariate.html#cb19-18" tabindex="-1"></a>  <span class="fu">geom_jitter</span>(<span class="at">data =</span> data,<span class="fu">aes</span>(<span class="at">x=</span>age_cat,<span class="at">y=</span>IQ),<span class="at">height=</span><span class="dv">0</span>, <span class="at">width=</span><span class="fl">0.25</span>, <span class="at">size=</span><span class="dv">3</span>,<span class="at">alpha=</span><span class="fl">0.5</span>)<span class="sc">+</span></span>
+<span id="cb19-19"><a href="connecting-the-iv-and-covariate.html#cb19-19" tabindex="-1"></a>  <span class="fu">scale_colour_manual</span>(<span class="at">values =</span> <span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>,<span class="st">&quot;black&quot;</span>,<span class="st">&quot;blue&quot;</span>))<span class="sc">+</span></span>
+<span id="cb19-20"><a href="connecting-the-iv-and-covariate.html#cb19-20" tabindex="-1"></a>  <span class="fu">scale_fill_manual</span>(<span class="at">values=</span><span class="fu">c</span>(<span class="st">&quot;grey&quot;</span>,<span class="st">&quot;black&quot;</span>,<span class="st">&quot;blue&quot;</span>))<span class="sc">+</span></span>
+<span id="cb19-21"><a href="connecting-the-iv-and-covariate.html#cb19-21" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb19-22"><a href="connecting-the-iv-and-covariate.html#cb19-22" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">legend.position =</span> <span class="st">&quot;none&quot;</span>)<span class="sc">+</span></span>
+<span id="cb19-23"><a href="connecting-the-iv-and-covariate.html#cb19-23" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>))<span class="sc">+</span></span>
+<span id="cb19-24"><a href="connecting-the-iv-and-covariate.html#cb19-24" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb19-25"><a href="connecting-the-iv-and-covariate.html#cb19-25" tabindex="-1"></a>    <span class="at">x=</span><span class="st">&quot;Age Categories&quot;</span>,</span>
+<span id="cb19-26"><a href="connecting-the-iv-and-covariate.html#cb19-26" tabindex="-1"></a>    <span class="at">y=</span><span class="st">&quot;IQ Score&quot;</span>,</span>
+<span id="cb19-27"><a href="connecting-the-iv-and-covariate.html#cb19-27" tabindex="-1"></a>    <span class="at">title=</span><span class="st">&quot;Effect of Age on </span><span class="sc">\n</span><span class="st"> IQ Scores&quot;</span></span>
+<span id="cb19-28"><a href="connecting-the-iv-and-covariate.html#cb19-28" tabindex="-1"></a>  )</span>
+<span id="cb19-29"><a href="connecting-the-iv-and-covariate.html#cb19-29" tabindex="-1"></a></span>
+<span id="cb19-30"><a href="connecting-the-iv-and-covariate.html#cb19-30" tabindex="-1"></a><span class="co"># Save a high quality .png copy of the image</span></span>
+<span id="cb19-31"><a href="connecting-the-iv-and-covariate.html#cb19-31" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;JLB_prc_5.png&quot;</span>,JLB_garph,<span class="at">height=</span><span class="dv">4</span>,<span class="at">width=</span><span class="dv">4</span>,<span class="at">dpi=</span><span class="dv">300</span>)</span>
+<span id="cb19-32"><a href="connecting-the-iv-and-covariate.html#cb19-32" tabindex="-1"></a></span>
+<span id="cb19-33"><a href="connecting-the-iv-and-covariate.html#cb19-33" tabindex="-1"></a><span class="co"># Call back the high quality image</span></span>
+<span id="cb19-34"><a href="connecting-the-iv-and-covariate.html#cb19-34" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;JLB_prc_5.png&quot;</span>)</span></code></pre></div>
 <p><img src="JLB_prc_5.png" width="600" /></p>
 </div>
 <div id="analyze-3-category-example" class="section level3 hasAnchor" number="5.0.1">
 <h3><span class="header-section-number">5.0.1</span> Analyze 3-category example<a href="connecting-the-iv-and-covariate.html#analyze-3-category-example" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>When there are more than two groups, use ANOVA instead of a t-test. If the results from the omnibus test of significance indicate p &lt; 0.05, run Tukey’s honestly significant difference test to figure out <em>where</em> the group differences are.</p>
-<div class="sourceCode" id="cb36"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb36-1"><a href="connecting-the-iv-and-covariate.html#cb36-1" tabindex="-1"></a><span class="co"># Run a one-way ANOVA</span></span>
-<span id="cb36-2"><a href="connecting-the-iv-and-covariate.html#cb36-2" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="at">data =</span> data, IQ <span class="sc">~</span> age_cat)</span>
-<span id="cb36-3"><a href="connecting-the-iv-and-covariate.html#cb36-3" tabindex="-1"></a></span>
-<span id="cb36-4"><a href="connecting-the-iv-and-covariate.html#cb36-4" tabindex="-1"></a></span>
-<span id="cb36-5"><a href="connecting-the-iv-and-covariate.html#cb36-5" tabindex="-1"></a><span class="co"># Follow up to find out which groups differ from one-another. </span></span>
-<span id="cb36-6"><a href="connecting-the-iv-and-covariate.html#cb36-6" tabindex="-1"></a><span class="fu">TukeyHSD</span>(res)</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="connecting-the-iv-and-covariate.html#cb20-1" tabindex="-1"></a><span class="co"># Run a one-way ANOVA</span></span>
+<span id="cb20-2"><a href="connecting-the-iv-and-covariate.html#cb20-2" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">aov</span>(<span class="at">data =</span> data, IQ <span class="sc">~</span> age_cat)</span>
+<span id="cb20-3"><a href="connecting-the-iv-and-covariate.html#cb20-3" tabindex="-1"></a></span>
+<span id="cb20-4"><a href="connecting-the-iv-and-covariate.html#cb20-4" tabindex="-1"></a></span>
+<span id="cb20-5"><a href="connecting-the-iv-and-covariate.html#cb20-5" tabindex="-1"></a><span class="co"># Follow up to find out which groups differ from one-another. </span></span>
+<span id="cb20-6"><a href="connecting-the-iv-and-covariate.html#cb20-6" tabindex="-1"></a><span class="fu">TukeyHSD</span>(res)</span></code></pre></div>
 <pre><code>##   Tukey multiple comparisons of means
 ##     95% family-wise confidence level
 ## 
