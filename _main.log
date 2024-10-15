@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.9.25)  15 OCT 2024 09:21
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.15)  15 OCT 2024 10:33
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -913,32 +913,90 @@ LaTeX Font Warning: Font shape `TU/lmtt/bx/it' in size <10> not available
 
 
 [16]
+LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
+(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 352.
+
 
 [17]
 
-[18
+[18]
+File: Figs/hist_1.png Graphic file (type bmp)
+<Figs/hist_1.png>
 
-]
-Chapter 4.
+Overfull \hbox (16.35533pt too wide) in paragraph at lines 471--472
+[][] 
+ []
+
 
 
 [19]
-File: Figs/effect_size.jpg Graphic file (type bmp)
-<Figs/effect_size.jpg>
+File: Figs/hist_2.png Graphic file (type bmp)
+<Figs/hist_2.png>
+
+Overfull \hbox (16.35533pt too wide) in paragraph at lines 497--498
+[][] 
+ []
+
 
 
 [20]
-LaTeX Font Info:    Font shape `TU/lmtt/bx/n' in size <10> not available
-(Font)              Font shape `TU/lmtt/b/n' tried instead on input line 399.
+File: Figs/hist_3.png Graphic file (type bmp)
+<Figs/hist_3.png>
+
+Overfull \hbox (16.35533pt too wide) in paragraph at lines 534--535
+[][] 
+ []
+
 
 
 [21]
 
 [22]
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 605.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
+(Font)              scaled to size 5.0pt on input line 605.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 10.00092pt on input line 605.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 7.00064pt on input line 605.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
+(Font)              scaled to size 5.00046pt on input line 605.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 9.99893pt on input line 605.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 6.99925pt on input line 605.
+LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
+(Font)              scaled to size 4.99947pt on input line 605.
+
+Overfull \hbox (60.96008pt too wide) in paragraph at lines 605--618
+[][] 
+ []
+
+
+
+[23]
+
+[24
+
+]
+Chapter 4.
+
+
+[25]
+File: Figs/effect_size.jpg Graphic file (type bmp)
+<Figs/effect_size.jpg>
+
+
+[26]
+
+[27]
+
+[28]
 File: Figs/scatter_1.png Graphic file (type bmp)
 <Figs/scatter_1.png>
 
-Overfull \hbox (124.76195pt too wide) in paragraph at lines 504--505
+Overfull \hbox (124.76195pt too wide) in paragraph at lines 777--778
 [][] 
  []
 
@@ -947,51 +1005,20 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 
 
 
-[23]
+[29]
 
-[24]
+[30]
 File: JLB_graph.png Graphic file (type bmp)
 <JLB_graph.png>
 
 
-[25]
+[31]
 
-[26
+[32
 
 ]
 Chapter 5.
 Missing character: There is no η (U+03B7) in font [lmroman10-regular]:mapping=tex-text;!
-
-
-[27]
-
-[28]
-
-[29]
-File: 2_bars.png Graphic file (type bmp)
-<2_bars.png>
-
-
-[30]
-
-[31]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 702--702
-[]\TU/lmtt/m/n/10 ## alternative hypothesis: true ratio of variances is not equal to 1[] 
- []
-
-
-Overfull \hbox (232.5pt too wide) in paragraph at lines 723--723
-[]\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means between group Under 65 and group Over 65 is not equal to 0[] 
- []
-
-
-
-[32]
-File: JLB_prc_5.png Graphic file (type bmp)
-<JLB_prc_5.png>
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
 
 
 [33]
@@ -999,69 +1026,83 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [34]
 
 [35]
+File: 2_bars.png Graphic file (type bmp)
+<2_bars.png>
 
-[36
 
-]
+[36]
 
 [37]
-
-[38]
-
-[39]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 928--928
+Overfull \hbox (12.0pt too wide) in paragraph at lines 975--975
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true ratio of variances is not equal to 1[] 
  []
 
 
-Overfull \hbox (232.5pt too wide) in paragraph at lines 949--949
+Overfull \hbox (232.5pt too wide) in paragraph at lines 996--996
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means between group Under 65 and group Over 65 is not equal to 0[] 
  []
 
 
 
+[38]
+File: JLB_prc_5.png Graphic file (type bmp)
+<JLB_prc_5.png>
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+
+[39]
+
 [40]
 
 [41]
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 1018.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(1)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 1018.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 10.00092pt on input line 1018.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 7.00064pt on input line 1018.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(2)/m/n' will be
-(Font)              scaled to size 5.00046pt on input line 1018.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 9.99893pt on input line 1018.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 6.99925pt on input line 1018.
-LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
-(Font)              scaled to size 4.99947pt on input line 1018.
 
+[42
 
-[42]
-Underfull \vbox (badness 10000) detected at line 1110
- []
-
-
-Underfull \vbox (badness 10000) detected at line 1110
- []
-
-
+]
 
 [43]
+
+[44]
+
+[45]
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1201--1201
+[]\TU/lmtt/m/n/10 ## alternative hypothesis: true ratio of variances is not equal to 1[] 
+ []
+
+
+Overfull \hbox (232.5pt too wide) in paragraph at lines 1222--1222
+[]\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means between group Under 65 and group Over 65 is not equal to 0[] 
+ []
+
+
+
+[46]
+
+[47]
+
+[48]
+Underfull \vbox (badness 10000) detected at line 1383
+ []
+
+
+Underfull \vbox (badness 10000) detected at line 1383
+ []
+
+
+
+[49]
 File: graph_1.png Graphic file (type bmp)
 <graph_1.png>
 
-Overfull \hbox (160.89748pt too wide) in paragraph at lines 1112--1113
+Overfull \hbox (160.89748pt too wide) in paragraph at lines 1385--1386
 [][] 
  []
 
 
 
-[44]
+[50]
 > Step: init table outer spec.
 > Step: parse table options.
 > Step: split table.
@@ -1072,15 +1113,15 @@ Overfull \hbox (160.89748pt too wide) in paragraph at lines 1112--1113
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1171 \end
+l.1444 \end
            {tblr} 
 Here is how much of TeX's memory you used:
- 22909 strings out of 476233
- 474180 string characters out of 5785007
+ 22964 strings out of 476234
+ 475117 string characters out of 5785537
  975936 words of memory out of 5000000
- 45221 multiletter control sequences out of 15000+600000
+ 45275 multiletter control sequences out of 15000+600000
  566072 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  90i,6n,123p,814b,939s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
-Output written on _main.pdf (44 pages).
+Output written on _main.pdf (50 pages).

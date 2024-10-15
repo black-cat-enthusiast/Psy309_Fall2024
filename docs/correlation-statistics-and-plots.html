@@ -160,6 +160,15 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#proposed-magnitude-of-the-effect-of-your-iv-on-the-dv"><i class="fa fa-check"></i>2. Proposed Magnitude of the effect of your IV on the DV</a></li>
 <li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#connect-the-theory-to-computation-in-r"><i class="fa fa-check"></i>3. Connect the theory to computation in R!</a></li>
 <li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#reflect-2"><i class="fa fa-check"></i>4. Reflect</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#code-for-practical-3"><i class="fa fa-check"></i>Code For Practical #3</a>
+<ul>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#object-oriented-programming"><i class="fa fa-check"></i>Object-oriented programming</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#random-number-generation"><i class="fa fa-check"></i>Random number generation</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#sample-from-the-normal-distribution"><i class="fa fa-check"></i>Sample from the normal distribution</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#sampling-from-a-list-of-values"><i class="fa fa-check"></i>Sampling from a list of values</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#example-of-a-complete-dataset"><i class="fa fa-check"></i>Example of a complete dataset</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#aggregate-table-of-data"><i class="fa fa-check"></i>Aggregate table of data</a></li>
+</ul></li>
 </ul></li>
 <li class="chapter" data-level="4" data-path="correlation-statistics-and-plots.html"><a href="correlation-statistics-and-plots.html"><i class="fa fa-check"></i><b>4</b> Correlation Statistics and Plots</a>
 <ul>
@@ -283,37 +292,37 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="code-for-practical-4" class="section level2 unnumbered hasAnchor">
 <h2>Code for Practical #4<a href="correlation-statistics-and-plots.html#code-for-practical-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="correlation-statistics-and-plots.html#cb1-1" tabindex="-1"></a><span class="co"># Set up how the code chunks will print</span></span>
-<span id="cb1-2"><a href="correlation-statistics-and-plots.html#cb1-2" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="co"># Show the code</span></span>
-<span id="cb1-3"><a href="correlation-statistics-and-plots.html#cb1-3" tabindex="-1"></a>                      <span class="at">warning =</span> <span class="cn">FALSE</span>, <span class="co"># Hide the warnings</span></span>
-<span id="cb1-4"><a href="correlation-statistics-and-plots.html#cb1-4" tabindex="-1"></a>                      <span class="at">message =</span> <span class="cn">FALSE</span>) <span class="co"># Hide the messages</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="correlation-statistics-and-plots.html#cb17-1" tabindex="-1"></a><span class="co"># Set up how the code chunks will print</span></span>
+<span id="cb17-2"><a href="correlation-statistics-and-plots.html#cb17-2" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="co"># Show the code</span></span>
+<span id="cb17-3"><a href="correlation-statistics-and-plots.html#cb17-3" tabindex="-1"></a>                      <span class="at">warning =</span> <span class="cn">FALSE</span>, <span class="co"># Hide the warnings</span></span>
+<span id="cb17-4"><a href="correlation-statistics-and-plots.html#cb17-4" tabindex="-1"></a>                      <span class="at">message =</span> <span class="cn">FALSE</span>) <span class="co"># Hide the messages</span></span></code></pre></div>
 <div id="generate-data" class="section level3 unnumbered hasAnchor">
 <h3>Generate Data<a href="correlation-statistics-and-plots.html#generate-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="correlation-statistics-and-plots.html#cb2-1" tabindex="-1"></a><span class="co"># You must install packages before you can use them.</span></span>
-<span id="cb2-2"><a href="correlation-statistics-and-plots.html#cb2-2" tabindex="-1"></a><span class="co"># You only needd to install once per computer. </span></span>
-<span id="cb2-3"><a href="correlation-statistics-and-plots.html#cb2-3" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="correlation-statistics-and-plots.html#cb2-4" tabindex="-1"></a><span class="co"># install.packages(c(&quot;faux&quot;,&quot;tidyverse&quot;)) # Remove leading hashtag to run this line! </span></span>
-<span id="cb2-5"><a href="correlation-statistics-and-plots.html#cb2-5" tabindex="-1"></a></span>
-<span id="cb2-6"><a href="correlation-statistics-and-plots.html#cb2-6" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="correlation-statistics-and-plots.html#cb2-7" tabindex="-1"></a><span class="co"># Once the packages are installed, you can load them to your current R session using the library() command </span></span>
-<span id="cb2-8"><a href="correlation-statistics-and-plots.html#cb2-8" tabindex="-1"></a></span>
-<span id="cb2-9"><a href="correlation-statistics-and-plots.html#cb2-9" tabindex="-1"></a><span class="fu">library</span>(faux)</span>
-<span id="cb2-10"><a href="correlation-statistics-and-plots.html#cb2-10" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb2-11"><a href="correlation-statistics-and-plots.html#cb2-11" tabindex="-1"></a></span>
-<span id="cb2-12"><a href="correlation-statistics-and-plots.html#cb2-12" tabindex="-1"></a><span class="co"># Set a consistent start point for &quot;random&quot; data generation</span></span>
-<span id="cb2-13"><a href="correlation-statistics-and-plots.html#cb2-13" tabindex="-1"></a><span class="co"># Makes it so the output will be consistent</span></span>
-<span id="cb2-14"><a href="correlation-statistics-and-plots.html#cb2-14" tabindex="-1"></a></span>
-<span id="cb2-15"><a href="correlation-statistics-and-plots.html#cb2-15" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># Can be any value. </span></span>
-<span id="cb2-16"><a href="correlation-statistics-and-plots.html#cb2-16" tabindex="-1"></a></span>
-<span id="cb2-17"><a href="correlation-statistics-and-plots.html#cb2-17" tabindex="-1"></a></span>
-<span id="cb2-18"><a href="correlation-statistics-and-plots.html#cb2-18" tabindex="-1"></a><span class="co"># Generate data. Specify the number of rows, number of variables, means for the columns, sd&#39;s for the columns, and the correlation between the columns.</span></span>
-<span id="cb2-19"><a href="correlation-statistics-and-plots.html#cb2-19" tabindex="-1"></a></span>
-<span id="cb2-20"><a href="correlation-statistics-and-plots.html#cb2-20" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(<span class="at">n =</span> <span class="dv">85</span>, <span class="at">vars =</span> <span class="dv">2</span>, <span class="at">mu =</span> <span class="fu">c</span>(<span class="dv">65</span>,<span class="dv">100</span>), <span class="at">sd =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>), <span class="at">r =</span> <span class="sc">-</span><span class="fl">0.3</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="correlation-statistics-and-plots.html#cb18-1" tabindex="-1"></a><span class="co"># You must install packages before you can use them.</span></span>
+<span id="cb18-2"><a href="correlation-statistics-and-plots.html#cb18-2" tabindex="-1"></a><span class="co"># You only needd to install once per computer. </span></span>
+<span id="cb18-3"><a href="correlation-statistics-and-plots.html#cb18-3" tabindex="-1"></a></span>
+<span id="cb18-4"><a href="correlation-statistics-and-plots.html#cb18-4" tabindex="-1"></a><span class="co"># install.packages(c(&quot;faux&quot;,&quot;tidyverse&quot;)) # Remove leading hashtag to run this line! </span></span>
+<span id="cb18-5"><a href="correlation-statistics-and-plots.html#cb18-5" tabindex="-1"></a></span>
+<span id="cb18-6"><a href="correlation-statistics-and-plots.html#cb18-6" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="correlation-statistics-and-plots.html#cb18-7" tabindex="-1"></a><span class="co"># Once the packages are installed, you can load them to your current R session using the library() command </span></span>
+<span id="cb18-8"><a href="correlation-statistics-and-plots.html#cb18-8" tabindex="-1"></a></span>
+<span id="cb18-9"><a href="correlation-statistics-and-plots.html#cb18-9" tabindex="-1"></a><span class="fu">library</span>(faux)</span>
+<span id="cb18-10"><a href="correlation-statistics-and-plots.html#cb18-10" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb18-11"><a href="correlation-statistics-and-plots.html#cb18-11" tabindex="-1"></a></span>
+<span id="cb18-12"><a href="correlation-statistics-and-plots.html#cb18-12" tabindex="-1"></a><span class="co"># Set a consistent start point for &quot;random&quot; data generation</span></span>
+<span id="cb18-13"><a href="correlation-statistics-and-plots.html#cb18-13" tabindex="-1"></a><span class="co"># Makes it so the output will be consistent</span></span>
+<span id="cb18-14"><a href="correlation-statistics-and-plots.html#cb18-14" tabindex="-1"></a></span>
+<span id="cb18-15"><a href="correlation-statistics-and-plots.html#cb18-15" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># Can be any value. </span></span>
+<span id="cb18-16"><a href="correlation-statistics-and-plots.html#cb18-16" tabindex="-1"></a></span>
+<span id="cb18-17"><a href="correlation-statistics-and-plots.html#cb18-17" tabindex="-1"></a></span>
+<span id="cb18-18"><a href="correlation-statistics-and-plots.html#cb18-18" tabindex="-1"></a><span class="co"># Generate data. Specify the number of rows, number of variables, means for the columns, sd&#39;s for the columns, and the correlation between the columns.</span></span>
+<span id="cb18-19"><a href="correlation-statistics-and-plots.html#cb18-19" tabindex="-1"></a></span>
+<span id="cb18-20"><a href="correlation-statistics-and-plots.html#cb18-20" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(<span class="at">n =</span> <span class="dv">85</span>, <span class="at">vars =</span> <span class="dv">2</span>, <span class="at">mu =</span> <span class="fu">c</span>(<span class="dv">65</span>,<span class="dv">100</span>), <span class="at">sd =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>), <span class="at">r =</span> <span class="sc">-</span><span class="fl">0.3</span>)</span></code></pre></div>
 </div>
 <div id="check-out-the-data" class="section level3 unnumbered hasAnchor">
 <h3>Check out the data<a href="correlation-statistics-and-plots.html#check-out-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="correlation-statistics-and-plots.html#cb3-1" tabindex="-1"></a><span class="co"># Show me the first 6 rows of data: </span></span>
-<span id="cb3-2"><a href="correlation-statistics-and-plots.html#cb3-2" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="correlation-statistics-and-plots.html#cb19-1" tabindex="-1"></a><span class="co"># Show me the first 6 rows of data: </span></span>
+<span id="cb19-2"><a href="correlation-statistics-and-plots.html#cb19-2" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
 <pre><code>##         X1        X2
 ## 1 64.74322  90.80306
 ## 2 56.44198  93.49663
@@ -321,14 +330,14 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 ## 4 67.53304 101.96359
 ## 5 54.27693  98.64371
 ## 6 48.10980 122.44146</code></pre>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="correlation-statistics-and-plots.html#cb5-1" tabindex="-1"></a><span class="co"># Rename the columns to represent your variables </span></span>
-<span id="cb5-2"><a href="correlation-statistics-and-plots.html#cb5-2" tabindex="-1"></a><span class="fu">colnames</span>(data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Age&quot;</span>,<span class="st">&quot;IQ&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="correlation-statistics-and-plots.html#cb21-1" tabindex="-1"></a><span class="co"># Rename the columns to represent your variables </span></span>
+<span id="cb21-2"><a href="correlation-statistics-and-plots.html#cb21-2" tabindex="-1"></a><span class="fu">colnames</span>(data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Age&quot;</span>,<span class="st">&quot;IQ&quot;</span>)</span></code></pre></div>
 </div>
 <div id="check-the-correlation" class="section level3 unnumbered hasAnchor">
 <h3>Check the correlation<a href="correlation-statistics-and-plots.html#check-the-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="correlation-statistics-and-plots.html#cb6-1" tabindex="-1"></a><span class="co"># Check the correlation between the two columns </span></span>
-<span id="cb6-2"><a href="correlation-statistics-and-plots.html#cb6-2" tabindex="-1"></a><span class="co"># If you don&#39;t like it, play around with the value in set.seed until you are happy. </span></span>
-<span id="cb6-3"><a href="correlation-statistics-and-plots.html#cb6-3" tabindex="-1"></a><span class="fu">cor.test</span>(data<span class="sc">$</span>Age,data<span class="sc">$</span>IQ)</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="correlation-statistics-and-plots.html#cb22-1" tabindex="-1"></a><span class="co"># Check the correlation between the two columns </span></span>
+<span id="cb22-2"><a href="correlation-statistics-and-plots.html#cb22-2" tabindex="-1"></a><span class="co"># If you don&#39;t like it, play around with the value in set.seed until you are happy. </span></span>
+<span id="cb22-3"><a href="correlation-statistics-and-plots.html#cb22-3" tabindex="-1"></a><span class="fu">cor.test</span>(data<span class="sc">$</span>Age,data<span class="sc">$</span>IQ)</span></code></pre></div>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
 ## 
@@ -343,41 +352,41 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 </div>
 <div id="code-to-generate-a-basic-scatterplot" class="section level3 unnumbered hasAnchor">
 <h3>Code to generate a basic scatterplot:<a href="correlation-statistics-and-plots.html#code-to-generate-a-basic-scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="correlation-statistics-and-plots.html#cb8-1" tabindex="-1"></a>basic <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb8-2"><a href="correlation-statistics-and-plots.html#cb8-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> IQ))<span class="sc">+</span></span>
-<span id="cb8-3"><a href="correlation-statistics-and-plots.html#cb8-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb8-4"><a href="correlation-statistics-and-plots.html#cb8-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span>
-<span id="cb8-5"><a href="correlation-statistics-and-plots.html#cb8-5" tabindex="-1"></a></span>
-<span id="cb8-6"><a href="correlation-statistics-and-plots.html#cb8-6" tabindex="-1"></a><span class="co"># Save a high quality .png image</span></span>
-<span id="cb8-7"><a href="correlation-statistics-and-plots.html#cb8-7" tabindex="-1"></a><span class="do">## Default size is 7 inches x 7 seven inches</span></span>
-<span id="cb8-8"><a href="correlation-statistics-and-plots.html#cb8-8" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/scatter_1.png&quot;</span>,basic, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
-<span id="cb8-9"><a href="correlation-statistics-and-plots.html#cb8-9" tabindex="-1"></a></span>
-<span id="cb8-10"><a href="correlation-statistics-and-plots.html#cb8-10" tabindex="-1"></a><span class="co"># Call back the high quality image </span></span>
-<span id="cb8-11"><a href="correlation-statistics-and-plots.html#cb8-11" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/scatter_1.png&quot;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="correlation-statistics-and-plots.html#cb24-1" tabindex="-1"></a>basic <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb24-2"><a href="correlation-statistics-and-plots.html#cb24-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> IQ))<span class="sc">+</span></span>
+<span id="cb24-3"><a href="correlation-statistics-and-plots.html#cb24-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb24-4"><a href="correlation-statistics-and-plots.html#cb24-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span>
+<span id="cb24-5"><a href="correlation-statistics-and-plots.html#cb24-5" tabindex="-1"></a></span>
+<span id="cb24-6"><a href="correlation-statistics-and-plots.html#cb24-6" tabindex="-1"></a><span class="co"># Save a high quality .png image</span></span>
+<span id="cb24-7"><a href="correlation-statistics-and-plots.html#cb24-7" tabindex="-1"></a><span class="do">## Default size is 7 inches x 7 seven inches</span></span>
+<span id="cb24-8"><a href="correlation-statistics-and-plots.html#cb24-8" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/scatter_1.png&quot;</span>,basic, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb24-9"><a href="correlation-statistics-and-plots.html#cb24-9" tabindex="-1"></a></span>
+<span id="cb24-10"><a href="correlation-statistics-and-plots.html#cb24-10" tabindex="-1"></a><span class="co"># Call back the high quality image </span></span>
+<span id="cb24-11"><a href="correlation-statistics-and-plots.html#cb24-11" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/scatter_1.png&quot;</span>)</span></code></pre></div>
 <p><img src="Figs/scatter_1.png" width="1050" /></p>
 </div>
 <div id="a-fancier-better-looking-scatterplot" class="section level3 unnumbered hasAnchor">
 <h3>A fancier, better looking scatterplot:<a href="correlation-statistics-and-plots.html#a-fancier-better-looking-scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="correlation-statistics-and-plots.html#cb9-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
-<span id="cb9-2"><a href="correlation-statistics-and-plots.html#cb9-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> IQ))<span class="sc">+</span></span>
-<span id="cb9-3"><a href="correlation-statistics-and-plots.html#cb9-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">colour =</span> <span class="st">&quot;#800020&quot;</span>)<span class="sc">+</span></span>
-<span id="cb9-4"><a href="correlation-statistics-and-plots.html#cb9-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">colour=</span><span class="st">&quot;#800020&quot;</span>, <span class="at">fill=</span><span class="st">&quot;#800020&quot;</span>)<span class="sc">+</span></span>
-<span id="cb9-5"><a href="correlation-statistics-and-plots.html#cb9-5" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
-<span id="cb9-6"><a href="correlation-statistics-and-plots.html#cb9-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>))<span class="sc">+</span></span>
-<span id="cb9-7"><a href="correlation-statistics-and-plots.html#cb9-7" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb9-8"><a href="correlation-statistics-and-plots.html#cb9-8" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Age of Participants&quot;</span>,</span>
-<span id="cb9-9"><a href="correlation-statistics-and-plots.html#cb9-9" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;IQ Score&quot;</span>,</span>
-<span id="cb9-10"><a href="correlation-statistics-and-plots.html#cb9-10" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relationship Between Age and IQ&quot;</span></span>
-<span id="cb9-11"><a href="correlation-statistics-and-plots.html#cb9-11" tabindex="-1"></a>  )<span class="sc">+</span></span>
-<span id="cb9-12"><a href="correlation-statistics-and-plots.html#cb9-12" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">30</span>,<span class="dv">90</span>)<span class="sc">+</span></span>
-<span id="cb9-13"><a href="correlation-statistics-and-plots.html#cb9-13" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">60</span>,<span class="dv">140</span>)</span>
-<span id="cb9-14"><a href="correlation-statistics-and-plots.html#cb9-14" tabindex="-1"></a></span>
-<span id="cb9-15"><a href="correlation-statistics-and-plots.html#cb9-15" tabindex="-1"></a><span class="co"># Save the chart once you&#39;re happy with it as a high quality .png image</span></span>
-<span id="cb9-16"><a href="correlation-statistics-and-plots.html#cb9-16" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;JLB_graph.png&quot;</span>,a,<span class="at">height=</span><span class="dv">4</span>,<span class="at">width=</span><span class="dv">4</span>,<span class="at">dpi =</span> <span class="dv">300</span>)</span>
-<span id="cb9-17"><a href="correlation-statistics-and-plots.html#cb9-17" tabindex="-1"></a></span>
-<span id="cb9-18"><a href="correlation-statistics-and-plots.html#cb9-18" tabindex="-1"></a><span class="co"># Add in the high quality image saved above </span></span>
-<span id="cb9-19"><a href="correlation-statistics-and-plots.html#cb9-19" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;JLB_graph.png&quot;</span>)</span></code></pre></div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-7"></span>
+<div class="sourceCode" id="cb25"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb25-1"><a href="correlation-statistics-and-plots.html#cb25-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb25-2"><a href="correlation-statistics-and-plots.html#cb25-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> IQ))<span class="sc">+</span></span>
+<span id="cb25-3"><a href="correlation-statistics-and-plots.html#cb25-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">colour =</span> <span class="st">&quot;#800020&quot;</span>)<span class="sc">+</span></span>
+<span id="cb25-4"><a href="correlation-statistics-and-plots.html#cb25-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">colour=</span><span class="st">&quot;#800020&quot;</span>, <span class="at">fill=</span><span class="st">&quot;#800020&quot;</span>)<span class="sc">+</span></span>
+<span id="cb25-5"><a href="correlation-statistics-and-plots.html#cb25-5" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb25-6"><a href="correlation-statistics-and-plots.html#cb25-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>))<span class="sc">+</span></span>
+<span id="cb25-7"><a href="correlation-statistics-and-plots.html#cb25-7" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb25-8"><a href="correlation-statistics-and-plots.html#cb25-8" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Age of Participants&quot;</span>,</span>
+<span id="cb25-9"><a href="correlation-statistics-and-plots.html#cb25-9" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;IQ Score&quot;</span>,</span>
+<span id="cb25-10"><a href="correlation-statistics-and-plots.html#cb25-10" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relationship Between Age and IQ&quot;</span></span>
+<span id="cb25-11"><a href="correlation-statistics-and-plots.html#cb25-11" tabindex="-1"></a>  )<span class="sc">+</span></span>
+<span id="cb25-12"><a href="correlation-statistics-and-plots.html#cb25-12" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">30</span>,<span class="dv">90</span>)<span class="sc">+</span></span>
+<span id="cb25-13"><a href="correlation-statistics-and-plots.html#cb25-13" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">60</span>,<span class="dv">140</span>)</span>
+<span id="cb25-14"><a href="correlation-statistics-and-plots.html#cb25-14" tabindex="-1"></a></span>
+<span id="cb25-15"><a href="correlation-statistics-and-plots.html#cb25-15" tabindex="-1"></a><span class="co"># Save the chart once you&#39;re happy with it as a high quality .png image</span></span>
+<span id="cb25-16"><a href="correlation-statistics-and-plots.html#cb25-16" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;JLB_graph.png&quot;</span>,a,<span class="at">height=</span><span class="dv">4</span>,<span class="at">width=</span><span class="dv">4</span>,<span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb25-17"><a href="correlation-statistics-and-plots.html#cb25-17" tabindex="-1"></a></span>
+<span id="cb25-18"><a href="correlation-statistics-and-plots.html#cb25-18" tabindex="-1"></a><span class="co"># Add in the high quality image saved above </span></span>
+<span id="cb25-19"><a href="correlation-statistics-and-plots.html#cb25-19" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;JLB_graph.png&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-15"></span>
 <img src="JLB_graph.png" alt="ADD A FIGURE CAPTION HERE" width="600" />
 <p class="caption">
 Figure 4.1: ADD A FIGURE CAPTION HERE

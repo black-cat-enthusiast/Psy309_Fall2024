@@ -1,0 +1,189 @@
+---
+title: "Code for Practical 3"
+author: "JLB"
+date: "2024-10-02"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Code For Practical #3 {-}
+
+```{r,include=TRUE}
+# this is the "setup" chunk. Info here will apply to all code blocks in the document. 
+knitr::opts_chunk$set(echo = TRUE, # Show the code
+                      warning = FALSE, # Hide warnings from R
+                      message = FALSE) # Hide messages from R
+```
+
+```{r}
+# step 1 install packages 
+## Do once per computer
+
+# install.packages(c("tidyverse","reshape2"))
+
+# Call the packages 
+## Do this every session
+
+library(tidyverse) # Call the tidyverse
+library(reshape2) # Call reshape2 (for the "melt" function)
+```
+
+### Object-oriented programming {-}
+
+Examples of how Rstudio can be used to assign single values, lists of values, or 2-D arrays of Data. 
+
+```{r}
+# Notes 
+
+# text will cause problems 
+
+# First example 
+
+67 * 88
+
+# Object-oriented programming 
+
+a <- 67 * 88 # Assign the result of the function onto the object "a"
+
+# Example 2 
+
+b <- c(1,2,3,4,5) # Assign a list onto the object "b"
+
+# Example 3 - DATA FAME 
+
+c <- data.frame( # Assign a 2-D data frame onto the object "c"
+  ID = c(1,2,3,4,5), 
+  Score = c(100,110,90,95,107)
+)
+```
+
+### Random number generation {-}
+
+```{r}
+set.seed(123) # Beginning of the random process
+
+d <- data.frame(
+  ID = c(1:100), # 100 IDs
+  Score = runif(n=100,min=1,max=10) # 100 random scores
+)
+
+head(d) # show me the first 6 rows
+tail(d) # show me the last 6 rows
+
+# Make a quick histogram of the data
+histogram <- d %>%
+  ggplot(aes(x=Score))+
+  geom_histogram(bins = 8, alpha=0.2, colour = "black")+
+  theme_classic()
+
+# Save the histogram as a high quality .png image
+ggsave("Figs/hist_1.png",histogram,height = 2.5, width = 5, dpi = 300)
+
+# Call back the high quality image 
+knitr::include_graphics("Figs/hist_1.png")
+```
+
+
+### Sample from the normal distribution {-}
+
+```{r}
+e <- data.frame(
+  ID = c(1:100),
+  Score = rnorm(n = 100, mean = 100, sd = 15) # sample from normal distribution
+)
+
+# Generate the chart
+histogram <- e %>%
+  ggplot(aes(x=Score))+
+  geom_histogram(bins = 8, alpha=0.2, colour = "black")+
+  theme_classic()
+
+# Save the histogram as a high quality .png image
+ggsave("Figs/hist_2.png",histogram,height = 2.5, width = 5, dpi = 300)
+
+# Call back the high quality image 
+knitr::include_graphics("Figs/hist_2.png")
+```
+
+### Sampling from a list of values {-}
+
+```{r}
+# Example 1: sample randomly from the values 1:7
+f <- data.frame(
+  ID = c(1:100),
+  Score = sample(x=c(1:7),size=100,replace = TRUE)
+)
+
+
+# Example 2: set the probabilities for the possible responses
+Prob_info <- c(0.02, 0.03, 0.05, 0.1, 0.1, 0.4, 0.4)
+
+g <- data.frame(
+  ID = c(1:100),
+  Score = sample(x=c(1:7),size=100,replace = TRUE,prob = Prob_info) # use prob info
+)
+
+# Generate the chart
+histogram <- g %>%
+  ggplot(aes(x=Score))+
+  geom_histogram(bins = 7, alpha=0.2, colour = "black")+
+  theme_classic()+
+  scale_x_continuous(breaks=c(1:7))
+
+# Save the histogram as a high quality .png image
+ggsave("Figs/hist_3.png",histogram,height = 2.5, width = 5, dpi = 300)
+
+# Call back the high quality image 
+knitr::include_graphics("Figs/hist_3.png")
+```
+
+### Example of a complete dataset {-}
+
+```{r}
+# Make data for a ctl group
+Control_group <- data.frame(
+  ID = c(1:100),
+  Condition = "Placebo",
+  Baseline_IQ = rnorm(n=100,mean=100,sd=15),
+  Post_IQ = rnorm(n=100,mean=100,sd=15)
+)
+
+# And experimental data with the exact same column headers
+Experimental_group <- data.frame(
+  ID = c(101:200),
+  Condition = "Drug",
+  Baseline_IQ = rnorm(n=100,mean=100,sd=15),
+  Post_IQ = rnorm(n=100,mean=130,sd=15)
+)
+
+# attach them together
+JLB_data <- rbind(Control_group,Experimental_group)
+```
+
+### Aggregate table of data {-}
+
+```{r}
+# An example of "tidy text" (from the tidyverse):
+table <- JLB_data %>% # Take the data AND THEN
+  melt(id.vars = c("ID","Condition")) %>% # Switch to long form AND THEN
+  group_by(Condition,variable) %>% # Group by the IVs
+  summarise( # Calculate descriptive stats
+    n = n(),
+    mean = mean(value),
+    sd = sd(value),
+    min = min(value),
+    max = max(value)
+  ) %>% mutate(se = sd / sqrt(n)) # Create a column for SE, and compute it
+
+# Rename the columns for a better looking table
+colnames(table) <- c("Condition","Timepoint","n","mean","sd","min","max","se")
+
+# a regular table
+table
+
+# a pretty table 
+knitr::kable(table)
+```

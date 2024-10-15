@@ -17,6 +17,13 @@ h2:experiments-manipulating-independent-variables 1. Experiments: Manipulating I
 h2:proposed-magnitude-of-the-effect-of-your-iv-on-the-dv 2. Proposed Magnitude of the effect of your IV on the DV
 h2:connect-the-theory-to-computation-in-r 3. Connect the theory to computation in R!
 h2:reflect-2 4. Reflect
+h2:code-for-practical-3 Code For Practical #3
+h3:object-oriented-programming Object-oriented programming
+h3:random-number-generation Random number generation
+h3:sample-from-the-normal-distribution Sample from the normal distribution
+h3:sampling-from-a-list-of-values Sampling from a list of values
+h3:example-of-a-complete-dataset Example of a complete dataset
+h3:aggregate-table-of-data Aggregate table of data
 h1:correlation-statistics-and-plots Correlation Statistics and Plots
 h2:thinking-about-association 1. Thinking About Association
 h2:what-is-already-known-about-these-varaibles 2. What is already known about these varaibles?
