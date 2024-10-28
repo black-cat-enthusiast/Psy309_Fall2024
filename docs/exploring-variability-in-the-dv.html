@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Practical #4 Exploring Variability in the DV | A book of Practical Assignments for Psy309 at UTM Fall 2024</title>
+  <meta name="description" content="This is an organized index of the 5 practical assignments and the final writing project that PSY309 students at UTM will complete during the Fall 2024 semester." />
+  <meta name="generator" content="bookdown 0.40 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Practical #4 Exploring Variability in the DV | A book of Practical Assignments for Psy309 at UTM Fall 2024" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="This is an organized index of the 5 practical assignments and the final writing project that PSY309 students at UTM will complete during the Fall 2024 semester." />
+  <meta name="github-repo" content="rstudio/bookdown-demo" />
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Practical #4 Exploring Variability in the DV | A book of Practical Assignments for Psy309 at UTM Fall 2024" />
+  
+  <meta name="twitter:description" content="This is an organized index of the 5 practical assignments and the final writing project that PSY309 students at UTM will complete during the Fall 2024 semester." />
+  
+
+
+
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="magnitude-of-manipulations.html"/>
+<link rel="next" href="connecting-the-iv-and-covariate.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">Psy309 Computational Assignments</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About</a></li>
+<li class="chapter" data-level="1" data-path="asking-scientific-questions-and-literature-review.html"><a href="asking-scientific-questions-and-literature-review.html"><i class="fa fa-check"></i><b>1</b> Asking Scientific Questions and Literature Review</a>
+<ul>
+<li class="chapter" data-level="" data-path="asking-scientific-questions-and-literature-review.html"><a href="asking-scientific-questions-and-literature-review.html#overview"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="asking-scientific-questions-and-literature-review.html"><a href="asking-scientific-questions-and-literature-review.html#choose-a-reasearch-topic-in-psychology"><i class="fa fa-check"></i>1. Choose a Reasearch Topic in Psychology</a></li>
+<li class="chapter" data-level="" data-path="asking-scientific-questions-and-literature-review.html"><a href="asking-scientific-questions-and-literature-review.html#see-whats-out-there"><i class="fa fa-check"></i>2. See What’s Out There</a></li>
+<li class="chapter" data-level="" data-path="asking-scientific-questions-and-literature-review.html"><a href="asking-scientific-questions-and-literature-review.html#reflect"><i class="fa fa-check"></i>3. Reflect</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="exploring-types-of-measurement-in-research.html"><a href="exploring-types-of-measurement-in-research.html"><i class="fa fa-check"></i><b>2</b> Exploring Types of Measurement in Research</a>
+<ul>
+<li class="chapter" data-level="" data-path="exploring-types-of-measurement-in-research.html"><a href="exploring-types-of-measurement-in-research.html#identify-dependent-variables"><i class="fa fa-check"></i>1. Identify dependent variable(s)</a></li>
+<li class="chapter" data-level="" data-path="exploring-types-of-measurement-in-research.html"><a href="exploring-types-of-measurement-in-research.html#identify-claims-made-by-the-paper"><i class="fa fa-check"></i>2. Identify claim(s) made by the paper</a></li>
+<li class="chapter" data-level="" data-path="exploring-types-of-measurement-in-research.html"><a href="exploring-types-of-measurement-in-research.html#critically-evaluate-the-measuement-approach"><i class="fa fa-check"></i>3. Critically Evaluate the Measuement Approach</a></li>
+<li class="chapter" data-level="" data-path="exploring-types-of-measurement-in-research.html"><a href="exploring-types-of-measurement-in-research.html#develop-a-research-idea"><i class="fa fa-check"></i>4. Develop a Research Idea</a></li>
+<li class="chapter" data-level="" data-path="exploring-types-of-measurement-in-research.html"><a href="exploring-types-of-measurement-in-research.html#reflect-1"><i class="fa fa-check"></i>5. Reflect</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html"><i class="fa fa-check"></i><b>3</b> Magnitude of Manipulations</a>
+<ul>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#experiments-manipulating-independent-variables"><i class="fa fa-check"></i>1. Experiments: Manipulating Independent Variable(s)</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#proposed-magnitude-of-the-effect-of-your-iv-on-the-dv"><i class="fa fa-check"></i>2. Proposed Magnitude of the effect of your IV on the DV</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#connect-the-theory-to-computation-in-r"><i class="fa fa-check"></i>3. Connect the theory to computation in R!</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#reflect-2"><i class="fa fa-check"></i>4. Reflect</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#code-for-practical-3"><i class="fa fa-check"></i>Code For Practical #3</a>
+<ul>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#object-oriented-programming"><i class="fa fa-check"></i>Object-oriented programming</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#random-number-generation"><i class="fa fa-check"></i>Random number generation</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#sample-from-the-normal-distribution"><i class="fa fa-check"></i>Sample from the normal distribution</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#sampling-from-a-list-of-values"><i class="fa fa-check"></i>Sampling from a list of values</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#example-of-a-complete-dataset"><i class="fa fa-check"></i>Example of a complete dataset</a></li>
+<li class="chapter" data-level="" data-path="magnitude-of-manipulations.html"><a href="magnitude-of-manipulations.html#aggregate-table-of-data"><i class="fa fa-check"></i>Aggregate table of data</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="exploring-variability-in-the-dv.html"><a href="exploring-variability-in-the-dv.html"><i class="fa fa-check"></i><b>4</b> Exploring Variability in the DV</a>
+<ul>
+<li class="chapter" data-level="" data-path="exploring-variability-in-the-dv.html"><a href="exploring-variability-in-the-dv.html#connecting-covariates-to-you-dependent-variable-of-interest"><i class="fa fa-check"></i>1. Connecting covariates to you dependent variable of interest</a></li>
+<li class="chapter" data-level="" data-path="exploring-variability-in-the-dv.html"><a href="exploring-variability-in-the-dv.html#what-is-already-known-about-these-varaibles"><i class="fa fa-check"></i>2. What is already known about these varaibles?</a></li>
+<li class="chapter" data-level="" data-path="exploring-variability-in-the-dv.html"><a href="exploring-variability-in-the-dv.html#power-analysis-what-sample-size-should-you-use"><i class="fa fa-check"></i>3. Power Analysis: what sample size should you use?</a></li>
+<li class="chapter" data-level="" data-path="exploring-variability-in-the-dv.html"><a href="exploring-variability-in-the-dv.html#a-picture-is-worth-1000-words"><i class="fa fa-check"></i>4. A picture is worth 1000 words…</a></li>
+<li class="chapter" data-level="" data-path="exploring-variability-in-the-dv.html"><a href="exploring-variability-in-the-dv.html#reflect-3"><i class="fa fa-check"></i>5. Reflect</a></li>
+<li class="chapter" data-level="" data-path="exploring-variability-in-the-dv.html"><a href="exploring-variability-in-the-dv.html#code-for-practical-4"><i class="fa fa-check"></i>Code for Practical #4</a>
+<ul>
+<li class="chapter" data-level="" data-path="exploring-variability-in-the-dv.html"><a href="exploring-variability-in-the-dv.html#generate-data"><i class="fa fa-check"></i>Generate Data</a></li>
+<li class="chapter" data-level="" data-path="exploring-variability-in-the-dv.html"><a href="exploring-variability-in-the-dv.html#check-out-the-data"><i class="fa fa-check"></i>Check out the data</a></li>
+<li class="chapter" data-level="" data-path="exploring-variability-in-the-dv.html"><a href="exploring-variability-in-the-dv.html#check-the-correlation"><i class="fa fa-check"></i>Check the correlation</a></li>
+<li class="chapter" data-level="" data-path="exploring-variability-in-the-dv.html"><a href="exploring-variability-in-the-dv.html#compute-a-simple-linear-regression"><i class="fa fa-check"></i>Compute a simple linear regression</a></li>
+<li class="chapter" data-level="" data-path="exploring-variability-in-the-dv.html"><a href="exploring-variability-in-the-dv.html#code-to-generate-a-basic-scatterplot"><i class="fa fa-check"></i>Code to generate a basic scatterplot:</a></li>
+<li class="chapter" data-level="" data-path="exploring-variability-in-the-dv.html"><a href="exploring-variability-in-the-dv.html#a-fancier-better-looking-scatterplot"><i class="fa fa-check"></i>A fancier, better looking scatterplot:</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html"><i class="fa fa-check"></i><b>5</b> Connecting the IV and Covariate</a>
+<ul>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#thinking-about-causality"><i class="fa fa-check"></i>1. Thinking About Causality</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#what-is-already-known"><i class="fa fa-check"></i>2. What is already known?</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#connect-the-theory-of-the-iv-dv-relationship-to-your-proposed-covariate."><i class="fa fa-check"></i>3. Connect the theory of the IV-DV relationship to your proposed covariate.</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#transform-the-continuous-covariate-to-a-categorical-variable"><i class="fa fa-check"></i>4. Transform the continuous covariate to a categorical variable</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#reflect-4"><i class="fa fa-check"></i>5. Reflect</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#code-for-practical-5"><i class="fa fa-check"></i>Code for Practical #5</a>
+<ul>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#generate-data-1"><i class="fa fa-check"></i>Generate data</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#transform"><i class="fa fa-check"></i>Transform</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#make-a-bar-graph"><i class="fa fa-check"></i>Make a Bar Graph</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#analyze"><i class="fa fa-check"></i>Analyze</a></li>
+<li class="chapter" data-level="" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#category-exmaple"><i class="fa fa-check"></i>3-category exmaple</a></li>
+<li class="chapter" data-level="5.0.1" data-path="connecting-the-iv-and-covariate.html"><a href="connecting-the-iv-and-covariate.html#analyze-3-category-example"><i class="fa fa-check"></i><b>5.0.1</b> Analyze 3-category example</a></li>
+</ul></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html"><i class="fa fa-check"></i>Capstone Project: A Simulated Research Paper</a>
+<ul>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#overview-1"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#methods"><i class="fa fa-check"></i>Methods</a></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#results"><i class="fa fa-check"></i>Results</a>
+<ul>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#correlation-analysis"><i class="fa fa-check"></i>Correlation Analysis</a></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#one-way-analysis"><i class="fa fa-check"></i>One-Way Analysis</a></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#factorial-anova"><i class="fa fa-check"></i>Factorial ANOVA</a></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#follow-up-pair-wise-comparisons"><i class="fa fa-check"></i>Follow up pair-wise comparisons</a></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#linear-regression"><i class="fa fa-check"></i>Linear Regression</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#discussion"><i class="fa fa-check"></i>Discussion</a>
+<ul>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#conclusions"><i class="fa fa-check"></i>Conclusions</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="capstone-project-a-simulated-research-paper.html"><a href="capstone-project-a-simulated-research-paper.html#references"><i class="fa fa-check"></i>References</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html"><i class="fa fa-check"></i>TA Responsibilities</a>
+<ul>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#overview-2"><i class="fa fa-check"></i>Overview</a></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#course-deliverables"><i class="fa fa-check"></i>Course Deliverables</a>
+<ul>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#x-3-practical-assignments"><i class="fa fa-check"></i>1. 5x 3% “Practical” assignments</a></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#x-25-tests"><i class="fa fa-check"></i>2. 2x 25% Tests</a></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#poster-presentation"><i class="fa fa-check"></i>3. 5% Poster Presentation</a></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#paper"><i class="fa fa-check"></i>3. 20% Paper</a></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#in-class-participation"><i class="fa fa-check"></i>4. 10% In-class participation</a></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#ta-student-contact"><i class="fa fa-check"></i>TA Student contact</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#course-responsibilities"><i class="fa fa-check"></i>Course Responsibilities</a>
+<ul>
+<li class="chapter" data-level="" data-path="ta-responsibilities.html"><a href="ta-responsibilities.html#reminders"><i class="fa fa-check"></i>Reminders</a></li>
+</ul></li>
+</ul></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">A book of Practical Assignments for Psy309 at UTM Fall 2024</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="exploring-variability-in-the-dv" class="section level1 hasAnchor" number="4">
+<h1><span class="header-section-number">Practical #4</span> Exploring Variability in the DV<a href="exploring-variability-in-the-dv.html#exploring-variability-in-the-dv" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p><em>Please submit a single document for practical #4. A .docx file is the preferred format.</em></p>
+<div id="connecting-covariates-to-you-dependent-variable-of-interest" class="section level2 unnumbered hasAnchor">
+<h2>1. Connecting covariates to you dependent variable of interest<a href="exploring-variability-in-the-dv.html#connecting-covariates-to-you-dependent-variable-of-interest" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>By this point, you’ve had a chance to develop your ideas around how to measure a construct within your research topic of interest. The simplest thing to do with such information is just to report its properties, like the average grade in a class, or frequencies, like how many people sign up for different classes. These are known as descriptive statistics.</p>
+<p>But if we want to go further and understand why the world is the way that it is, we may try to see how things we can measure are linked together. If we are going to observe more than one variable of interest and see how closely linked these variables are, we are beginning to engage association claims, which often involves a <em>correlational</em> approach. When one variable is correlated with another variable of interest, we call it a <em>covariate</em>.</p>
+<p>For your topic of interest, <strong>describe a second construct / covariate that you suspect is linked (either positively or negatively) to your dependent variable of interest</strong>. What is your reasoning for selecting this variable? Is there an obvious reason that it is relevant, or, even better- is it mentioned as being related in the research literature? <strong>In a short paragraph (3-5 sentences), describe:</strong></p>
+<ul>
+<li>Discuss your idea for why the two variables might be related.</li>
+<li>Be clear if the proposed relationship is positive or negative, and speculate about the strength.</li>
+</ul>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-9"></span>
+<img src="Figs/strength.jpg" alt="Figure 1. A reminder about the data patterns that correspond to various correlation coefficients"  />
+<p class="caption">
+Figure 4.1: Figure 1. A reminder about the data patterns that correspond to various correlation coefficients
+</p>
+</div>
+<ul>
+<li>Provide an in-text citation to (at least) one peer-reviewed article that shows that the constructs might be related.
+<ul>
+<li>If there is no direct evidence or reporting of this relationship, then cite an article that shows that show some sort of peripheral evidence that could support the relationship that you are proposing.</li>
+</ul></li>
+<li>Below the paragraph, provide an APA style reference to the paper that you cited.</li>
+</ul>
+</div>
+<div id="what-is-already-known-about-these-varaibles" class="section level2 unnumbered hasAnchor">
+<h2>2. What is already known about these varaibles?<a href="exploring-variability-in-the-dv.html#what-is-already-known-about-these-varaibles" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Write a paragraph or two describing what we know about your proposed DV and covariate</strong>. What direction are the proposed associations? In this section, you should cite at least 2 empirical, peer-reviewed papers that help you to estimate the expected association size, using APA format (minus hanging indents) and including the full references below the paragraph(s).</p>
+<p>Most importantly, we need to get specific about the expect association value. In your brief literature review, please report any measure of association, which will often be a correlation (r) or beta estimate (b), along with some interpretation of the effect size involved. Effect sizes can be described by specific effect size statistics like cohen’s d or partial eta squared, or they could be describe by confidence intervals.</p>
+<p>If you cannot find any reports of correlation values in the literature, then you will have to argue from theory about your predicted effect size:</p>
+<p><img src="Figs/effect_size.jpg" /><!-- --></p>
+<p>Please note that finding correlations &gt;.30 (or &lt; -.30) is rare in a lot of psychology (especially human research; animal studies tend to yield larger effect sizes), so you will need to justify the effect size you expect to find.</p>
+</div>
+<div id="power-analysis-what-sample-size-should-you-use" class="section level2 unnumbered hasAnchor">
+<h2>3. Power Analysis: what sample size should you use?<a href="exploring-variability-in-the-dv.html#power-analysis-what-sample-size-should-you-use" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Use an online calculator (LINK: <a href="https://homepage.univie.ac.at/robin.ristl/samplesize.php?test=correlation" class="uri">https://homepage.univie.ac.at/robin.ristl/samplesize.php?test=correlation</a>) to determine the sample size needed to meet statistical significance at a = 0.05 and beta = 0.8 given the estimated correlation that you derived from your literature search. Explain what values you entered in the calculator, and what number of participants the calculator indicated would be sufficient to detect statistical significance.</p>
+<p><strong><em>For this portion of the assignment, make sure that you have your code blocks set to <code>echo = TRUE, message = FALSE, warning = FALSE</code>.</em></strong> This will print the code and the result, but not excessive the messages that R sends.</p>
+<p><strong>Simulate</strong> two columns of data using the <code>rnorm_multi()</code> function from the <code>faux</code> package to represent your DV and covariate. Use the sample size that you determined was required for adequate power.</p>
+<p><strong>Analyze</strong> the linear relationship between the two variables using both the <code>cor.test()</code> function and the <code>lm()</code> function. Write two separate statements that highlight the unique information gained from each analysis approach.</p>
+</div>
+<div id="a-picture-is-worth-1000-words" class="section level2 unnumbered hasAnchor">
+<h2>4. A picture is worth 1000 words…<a href="exploring-variability-in-the-dv.html#a-picture-is-worth-1000-words" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p><strong>Generate</strong> a ggplot (scatterplot) of the data with a linear line of best fit. You can format this graph in any way that you see fit. Feel free to be creative! Every element of this chart can be tweaked to your specifications. Feel free to <code>Google</code> how to change specific aesthetics.</p>
+<p><strong>Save</strong> the ggplot as a high-quality .png image (<code>dpi = 300</code>).</p>
+<p><strong>Call back</strong> the image that you saved to showcase your simulated data in picture form, and add a figure caption to describe the relationship that you have depicted in the chart.!</p>
+</div>
+<div id="reflect-3" class="section level2 unnumbered hasAnchor">
+<h2>5. Reflect<a href="exploring-variability-in-the-dv.html#reflect-3" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>Write a closing paragraph (3-5 sentences) summarizing what it is like trying to estimate an association / correlation from the literature. What did you think about creating your first data visualization using R? Were you surprised by the number of participants required to detect your effect with 80% power? Feeling confused about any of these concepts? Is there anything that would have improved your experience doing this assignment?</p>
+</div>
+<div id="code-for-practical-4" class="section level2 unnumbered hasAnchor">
+<h2>Code for Practical #4<a href="exploring-variability-in-the-dv.html#code-for-practical-4" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="exploring-variability-in-the-dv.html#cb17-1" tabindex="-1"></a><span class="co"># Set up how the code chunks will print</span></span>
+<span id="cb17-2"><a href="exploring-variability-in-the-dv.html#cb17-2" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="co"># Show the code</span></span>
+<span id="cb17-3"><a href="exploring-variability-in-the-dv.html#cb17-3" tabindex="-1"></a>                      <span class="at">warning =</span> <span class="cn">FALSE</span>, <span class="co"># Hide the warnings</span></span>
+<span id="cb17-4"><a href="exploring-variability-in-the-dv.html#cb17-4" tabindex="-1"></a>                      <span class="at">message =</span> <span class="cn">FALSE</span>) <span class="co"># Hide the messages</span></span>
+<span id="cb17-5"><a href="exploring-variability-in-the-dv.html#cb17-5" tabindex="-1"></a></span>
+<span id="cb17-6"><a href="exploring-variability-in-the-dv.html#cb17-6" tabindex="-1"></a><span class="fu">options</span>(<span class="at">scipen=</span><span class="dv">999</span>) <span class="co"># turn off scientific notation</span></span>
+<span id="cb17-7"><a href="exploring-variability-in-the-dv.html#cb17-7" tabindex="-1"></a></span>
+<span id="cb17-8"><a href="exploring-variability-in-the-dv.html#cb17-8" tabindex="-1"></a><span class="co"># You must install packages before you can use them.</span></span>
+<span id="cb17-9"><a href="exploring-variability-in-the-dv.html#cb17-9" tabindex="-1"></a><span class="co"># You only needd to install once per computer. </span></span>
+<span id="cb17-10"><a href="exploring-variability-in-the-dv.html#cb17-10" tabindex="-1"></a></span>
+<span id="cb17-11"><a href="exploring-variability-in-the-dv.html#cb17-11" tabindex="-1"></a><span class="co"># install.packages(c(&quot;faux&quot;,&quot;tidyverse&quot;)) # Remove leading hashtag to run this line! </span></span>
+<span id="cb17-12"><a href="exploring-variability-in-the-dv.html#cb17-12" tabindex="-1"></a></span>
+<span id="cb17-13"><a href="exploring-variability-in-the-dv.html#cb17-13" tabindex="-1"></a><span class="co"># Once the packages are installed, you can load them to your current R session using the library() command </span></span>
+<span id="cb17-14"><a href="exploring-variability-in-the-dv.html#cb17-14" tabindex="-1"></a></span>
+<span id="cb17-15"><a href="exploring-variability-in-the-dv.html#cb17-15" tabindex="-1"></a><span class="fu">library</span>(faux)</span>
+<span id="cb17-16"><a href="exploring-variability-in-the-dv.html#cb17-16" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div id="generate-data" class="section level3 unnumbered hasAnchor">
+<h3>Generate Data<a href="exploring-variability-in-the-dv.html#generate-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="exploring-variability-in-the-dv.html#cb18-1" tabindex="-1"></a><span class="co"># Set a consistent start point for &quot;random&quot; data generation</span></span>
+<span id="cb18-2"><a href="exploring-variability-in-the-dv.html#cb18-2" tabindex="-1"></a><span class="co"># Makes it so the output will be consistent</span></span>
+<span id="cb18-3"><a href="exploring-variability-in-the-dv.html#cb18-3" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>) <span class="co"># Can be any value. </span></span>
+<span id="cb18-4"><a href="exploring-variability-in-the-dv.html#cb18-4" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="exploring-variability-in-the-dv.html#cb18-5" tabindex="-1"></a><span class="co"># Generate data. Specify the number of rows, number of variables, means for the columns, sd&#39;s for the columns, and the correlation between the columns.</span></span>
+<span id="cb18-6"><a href="exploring-variability-in-the-dv.html#cb18-6" tabindex="-1"></a></span>
+<span id="cb18-7"><a href="exploring-variability-in-the-dv.html#cb18-7" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(<span class="at">n =</span> <span class="dv">85</span>, <span class="at">vars =</span> <span class="dv">2</span>, <span class="at">mu =</span> <span class="fu">c</span>(<span class="dv">65</span>,<span class="dv">100</span>), <span class="at">sd =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>), <span class="at">r =</span> <span class="sc">-</span><span class="fl">0.3</span>)</span></code></pre></div>
+</div>
+<div id="check-out-the-data" class="section level3 unnumbered hasAnchor">
+<h3>Check out the data<a href="exploring-variability-in-the-dv.html#check-out-the-data" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="exploring-variability-in-the-dv.html#cb19-1" tabindex="-1"></a><span class="co"># Show me the first 6 rows of data: </span></span>
+<span id="cb19-2"><a href="exploring-variability-in-the-dv.html#cb19-2" tabindex="-1"></a><span class="fu">head</span>(data)</span></code></pre></div>
+<pre><code>##         X1        X2
+## 1 64.74322  90.80306
+## 2 56.44198  93.49663
+## 3 53.76554 121.72313
+## 4 67.53304 101.96359
+## 5 54.27693  98.64371
+## 6 48.10980 122.44146</code></pre>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="exploring-variability-in-the-dv.html#cb21-1" tabindex="-1"></a><span class="co"># Rename the columns to represent your variables </span></span>
+<span id="cb21-2"><a href="exploring-variability-in-the-dv.html#cb21-2" tabindex="-1"></a><span class="fu">colnames</span>(data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">&quot;Age&quot;</span>,<span class="st">&quot;IQ&quot;</span>)</span></code></pre></div>
+</div>
+<div id="check-the-correlation" class="section level3 unnumbered hasAnchor">
+<h3>Check the correlation<a href="exploring-variability-in-the-dv.html#check-the-correlation" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb22"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb22-1"><a href="exploring-variability-in-the-dv.html#cb22-1" tabindex="-1"></a><span class="co"># Check the correlation between the two columns </span></span>
+<span id="cb22-2"><a href="exploring-variability-in-the-dv.html#cb22-2" tabindex="-1"></a><span class="co"># If you don&#39;t like it, play around with the value in set.seed until you are happy. </span></span>
+<span id="cb22-3"><a href="exploring-variability-in-the-dv.html#cb22-3" tabindex="-1"></a><span class="fu">cor.test</span>(data<span class="sc">$</span>Age,data<span class="sc">$</span>IQ)</span></code></pre></div>
+<pre><code>## 
+##  Pearson&#39;s product-moment correlation
+## 
+## data:  data$Age and data$IQ
+## t = -2.5503, df = 83, p-value = 0.0126
+## alternative hypothesis: true correlation is not equal to 0
+## 95 percent confidence interval:
+##  -0.45646873 -0.05988606
+## sample estimates:
+##        cor 
+## -0.2695696</code></pre>
+</div>
+<div id="compute-a-simple-linear-regression" class="section level3 unnumbered hasAnchor">
+<h3>Compute a simple linear regression<a href="exploring-variability-in-the-dv.html#compute-a-simple-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb24"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb24-1"><a href="exploring-variability-in-the-dv.html#cb24-1" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">lm</span>(IQ <span class="sc">~</span> Age, <span class="at">data=</span>data)</span>
+<span id="cb24-2"><a href="exploring-variability-in-the-dv.html#cb24-2" tabindex="-1"></a><span class="fu">summary</span>(res)</span></code></pre></div>
+<pre><code>## 
+## Call:
+## lm(formula = IQ ~ Age, data = data)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -33.851  -7.613  -0.847  10.302  33.607 
+## 
+## Coefficients:
+##             Estimate Std. Error t value            Pr(&gt;|t|)    
+## (Intercept) 123.8054     9.2884   13.33 &lt;0.0000000000000002 ***
+## Age          -0.3600     0.1412   -2.55              0.0126 *  
+## ---
+## Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+## 
+## Residual standard error: 13.01 on 83 degrees of freedom
+## Multiple R-squared:  0.07267,    Adjusted R-squared:  0.0615 
+## F-statistic: 6.504 on 1 and 83 DF,  p-value: 0.0126</code></pre>
+</div>
+<div id="code-to-generate-a-basic-scatterplot" class="section level3 unnumbered hasAnchor">
+<h3>Code to generate a basic scatterplot:<a href="exploring-variability-in-the-dv.html#code-to-generate-a-basic-scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb26"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb26-1"><a href="exploring-variability-in-the-dv.html#cb26-1" tabindex="-1"></a>basic <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb26-2"><a href="exploring-variability-in-the-dv.html#cb26-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> IQ))<span class="sc">+</span></span>
+<span id="cb26-3"><a href="exploring-variability-in-the-dv.html#cb26-3" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
+<span id="cb26-4"><a href="exploring-variability-in-the-dv.html#cb26-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>)</span>
+<span id="cb26-5"><a href="exploring-variability-in-the-dv.html#cb26-5" tabindex="-1"></a></span>
+<span id="cb26-6"><a href="exploring-variability-in-the-dv.html#cb26-6" tabindex="-1"></a><span class="co"># Save a high quality .png image</span></span>
+<span id="cb26-7"><a href="exploring-variability-in-the-dv.html#cb26-7" tabindex="-1"></a><span class="do">## Default size is 7 inches x 7 seven inches</span></span>
+<span id="cb26-8"><a href="exploring-variability-in-the-dv.html#cb26-8" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;Figs/scatter_1.png&quot;</span>,basic, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb26-9"><a href="exploring-variability-in-the-dv.html#cb26-9" tabindex="-1"></a></span>
+<span id="cb26-10"><a href="exploring-variability-in-the-dv.html#cb26-10" tabindex="-1"></a><span class="co"># Call back the high quality image </span></span>
+<span id="cb26-11"><a href="exploring-variability-in-the-dv.html#cb26-11" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;Figs/scatter_1.png&quot;</span>)</span></code></pre></div>
+<p><img src="Figs/scatter_1.png" width="1050" /></p>
+</div>
+<div id="a-fancier-better-looking-scatterplot" class="section level3 unnumbered hasAnchor">
+<h3>A fancier, better looking scatterplot:<a href="exploring-variability-in-the-dv.html#a-fancier-better-looking-scatterplot" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div class="sourceCode" id="cb27"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb27-1"><a href="exploring-variability-in-the-dv.html#cb27-1" tabindex="-1"></a>a <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<span id="cb27-2"><a href="exploring-variability-in-the-dv.html#cb27-2" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> IQ))<span class="sc">+</span></span>
+<span id="cb27-3"><a href="exploring-variability-in-the-dv.html#cb27-3" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">size =</span> <span class="dv">4</span>, <span class="at">alpha =</span> <span class="fl">0.5</span>, <span class="at">colour =</span> <span class="st">&quot;#800020&quot;</span>)<span class="sc">+</span></span>
+<span id="cb27-4"><a href="exploring-variability-in-the-dv.html#cb27-4" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">&quot;lm&quot;</span>, <span class="at">colour=</span><span class="st">&quot;#800020&quot;</span>, <span class="at">fill=</span><span class="st">&quot;#800020&quot;</span>)<span class="sc">+</span></span>
+<span id="cb27-5"><a href="exploring-variability-in-the-dv.html#cb27-5" tabindex="-1"></a>  <span class="fu">theme_classic</span>()<span class="sc">+</span></span>
+<span id="cb27-6"><a href="exploring-variability-in-the-dv.html#cb27-6" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">plot.title =</span> <span class="fu">element_text</span>(<span class="at">hjust=</span><span class="fl">0.5</span>))<span class="sc">+</span></span>
+<span id="cb27-7"><a href="exploring-variability-in-the-dv.html#cb27-7" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb27-8"><a href="exploring-variability-in-the-dv.html#cb27-8" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">&quot;Age of Participants&quot;</span>,</span>
+<span id="cb27-9"><a href="exploring-variability-in-the-dv.html#cb27-9" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">&quot;IQ Score&quot;</span>,</span>
+<span id="cb27-10"><a href="exploring-variability-in-the-dv.html#cb27-10" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">&quot;Relationship Between Age and IQ&quot;</span></span>
+<span id="cb27-11"><a href="exploring-variability-in-the-dv.html#cb27-11" tabindex="-1"></a>  )<span class="sc">+</span></span>
+<span id="cb27-12"><a href="exploring-variability-in-the-dv.html#cb27-12" tabindex="-1"></a>  <span class="fu">xlim</span>(<span class="dv">30</span>,<span class="dv">90</span>)<span class="sc">+</span></span>
+<span id="cb27-13"><a href="exploring-variability-in-the-dv.html#cb27-13" tabindex="-1"></a>  <span class="fu">ylim</span>(<span class="dv">60</span>,<span class="dv">140</span>)</span>
+<span id="cb27-14"><a href="exploring-variability-in-the-dv.html#cb27-14" tabindex="-1"></a></span>
+<span id="cb27-15"><a href="exploring-variability-in-the-dv.html#cb27-15" tabindex="-1"></a><span class="co"># Save the chart once you&#39;re happy with it as a high quality .png image</span></span>
+<span id="cb27-16"><a href="exploring-variability-in-the-dv.html#cb27-16" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">&quot;JLB_graph.png&quot;</span>,a,<span class="at">height=</span><span class="dv">4</span>,<span class="at">width=</span><span class="dv">4</span>,<span class="at">dpi =</span> <span class="dv">300</span>)</span>
+<span id="cb27-17"><a href="exploring-variability-in-the-dv.html#cb27-17" tabindex="-1"></a></span>
+<span id="cb27-18"><a href="exploring-variability-in-the-dv.html#cb27-18" tabindex="-1"></a><span class="co"># Add in the high quality image saved above </span></span>
+<span id="cb27-19"><a href="exploring-variability-in-the-dv.html#cb27-19" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">&quot;JLB_graph.png&quot;</span>)</span></code></pre></div>
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-17"></span>
+<img src="JLB_graph.png" alt="ADD A FIGURE CAPTION HERE" width="600" />
+<p class="caption">
+Figure 4.2: ADD A FIGURE CAPTION HERE
+</p>
+</div>
+
+</div>
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="magnitude-of-manipulations.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="connecting-the-iv-and-covariate.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"whatsapp": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04-Practical_4.Rmd",
+"text": "Edit"
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["_main.pdf", "_main.epub"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+</body>
+
+</html>

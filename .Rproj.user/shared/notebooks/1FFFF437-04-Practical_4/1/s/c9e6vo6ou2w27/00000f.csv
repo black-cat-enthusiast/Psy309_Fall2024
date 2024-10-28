@@ -1,0 +1,5 @@
+"0",""
+"0","# Set up how the code chunks will print"
+"0","knitr::opts_chunk$set(echo = TRUE, # Show the code"
+"0","                      warning = FALSE, # Hide the warnings"
+"0","                      message = FALSE) # Hide the messages"

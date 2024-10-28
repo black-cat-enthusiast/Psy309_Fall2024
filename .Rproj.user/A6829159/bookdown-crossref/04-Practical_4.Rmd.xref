@@ -1,13 +1,14 @@
-h1:correlation-statistics-and-plots Correlation Statistics and Plots
-h2:thinking-about-association 1. Thinking About Association
+h1:exploring-variability-in-the-dv Exploring Variability in the DV
+h2:connecting-covariates-to-you-dependent-variable-of-interest 1. Connecting covariates to you dependent variable of interest
 h2:what-is-already-known-about-these-varaibles 2. What is already known about these varaibles?
 h2:power-analysis-what-sample-size-should-you-use 3. Power Analysis: what sample size should you use?
-h2:a-picture-is-worth-100-words 4. A picture is worth 100 words…
+h2:a-picture-is-worth-1000-words 4. A picture is worth 1000 words…
 h2:reflect 5. Reflect
 h2:code-for-practical-4 Code for Practical #4
 h3:generate-data Generate Data
 h3:check-out-the-data Check out the data
 h3:check-the-correlation Check the correlation
+h3:compute-a-simple-linear-regression Compute a simple linear regression
 h3:code-to-generate-a-basic-scatterplot Code to generate a basic scatterplot:
 h3:a-fancier-better-looking-scatterplot A fancier, better looking scatterplot:
 

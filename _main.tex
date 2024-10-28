@@ -616,23 +616,53 @@ Placebo & Post\_IQ & 100 & 98.91235 & 15.79230 & 54.43327 & 135.5055 & 1.579230\
 \hline
 \end{tabular}
 
+\chapter{Exploring Variability in the DV}\label{exploring-variability-in-the-dv}
+
 \emph{Please submit a single document for practical \#4. A .docx file is the preferred format.}
 
-\chapter{Correlation Statistics and Plots}\label{correlation-statistics-and-plots}
+\section*{1. Connecting covariates to you dependent variable of interest}\label{connecting-covariates-to-you-dependent-variable-of-interest}
+\addcontentsline{toc}{section}{1. Connecting covariates to you dependent variable of interest}
 
-\section*{1. Thinking About Association}\label{thinking-about-association}
-\addcontentsline{toc}{section}{1. Thinking About Association}
+By this point, you've had a chance to develop your ideas around how to measure a construct within your research topic of interest. The simplest thing to do with such information is just to report its properties, like the average grade in a class, or frequencies, like how many people sign up for different classes. These are known as descriptive statistics.
 
-As part of your final paper, you will be proposing an association between your dependent variable (DV) and a covariate of interest. In the last practical assignment, you developed some `priors' around what the DV and covariate would look like. In this assignment, you will be asked to justify, simulate, and report the association between your DV and your covariate.
+But if we want to go further and understand why the world is the way that it is, we may try to see how things we can measure are linked together. If we are going to observe more than one variable of interest and see how closely linked these variables are, we are beginning to engage association claims, which often involves a \emph{correlational} approach. When one variable is correlated with another variable of interest, we call it a \emph{covariate}.
 
-The first step is to \textbf{write an introductory paragraph} that reminds us what your proposed DV and covariate are, and why you believe they should be associated. You can cite papers later- first just explain how you think the two variables work together. For example, if the your DV were ``feelings of stress'' and your covariate were ``optimism'', tell us a bit about the relationship between them from a theoretical perspective- do optimistic people tend not to perceive stressful life events the same way? Perhaps optimistic people just don't experience the same level of physiological reaction to stressors and see the world a less threatening place? Help us understand why you think these variables ought to be related, or at least why it is possible that they are.
+For your topic of interest, \textbf{describe a second construct / covariate that you suspect is linked (either positively or negatively) to your dependent variable of interest}. What is your reasoning for selecting this variable? Is there an obvious reason that it is relevant, or, even better- is it mentioned as being related in the research literature? \textbf{In a short paragraph (3-5 sentences), describe:}
+
+\begin{itemize}
+\tightlist
+\item
+  Discuss your idea for why the two variables might be related.
+\item
+  Be clear if the proposed relationship is positive or negative, and speculate about the strength.
+\end{itemize}
+
+\begin{figure}
+\centering
+\includegraphics{Figs/strength.jpg}
+\caption{\label{fig:unnamed-chunk-9}Figure 1. A reminder about the data patterns that correspond to various correlation coefficients}
+\end{figure}
+
+\begin{itemize}
+\tightlist
+\item
+  Provide an in-text citation to (at least) one peer-reviewed article that shows that the constructs might be related.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    If there is no direct evidence or reporting of this relationship, then cite an article that shows that show some sort of peripheral evidence that could support the relationship that you are proposing.
+  \end{itemize}
+\item
+  Below the paragraph, provide an APA style reference to the paper that you cited.
+\end{itemize}
 
 \section*{2. What is already known about these varaibles?}\label{what-is-already-known-about-these-varaibles}
 \addcontentsline{toc}{section}{2. What is already known about these varaibles?}
 
 \textbf{Write a paragraph or two describing what we know about your proposed DV and covariate}. What direction are the proposed associations? In this section, you should cite at least 2 empirical, peer-reviewed papers that help you to estimate the expected association size, using APA format (minus hanging indents) and including the full references below the paragraph(s).
 
-Most importantly, we need to get specific about the expect association value. In your brief literature review, please report any measure of association, which will often be a correlation (r) or beta estimate (b), along with some interpretation of the effect size involved. Effect sizes can be described by specific effect size statistics like cohen's d or partial eta2, or they could be describe by confidence intervals.
+Most importantly, we need to get specific about the expect association value. In your brief literature review, please report any measure of association, which will often be a correlation (r) or beta estimate (b), along with some interpretation of the effect size involved. Effect sizes can be described by specific effect size statistics like cohen's d or partial eta squared, or they could be describe by confidence intervals.
 
 If you cannot find any reports of correlation values in the literature, then you will have to argue from theory about your predicted effect size:
 
@@ -643,20 +673,22 @@ Please note that finding correlations \textgreater.30 (or \textless{} -.30) is r
 \section*{3. Power Analysis: what sample size should you use?}\label{power-analysis-what-sample-size-should-you-use}
 \addcontentsline{toc}{section}{3. Power Analysis: what sample size should you use?}
 
+Use an online calculator (LINK: \url{https://homepage.univie.ac.at/robin.ristl/samplesize.php?test=correlation}) to determine the sample size needed to meet statistical significance at a = 0.05 and beta = 0.8 given the estimated correlation that you derived from your literature search. Explain what values you entered in the calculator, and what number of participants the calculator indicated would be sufficient to detect statistical significance.
+
 \textbf{\emph{For this portion of the assignment, make sure that you have your code blocks set to \texttt{echo\ =\ TRUE,\ message\ =\ FALSE,\ warning\ =\ FALSE}.}} This will print the code and the result, but not excessive the messages that R sends.
 
-Use an online calculator (link in Lecture\_5 slides to my favorite one, but there are many available) to estimate the sample size needed given the estimated correlation that you derived from your literature search.
+\textbf{Simulate} two columns of data using the \texttt{rnorm\_multi()} function from the \texttt{faux} package to represent your DV and covariate. Use the sample size that you determined was required for adequate power.
 
-\section*{4. A picture is worth 100 words\ldots{}}\label{a-picture-is-worth-100-words}
-\addcontentsline{toc}{section}{4. A picture is worth 100 words\ldots{}}
+\textbf{Analyze} the linear relationship between the two variables using both the \texttt{cor.test()} function and the \texttt{lm()} function. Write two separate statements that highlight the unique information gained from each analysis approach.
 
-\textbf{Simulate} two columns of data to represent your DV and covariate. Use the sample size that you determined was required for adequate power.
+\section*{4. A picture is worth 1000 words\ldots{}}\label{a-picture-is-worth-1000-words}
+\addcontentsline{toc}{section}{4. A picture is worth 1000 words\ldots{}}
 
 \textbf{Generate} a ggplot (scatterplot) of the data with a linear line of best fit. You can format this graph in any way that you see fit. Feel free to be creative! Every element of this chart can be tweaked to your specifications. Feel free to \texttt{Google} how to change specific aesthetics.
 
-\textbf{Save} the ggplot as a high-quality .png image (\texttt{dpi\ =\ 300}), and call back the high quality image for your assignment. Add a figure caption to describe the relationship that you have depicted in the chart.
+\textbf{Save} the ggplot as a high-quality .png image (\texttt{dpi\ =\ 300}).
 
-\textbf{Call back} the image that you saved to showcase your simulated data in pictoral form!
+\textbf{Call back} the image that you saved to showcase your simulated data in picture form, and add a figure caption to describe the relationship that you have depicted in the chart.!
 
 \section*{5. Reflect}\label{reflect-3}
 \addcontentsline{toc}{section}{5. Reflect}
@@ -672,6 +704,18 @@ Write a closing paragraph (3-5 sentences) summarizing what it is like trying to 
 \NormalTok{knitr}\SpecialCharTok{::}\NormalTok{opts\_chunk}\SpecialCharTok{$}\FunctionTok{set}\NormalTok{(}\AttributeTok{echo =} \ConstantTok{TRUE}\NormalTok{, }\CommentTok{\# Show the code}
                       \AttributeTok{warning =} \ConstantTok{FALSE}\NormalTok{, }\CommentTok{\# Hide the warnings}
                       \AttributeTok{message =} \ConstantTok{FALSE}\NormalTok{) }\CommentTok{\# Hide the messages}
+
+\FunctionTok{options}\NormalTok{(}\AttributeTok{scipen=}\DecValTok{999}\NormalTok{) }\CommentTok{\# turn off scientific notation}
+
+\CommentTok{\# You must install packages before you can use them.}
+\CommentTok{\# You only needd to install once per computer. }
+
+\CommentTok{\# install.packages(c("faux","tidyverse")) \# Remove leading hashtag to run this line! }
+
+\CommentTok{\# Once the packages are installed, you can load them to your current R session using the library() command }
+
+\FunctionTok{library}\NormalTok{(faux)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -680,22 +724,9 @@ Write a closing paragraph (3-5 sentences) summarizing what it is like trying to 
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\CommentTok{\# You must install packages before you can use them.}
-\CommentTok{\# You only needd to install once per computer. }
-
-\CommentTok{\# install.packages(c("faux","tidyverse")) \# Remove leading hashtag to run this line! }
-
-
-\CommentTok{\# Once the packages are installed, you can load them to your current R session using the library() command }
-
-\FunctionTok{library}\NormalTok{(faux)}
-\FunctionTok{library}\NormalTok{(tidyverse)}
-
 \CommentTok{\# Set a consistent start point for "random" data generation}
 \CommentTok{\# Makes it so the output will be consistent}
-
 \FunctionTok{set.seed}\NormalTok{(}\DecValTok{123}\NormalTok{) }\CommentTok{\# Can be any value. }
-
 
 \CommentTok{\# Generate data. Specify the number of rows, number of variables, means for the columns, sd\textquotesingle{}s for the columns, and the correlation between the columns.}
 
@@ -755,6 +786,37 @@ Write a closing paragraph (3-5 sentences) summarizing what it is like trying to 
 ## -0.2695696
 \end{verbatim}
 
+\subsection*{Compute a simple linear regression}\label{compute-a-simple-linear-regression}
+\addcontentsline{toc}{subsection}{Compute a simple linear regression}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{res }\OtherTok{\textless{}{-}} \FunctionTok{lm}\NormalTok{(IQ }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Age, }\AttributeTok{data=}\NormalTok{data)}
+\FunctionTok{summary}\NormalTok{(res)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+## Call:
+## lm(formula = IQ ~ Age, data = data)
+## 
+## Residuals:
+##     Min      1Q  Median      3Q     Max 
+## -33.851  -7.613  -0.847  10.302  33.607 
+## 
+## Coefficients:
+##             Estimate Std. Error t value            Pr(>|t|)    
+## (Intercept) 123.8054     9.2884   13.33 <0.0000000000000002 ***
+## Age          -0.3600     0.1412   -2.55              0.0126 *  
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+## 
+## Residual standard error: 13.01 on 83 degrees of freedom
+## Multiple R-squared:  0.07267,    Adjusted R-squared:  0.0615 
+## F-statistic: 6.504 on 1 and 83 DF,  p-value: 0.0126
+\end{verbatim}
+
 \subsection*{Code to generate a basic scatterplot:}\label{code-to-generate-a-basic-scatterplot}
 \addcontentsline{toc}{subsection}{Code to generate a basic scatterplot:}
 
@@ -804,7 +866,7 @@ Write a closing paragraph (3-5 sentences) summarizing what it is like trying to 
 \end{Shaded}
 
 \begin{figure}
-\includegraphics[width=16.67in]{JLB_graph} \caption{ADD A FIGURE CAPTION HERE}\label{fig:unnamed-chunk-15}
+\includegraphics[width=16.67in]{JLB_graph} \caption{ADD A FIGURE CAPTION HERE}\label{fig:unnamed-chunk-17}
 \end{figure}
 
 \chapter{Connecting the IV and Covariate}\label{connecting-the-iv-and-covariate}
@@ -945,7 +1007,7 @@ Generate a 3rd column of data that will represent a categorized version of the c
 \end{Shaded}
 
 \begin{figure}
-\includegraphics[width=12.5in]{2_bars} \caption{First example: Here, I divided the continuous covariate into two categories.}\label{fig:unnamed-chunk-19}
+\includegraphics[width=12.5in]{2_bars} \caption{First example: Here, I divided the continuous covariate into two categories.}\label{fig:unnamed-chunk-21}
 \end{figure}
 
 \subsection*{Analyze}\label{analyze}
@@ -1510,7 +1572,7 @@ So far, we've worked with categorized versions of the covariate. But this was ba
 \end{Shaded}
 
 \begin{figure}
-\includegraphics[width=25in]{graph_2} \caption{Side-by-side comparisons of continuous relationships at each level of the moderator.}\label{fig:unnamed-chunk-32}
+\includegraphics[width=25in]{graph_2} \caption{Side-by-side comparisons of continuous relationships at each level of the moderator.}\label{fig:unnamed-chunk-34}
 \end{figure}
 
 \begin{Shaded}
@@ -1530,7 +1592,7 @@ So far, we've worked with categorized versions of the covariate. But this was ba
 \end{Shaded}
 
 \begin{figure}
-\includegraphics[width=16.67in]{graph_3} \caption{Overlapping lines show the different linear relationships for the two levels of the moderator variable.}\label{fig:unnamed-chunk-33}
+\includegraphics[width=16.67in]{graph_3} \caption{Overlapping lines show the different linear relationships for the two levels of the moderator variable.}\label{fig:unnamed-chunk-35}
 \end{figure}
 
 \begin{Shaded}

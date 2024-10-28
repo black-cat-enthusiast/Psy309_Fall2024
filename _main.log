@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.15)  15 OCT 2024 10:33
+This is XeTeX, Version 3.141592653-2.6-0.999996 (TeX Live 2024) (preloaded format=xelatex 2024.10.15)  28 OCT 2024 10:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -984,44 +984,52 @@ Chapter 4.
 
 
 [25]
+File: Figs/strength.jpg Graphic file (type bmp)
+<Figs/strength.jpg>
 File: Figs/effect_size.jpg Graphic file (type bmp)
 <Figs/effect_size.jpg>
 
 
 [26]
+Underfull \hbox (badness 1189) in paragraph at lines 676--677
+[][][][][][][][][][] [] [][][] [] [][][][] [] [][][][][][][][][][][]$[]\TU/lmr/m/n/10 ) to determine the sample size needed to
+ []
+
+
 
 [27]
 
 [28]
+
+[29]
+Overfull \hbox (1.5pt too wide) in paragraph at lines 818--818
+[]\TU/lmtt/m/n/10 ## (Intercept) 123.8054     9.2884   13.33 <0.0000000000000002 ***[] 
+ []
+
 File: Figs/scatter_1.png Graphic file (type bmp)
 <Figs/scatter_1.png>
 
-Overfull \hbox (124.76195pt too wide) in paragraph at lines 777--778
+Overfull \hbox (124.76195pt too wide) in paragraph at lines 839--840
 [][] 
  []
 
 
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-
-[29]
 
 [30]
+
+[31]
 File: JLB_graph.png Graphic file (type bmp)
 <JLB_graph.png>
 
 
-[31]
-
-[32
-
-]
+[32]
 Chapter 5.
 Missing character: There is no η (U+03B7) in font [lmroman10-regular]:mapping=tex-text;!
 
 
-[33]
+[33
+
+]
 
 [34]
 
@@ -1033,12 +1041,12 @@ File: 2_bars.png Graphic file (type bmp)
 [36]
 
 [37]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 975--975
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1037--1037
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true ratio of variances is not equal to 1[] 
  []
 
 
-Overfull \hbox (232.5pt too wide) in paragraph at lines 996--996
+Overfull \hbox (232.5pt too wide) in paragraph at lines 1058--1058
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means between group Under 65 and group Over 65 is not equal to 0[] 
  []
 
@@ -1067,12 +1075,12 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 [44]
 
 [45]
-Overfull \hbox (12.0pt too wide) in paragraph at lines 1201--1201
+Overfull \hbox (12.0pt too wide) in paragraph at lines 1263--1263
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true ratio of variances is not equal to 1[] 
  []
 
 
-Overfull \hbox (232.5pt too wide) in paragraph at lines 1222--1222
+Overfull \hbox (232.5pt too wide) in paragraph at lines 1284--1284
 []\TU/lmtt/m/n/10 ## alternative hypothesis: true difference in means between group Under 65 and group Over 65 is not equal to 0[] 
  []
 
@@ -1083,11 +1091,11 @@ Overfull \hbox (232.5pt too wide) in paragraph at lines 1222--1222
 [47]
 
 [48]
-Underfull \vbox (badness 10000) detected at line 1383
+Underfull \vbox (badness 10000) detected at line 1445
  []
 
 
-Underfull \vbox (badness 10000) detected at line 1383
+Underfull \vbox (badness 10000) detected at line 1445
  []
 
 
@@ -1096,7 +1104,7 @@ Underfull \vbox (badness 10000) detected at line 1383
 File: graph_1.png Graphic file (type bmp)
 <graph_1.png>
 
-Overfull \hbox (160.89748pt too wide) in paragraph at lines 1385--1386
+Overfull \hbox (160.89748pt too wide) in paragraph at lines 1447--1448
 [][] 
  []
 
@@ -1113,15 +1121,15 @@ Overfull \hbox (160.89748pt too wide) in paragraph at lines 1385--1386
 ! Missing $ inserted.
 <inserted text> 
                 $
-l.1444 \end
+l.1506 \end
            {tblr} 
 Here is how much of TeX's memory you used:
- 22964 strings out of 476234
- 475117 string characters out of 5785537
+ 22974 strings out of 476234
+ 475330 string characters out of 5785537
  975936 words of memory out of 5000000
- 45275 multiletter control sequences out of 15000+600000
+ 45284 multiletter control sequences out of 15000+600000
  566072 words of font info for 98 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 90i,6n,123p,814b,939s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 90i,6n,123p,724b,939s stack positions out of 10000i,1000n,20000p,200000b,200000s
 
 Output written on _main.pdf (50 pages).
