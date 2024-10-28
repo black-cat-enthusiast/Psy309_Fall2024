@@ -163,27 +163,3 @@ ggsave("JLB_graph.png",a,height=4,width=4,dpi = 300)
 knitr::include_graphics("JLB_graph.png")
 ```
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
