@@ -3,24 +3,24 @@
     "path": "C:/Users/jenne/OneDrive - University of Toronto/TAing/Fall 2024/PSY_309 - INSTRUCTOR/Book_Of_Practicals/Psy309_Fall2024/Psy309_Fall2024/04-Practical_4.Rmd",
     "project_path": "04-Practical_4.Rmd",
     "type": "r_markdown",
-    "hash": "2892795325",
+    "hash": "0",
     "contents": "",
-    "dirty": true,
+    "dirty": false,
     "created": 1725534892606.0,
     "source_on_save": false,
     "relative_order": 2,
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "163,3",
-        "scrollLine": "140"
+        "cursorPosition": "159,50",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1730124585,
+    "lastKnownWriteTime": 1730125618,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1730125299041,
+    "last_content_update": 1730125618669,
     "read_only": false,
     "read_only_alternatives": []
 }

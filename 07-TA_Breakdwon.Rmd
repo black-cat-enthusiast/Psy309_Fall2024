@@ -1,7 +1,7 @@
 ---
 output:
-  word_document: default
   html_document: default
+  word_document: default
   pdf_document: default
 ---
 
@@ -59,6 +59,8 @@ knitr::opts_chunk$set(echo = FALSE,message=FALSE,warning=FALSE)
 
 library(tidyverse)
 library(reshape2)
+packageVersion("xfun")
+
 
 data <- read_csv("Breakdown.csv")
 ```
@@ -68,7 +70,9 @@ data <- read_csv("Breakdown.csv")
 All of your TA responsibilities can be completed virtually. Psy309 will involve two in-class tests that  will be completed on Quercus. 
 
 ```{r}
-knitr::kable(data)
+data %>%
+  mutate(TA = c("Victoria","Evana","All (Split)","Jennifer","Victoria","Evana","All (Split)","All (Split)","All (Split)")) %>%
+  knitr::kable()
 ```
 
 *Note* That there will be late / deferred submissions for all of the assignments.
@@ -103,4 +107,4 @@ knitr::include_graphics("Psy309_deliverables.png")
 
 - Practical assignments are due Fridays at 11:59pm.
 
-I will email you a reminder that submissions are available the day after the due date. 
+I will email the TA(s) responsible for grading a reminder that submissions are available the day after each due date. 
