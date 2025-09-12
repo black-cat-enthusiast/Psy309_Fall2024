@@ -17,7 +17,7 @@ output:
 
 ### 1. 5x 3% "Practical" assignments {-}
 
-- Each TA marks 1-2 weekly submissions for **all the students** (breakdown below)
+- Each TA marks 8 - 10 submissions across all five practical assignments
 - Practicals are intended to be "bite-sized" pieces of their final paper project.
 - Each submission will be graded out of ~15 marks.
 - A rubric will be provided on Quercus to evaluate the practical submissions. 
@@ -36,7 +36,7 @@ output:
 
 ### 3. 20% Paper {-}
 
-- "Capstone" project for this course (12-14 pages all-in)
+- "Capstone" project for this course (8-10 pages all-in)
 - You will evaluate ~11 students' assignments. 
 - A detailed rubric will be provided on Quercus to evaluate the final project. 
 
@@ -67,7 +67,6 @@ All of your TA responsibilities can be completed virtually. Psy309 will involve 
 
 ```{r}
 data %>%
-  mutate(TA = c("Victoria","Evana","All (Split)","Jennifer","Victoria","Evana","All (Split)","All (Split)","All (Split)")) %>%
   knitr::kable()
 ```
 

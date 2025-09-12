@@ -1,5 +1,5 @@
 --- 
-title: "A book of Practical Assignments for Psy309 at UTM Spring 2025"
+title: "A book of Practical Assignments for Psy309 at UTM Fall 2025"
 site: bookdown::bookdown_site
 documentclass: book
 # url: your book url like https://bookdown.org/yihui/bookdown

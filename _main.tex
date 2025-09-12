@@ -123,11 +123,11 @@
 \IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
 \urlstyle{same}
 \hypersetup{
-  pdftitle={A book of Practical Assignments for Psy309 at UTM Fall 2024},
+  pdftitle={A book of Practical Assignments for Psy309 at UTM Fall 2025},
   hidelinks,
   pdfcreator={LaTeX via pandoc}}
 
-\title{A book of Practical Assignments for Psy309 at UTM Fall 2024}
+\title{A book of Practical Assignments for Psy309 at UTM Fall 2025}
 \author{}
 \date{\vspace{-2.5em}}
 
@@ -673,7 +673,7 @@ Please note that finding correlations \textgreater.30 (or \textless{} -.30) is r
 \section*{3. Power Analysis: what sample size should you use?}\label{power-analysis-what-sample-size-should-you-use}
 \addcontentsline{toc}{section}{3. Power Analysis: what sample size should you use?}
 
-Use an online calculator (LINK: \url{https://homepage.univie.ac.at/robin.ristl/samplesize.php?test=correlation}) to determine the sample size needed to meet statistical significance at a = 0.05 and beta = 0.8 given the estimated correlation that you derived from your literature search. Explain what values you entered in the calculator, and what number of participants the calculator indicated would be sufficient to detect statistical significance.
+Use an online calculator (LINK: \url{https://homepage.univie.ac.at/robin.ristl/samplesize.php?test=correlation}) or the \texttt{pwr} package in Rstudio to determine the sample size needed to meet statistical significance at a = 0.05 and beta = 0.8 given the estimated correlation that you derived from your literature search. Explain what values you entered in the calculator, and what number of participants the calculator indicated would be sufficient to detect statistical significance.
 
 \textbf{\emph{For this portion of the assignment, make sure that you have your code blocks set to \texttt{echo\ =\ TRUE,\ message\ =\ FALSE,\ warning\ =\ FALSE}.}} This will print the code and the result, but not excessive the messages that R sends.
 
@@ -708,16 +708,50 @@ Write a closing paragraph (3-5 sentences) summarizing what it is like trying to 
 \FunctionTok{options}\NormalTok{(}\AttributeTok{scipen=}\DecValTok{999}\NormalTok{) }\CommentTok{\# turn off scientific notation}
 
 \CommentTok{\# You must install packages before you can use them.}
-\CommentTok{\# You only needd to install once per computer. }
+\CommentTok{\# You only need to install once per computer. }
 
-\CommentTok{\# install.packages(c("faux","tidyverse")) \# Remove leading hashtag to run this line! }
+\CommentTok{\# install.packages(c("faux","tidyverse","pwr")) \# Remove leading hashtag to run this line! }
 
 \CommentTok{\# Once the packages are installed, you can load them to your current R session using the library() command }
 
 \FunctionTok{library}\NormalTok{(faux)}
 \FunctionTok{library}\NormalTok{(tidyverse)}
+\FunctionTok{library}\NormalTok{(pwr)}
 \end{Highlighting}
 \end{Shaded}
+
+\subsection{Power Analysis}\label{power-analysis}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{pwr.r.test}\NormalTok{(}
+  \AttributeTok{n =} \ConstantTok{NULL}\NormalTok{,}
+  \AttributeTok{r =} \SpecialCharTok{{-}}\FloatTok{0.3}\NormalTok{,}
+  \AttributeTok{sig.level =} \FloatTok{0.05}\NormalTok{,}
+  \AttributeTok{power =} \FloatTok{0.8}\NormalTok{,}
+  \AttributeTok{alternative =} \StringTok{"two.sided"}
+\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## 
+##      approximate correlation power calculation (arctangh transformation) 
+## 
+##               n = 84.07364
+##               r = 0.3
+##       sig.level = 0.05
+##           power = 0.8
+##     alternative = two.sided
+\end{verbatim}
+
+Make sure to \textbf{\emph{always}} round up the number of participants!
+
+\begin{itemize}
+\tightlist
+\item
+  My analysis indicates that a sample size of \(n = 85\) would be required to detect statistical significance at \(\alpha = 0.05\) for a relationship where \(r = 0.3\).
+\end{itemize}
 
 \subsection*{Generate Data}\label{generate-data}
 \addcontentsline{toc}{subsection}{Generate Data}
@@ -1786,17 +1820,10 @@ List your references in alphabetical order, using internal APA format (no hangin
 \addcontentsline{toc}{section}{Overview}
 
 \begin{itemize}
-\tightlist
 \item
-  Anticipated enrollment = 38 students
-\end{itemize}
-
-The assignments build across the term, so it makes the most sense for \textbf{each TA to be assigned \textasciitilde13 students} to assess throughout the term.
-
-\begin{itemize}
-\tightlist
+  Anticipated enrollment = 34 students
 \item
-  We will split the two term tests such that each of you grades 1-2 questions across all of the tests.
+  Psy309 is deliverable-heavy! Students complete 5 weekly ``practical'' assignments, two term tests, and a final project that involves a simulated research paper and an asynchronous poster presentation.
 \end{itemize}
 
 \section*{Course Deliverables}\label{course-deliverables}
@@ -1808,11 +1835,11 @@ The assignments build across the term, so it makes the most sense for \textbf{ea
 \begin{itemize}
 \tightlist
 \item
-  Each TA marks bi-weekly submissions for \textasciitilde13 students.
+  Each TA marks 8 - 10 submissions across all five practical assignments
 \item
   Practicals are intended to be ``bite-sized'' pieces of their final paper project.
 \item
-  Each submission will be graded out of 15 marks.
+  Each submission will be graded out of \textasciitilde15 marks.
 \item
   A rubric will be provided on Quercus to evaluate the practical submissions.
 \end{itemize}
@@ -1840,7 +1867,7 @@ The assignments build across the term, so it makes the most sense for \textbf{ea
 \item
   Students will upload a 5-minute video explaining their project and results.
 \item
-  Mostly graded for completion, but also offers an opportunity to provide feedback about the interpretations.
+  Mostly graded for completion
 \end{itemize}
 
 \subsection*{3. 20\% Paper}\label{paper}
@@ -1849,11 +1876,11 @@ The assignments build across the term, so it makes the most sense for \textbf{ea
 \begin{itemize}
 \tightlist
 \item
-  ``Capstone'' project for this course (12-14 pages all-in)
+  ``Capstone'' project for this course (8-10 pages all-in)
 \item
-  You will evaluate the same \textasciitilde13 students as you have graded all semester.
+  You will evaluate \textasciitilde11 students' assignments.
 \item
-  A detailed rubric will be provided on Quercus to evaluate the essays.
+  A detailed rubric will be provided on Quercus to evaluate the final project.
 \end{itemize}
 
 \subsection*{4. 10\% In-class participation}\label{in-class-participation}
@@ -1870,11 +1897,9 @@ The assignments build across the term, so it makes the most sense for \textbf{ea
 
 \begin{itemize}
 \item
-  10 weekly office hours - \textbf{Please send Jennet your personal zoom links}
-\item
   Remaining hours allocated to student contact in the DDAH form can be used to field emails.
 \item
-  In any situation where students are hostile or you don't know how to respond to them, feel free to forward their correspondences along to me to deal with. \emph{You can count on me to back up your calls!}
+  In any situation where students are hostile or you don't know how to respond to them, feel free to forward their correspondences along to me to deal with. \emph{You can count on me to back you up!} :)
 \end{itemize}
 
 \section*{Course Responsibilities}\label{course-responsibilities}
@@ -1882,27 +1907,27 @@ The assignments build across the term, so it makes the most sense for \textbf{ea
 
 All of your TA responsibilities can be completed virtually. Psy309 will involve two in-class tests that will be completed on Quercus.
 
-\begin{tabular}{l|l|l|l|l}
+\begin{tabular}{l|l|l|l}
 \hline
-Assignment & Due\_Date & Format & Size & TA\\
+Assignment & Due\_Date & Format & Size\\
 \hline
-Practical 1 & 2025-05-09 & Online & Small & Victoria\\
+Practical 1 & 2025-09-11 & Online & Small\\
 \hline
-Practical 2 & 2025-05-16 & Online & Small & Evana\\
+Practical 2 & 2025-09-26 & Online & Small\\
 \hline
-Test \#1 & 2025-05-21 & Online & Med & All (Split)\\
+Test \#1 & 2025-10-02 & Online & Med\\
 \hline
-Practical 3 & 2025-05-23 & Online & Small & Jennifer\\
+Practical 3 & 2025-10-10 & Online & Small\\
 \hline
-Practical 4 & 2025-05-30 & Online & Small & Victoria\\
+Practical 4 & 2025-10-24 & Online & Small\\
 \hline
-Practical 5 & 2025-06-06 & Online & Small & Evana\\
+Practical 5 & 2025-11-07 & Online & Small\\
 \hline
-Poster & 2025-06-13 & Online & Small & All (Split)\\
+Poster & 2025-11-20 & Online & Small\\
 \hline
-Test \#2 & 2025-06-11 & Online & Med & All (Split)\\
+Test \#2 & 2025-11-27 & Online & Med\\
 \hline
-Paper & 2025-06-16 & Online & Largest & All (Split)\\
+Paper & 2025-12-01 & Online & Largest\\
 \hline
 \end{tabular}
 

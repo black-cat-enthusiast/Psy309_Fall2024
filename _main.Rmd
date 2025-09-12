@@ -1,5 +1,5 @@
 --- 
-title: "A book of Practical Assignments for Psy309 at UTM Spring 2025"
+title: "A book of Practical Assignments for Psy309 at UTM Fall 2025"
 site: bookdown::bookdown_site
 documentclass: book
 # url: your book url like https://bookdown.org/yihui/bookdown
@@ -466,7 +466,7 @@ Please note that finding correlations >.30 (or < -.30) is rare in a lot of psych
 
 ## 3. Power Analysis: what sample size should you use? {-}
 
-Use an online calculator (LINK: https://homepage.univie.ac.at/robin.ristl/samplesize.php?test=correlation) to determine the sample size needed to meet statistical significance at a = 0.05 and beta = 0.8 given the estimated correlation that you derived from your literature search. Explain what values you entered in the calculator, and what number of participants the calculator indicated would be sufficient to detect statistical significance.
+Use an online calculator (LINK: https://homepage.univie.ac.at/robin.ristl/samplesize.php?test=correlation) or the `pwr` package in Rstudio to determine the sample size needed to meet statistical significance at a = 0.05 and beta = 0.8 given the estimated correlation that you derived from your literature search. Explain what values you entered in the calculator, and what number of participants the calculator indicated would be sufficient to detect statistical significance.
 
 ***For this portion of the assignment, make sure that you have your code blocks set to `echo = TRUE, message = FALSE, warning = FALSE`.*** This will print the code and the result, but not excessive the messages that R sends.
 
@@ -489,7 +489,7 @@ Write a closing paragraph (3-5 sentences) summarizing what it is like trying to 
 
 ## Code for Practical #4 {-}
 
-```{r, include=TRUE}
+```{r,setup, include=TRUE}
 # Set up how the code chunks will print
 knitr::opts_chunk$set(echo = TRUE, # Show the code
                       warning = FALSE, # Hide the warnings
@@ -498,15 +498,32 @@ knitr::opts_chunk$set(echo = TRUE, # Show the code
 options(scipen=999) # turn off scientific notation
 
 # You must install packages before you can use them.
-# You only needd to install once per computer. 
+# You only need to install once per computer. 
 
-# install.packages(c("faux","tidyverse")) # Remove leading hashtag to run this line! 
+# install.packages(c("faux","tidyverse","pwr")) # Remove leading hashtag to run this line! 
 
 # Once the packages are installed, you can load them to your current R session using the library() command 
 
 library(faux)
 library(tidyverse)
+library(pwr)
 ```
+
+### Power Analysis
+
+```{r}
+pwr.r.test(
+  n = NULL,
+  r = -0.3,
+  sig.level = 0.05,
+  power = 0.8,
+  alternative = "two.sided"
+)
+```
+
+Make sure to ***always*** round up the number of participants! 
+
+- My analysis indicates that a sample size of $n = 85$ would be required to detect statistical significance at $\alpha = 0.05$ for a relationship where $r = 0.3$. 
 
 ### Generate Data {-}
 
@@ -595,7 +612,7 @@ output:
   html_document: default
 ---
 
-```{r setup, include=FALSE}
+```{r setup_2, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
@@ -1135,7 +1152,7 @@ output:
 
 ### 1. 5x 3% "Practical" assignments {-}
 
-- Each TA marks 1-2 weekly submissions for **all the students** (breakdown below)
+- Each TA marks 8 - 10 submissions across all five practical assignments
 - Practicals are intended to be "bite-sized" pieces of their final paper project.
 - Each submission will be graded out of ~15 marks.
 - A rubric will be provided on Quercus to evaluate the practical submissions. 
@@ -1154,7 +1171,7 @@ output:
 
 ### 3. 20% Paper {-}
 
-- "Capstone" project for this course (12-14 pages all-in)
+- "Capstone" project for this course (8-10 pages all-in)
 - You will evaluate ~11 students' assignments. 
 - A detailed rubric will be provided on Quercus to evaluate the final project. 
 
@@ -1185,7 +1202,6 @@ All of your TA responsibilities can be completed virtually. Psy309 will involve 
 
 ```{r}
 data %>%
-  mutate(TA = c("Victoria","Evana","All (Split)","Jennifer","Victoria","Evana","All (Split)","All (Split)","All (Split)")) %>%
   knitr::kable()
 ```
 
