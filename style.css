@@ -12,3 +12,94 @@ pre {
 pre code {
   white-space: inherit;
 }
+
+body {
+  font-size: 18px;
+  line-height: 1.7;
+}
+
+pre {
+  border-radius: 8px;
+  border: 1px solid #e5e5e5;
+}
+
+main.content {
+  max-width: 1200px;
+}
+
+body {
+  font-size: 19px;
+  line-height: 1.8;
+}
+
+main.content {
+  max-width: 1400px;
+}
+
+h1 {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #002A5C;
+}
+
+h2 {
+  font-size: 2.0rem;
+  font-weight: 600;
+  color: #002A5C;
+  margin-top: 2rem;
+  padding-bottom: 0.3rem;
+  border-bottom: 2px solid #e5e5e5;
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #444444;
+}
+
+p {
+  margin-bottom: 1.2rem;
+}
+
+ul li {
+  margin-bottom: 0.8rem;
+}
+
+.sidebar {
+  font-size: 0.95rem;
+}
+
+.toc {
+  font-size: 0.95rem;
+}
+
+pre {
+  border-radius: 8px;
+  border: 1px solid #dddddd;
+  padding: 12px;
+}
+
+code {
+  background-color: #f5f5f5;
+  border-radius: 4px;
+  padding: 2px 4px;
+}
+
+img {
+  border-radius: 8px;
+}
+
+a {
+  color: #0056b3;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+p.caption {
+  color: #777777;
+  font-size: 0.9rem;
+  margin-top: 10px;
+}

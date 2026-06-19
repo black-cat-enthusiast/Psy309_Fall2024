@@ -1,0 +1,21 @@
+project:
+  type: book
+book:
+  title: "Psy309: A Simulated Research Project"
+  author: "Jennet Baumbach, Ph.D"
+
+  chapters:
+    - index.qmd
+    - 01-Practical_1.qmd
+    - 02-Practical_2.qmd
+    - 03-Practical_3.qmd
+    - 04-Practical_4.qmd
+    - 05-Practical_5.qmd
+    - 06-Final_Project.qmd
+    - 07-TA_Breakdwon.qmd
+    
+number-sections: false
+
+format:
+  html:
+    theme: cosmo
