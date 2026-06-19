@@ -6,9 +6,8 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Jennet Baumbach, Ph.D">
 
-<title>Psy309: A Simulated Research Project</title>
+<title>Psy309: A Simulated Research Project - Practical Assignment #1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./01-Practical_1.html" rel="next">
+<link href="./02-Practical_2.html" rel="next">
+<link href="./index.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -72,7 +72,7 @@ ul.task-list li input[type="checkbox"] {
 
 </head>
 
-<body class="nav-sidebar floating fullcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html"><span class="chapter-title">A book of Practical Assignments for Psy309 at UTM Fall 2025</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./01-Practical_1.html"><span class="chapter-title">Practical Assignment #1</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -108,12 +108,12 @@ ul.task-list li input[type="checkbox"] {
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">A book of Practical Assignments for Psy309 at UTM Fall 2025</span></a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">A book of Practical Assignments for Psy309 at UTM Fall 2025</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01-Practical_1.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Practical Assignment #1</span></a>
+  <a href="./01-Practical_1.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Practical Assignment #1</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -154,25 +154,33 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#asking-scientific-questions-and-literature-review" id="toc-asking-scientific-questions-and-literature-review" class="nav-link active" data-scroll-target="#asking-scientific-questions-and-literature-review">Asking Scientific Questions and Literature Review</a>
+  <ul class="collapse">
+  <li><a href="#overview" id="toc-overview" class="nav-link" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#choose-a-reasearch-topic-in-psychology" id="toc-choose-a-reasearch-topic-in-psychology" class="nav-link" data-scroll-target="#choose-a-reasearch-topic-in-psychology">1. Choose a Reasearch Topic in Psychology</a></li>
+  <li><a href="#see-whats-out-there" id="toc-see-whats-out-there" class="nav-link" data-scroll-target="#see-whats-out-there">2. See What’s Out There</a></li>
+  <li><a href="#reflect" id="toc-reflect" class="nav-link" data-scroll-target="#reflect">3. Reflect</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Psy309: A Simulated Research Project</h1>
+<h1 class="title"><span class="chapter-title">Practical Assignment #1</span></h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
-    <div>
-    <div class="quarto-title-meta-heading">Author</div>
-    <div class="quarto-title-meta-contents">
-             <p>Jennet Baumbach, Ph.D </p>
-          </div>
-  </div>
     
   
     
@@ -183,14 +191,52 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<p>This is a series of assignments intended to help third year UTM students transfer their theoretical knowledge of using the general linear model from Psy201/202 to a computational approach in <code>Rstudio</code>.</p>
+<section id="asking-scientific-questions-and-literature-review" class="level2">
+<h2 class="anchored" data-anchor-id="asking-scientific-questions-and-literature-review">Asking Scientific Questions and Literature Review</h2>
+<section id="overview" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="overview">Overview</h3>
+<p>The purpose of this assignment is to showcase your interest in a specific topic related to psychology, and to demonstrate your ability to find <strong>scholarly sources</strong> that make claims related to your topic.</p>
+<p><strong><em>Your submission should not be longer than 2 pages (including references)</em></strong></p>
+</section>
+<section id="choose-a-reasearch-topic-in-psychology" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="choose-a-reasearch-topic-in-psychology">1. Choose a Reasearch Topic in Psychology</h3>
+<p><strong>In a single paragraph (3-5 sentences), tell us what you would like to research.</strong></p>
+<p><em>Some questions that you could think over while selecting at topic:</em></p>
+<p>Why did you decide to study Psychology? There is some mystery about the mind, or some insight that you have had, that motivates you. Do you want to help people with a particular set of challenges? Do you want to understand growth and development? The way the brain works? How people interact? The possibilities are endless.</p>
+<p>In this course you will learn how to develop a research proposal around a topic of your choice, one that could be the beginning of a grant proposal or a way to wow potential supervisors for grad school, or to impress potential employers who want to know if you can lead project. The more you make this something relevant to your own goals, the more useful this course will be.</p>
+<p>It must be a topic in <em>psychology</em>: i.e., the study of the mind, and it should be something that can be studied <em>scientifically</em>, i.e., observed in such a way that other people could replicate your process and generate similar data. This topic will be the basis for your research project over the course of the semester, so please give it some thought!</p>
+</section>
+<section id="see-whats-out-there" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="see-whats-out-there">2. See What’s Out There</h3>
+<p>Go to <a href="https://guides.library.utoronto.ca/psycinfoovid">the library PsycINFO page</a>, <a href="https://scholar.google.ca/">Google Scholar</a>, or similar academic search engine.</p>
+<p>Conduct a basic search for a topic that you are interested in. If you would like more information about this process, we have multiple videos on conducting a literature search available online.</p>
+<p><strong>Please write a few paragraphs describing:</strong></p>
 <ul>
-<li><p>5 “practical” assignments help students to refine a research question, then generate fictitious data to represent their hypothesized effect.</p></li>
-<li><p>The final project involves synthesis of the practical assignments with additional analyses (3-way ANOVA and multiple linear regression).</p></li>
-<li><p>As they complete the assignments, students learn to think critically about research design and construct opperationalization. They also develop basic coding skills, which are combined with their theoretical understanding of statistics in the final written assignment.</p></li>
+<li><p>The search engine(s) that you used</p></li>
+<li><p>What were the <em>specific</em> search terms you used (so if we entered those terms, we should get the same output as you)</p></li>
+<li><p>How did you expand / change your search terms to focus on the types of studies you were most interested in?</p></li>
+<li><p>Provide a reference list of 3-5 peer-reviewed, academic research papers on your research topic; the references should be listed in <a href="https://guides.library.utoronto.ca/c.php?g=250462&amp;p=1670709">APA format</a>.</p></li>
+<li><p>At least one of your papers must be an empirical paper!</p></li>
+</ul>
+<p><strong>Provide a brief (3-5 sentence) summary of one empirical, peer-reviewed research paper from your list</strong> (preferably one that represents an approach to your research topic that you find interesting.)</p>
+<ul>
+<li>Tell us what the paper was about and why you chose it - how did you know it was an empirical paper? What about it was interesting to you?
+<ul>
+<li>You don’t have to tell us everything about the paper- again just a 3-5 sentence summary in your own words, which means you must leave many details out! You will get into the details of this paper in the next two practical assignments. Note: you can change this ‘focus paper’ later if you find something better, but it is better to start with a specific paper in mind.</li>
+<li>You will end up having to create an empirical research proposal by the end of the term, so this paper can be an important example for you to rely and build upon as the term goes on. The important thing is to pick a paper and dive in - this is a ‘safe space’ to just immerse yourself in a research approach, regardless of whether you actually perform research like this in the future!</li>
+</ul></li>
+</ul>
+</section>
+<section id="reflect" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="reflect">3. Reflect</h3>
+<p><strong>Write a closing paragraph (3-5 sentences) describing what it was like to try to find research on your topic.</strong></p>
+<ul>
+<li>Was it hard to pick a topic? Did your topic change based on what you found (or couldn’t find) during your literature review? What advice would you give to other students doing this assignment in the future?</li>
 </ul>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -604,10 +650,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link" aria-label="A book of Practical Assignments for Psy309 at UTM Fall 2025">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-title">A book of Practical Assignments for Psy309 at UTM Fall 2025</span></span>
+      </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./01-Practical_1.html" class="pagination-link" aria-label="Practical Assignment #1">
-        <span class="nav-page-text"><span class="chapter-title">Practical Assignment #1</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./02-Practical_2.html" class="pagination-link" aria-label="Practical Assignment #2">
+        <span class="nav-page-text"><span class="chapter-title">Practical Assignment #2</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
