@@ -1,5 +1,6 @@
 project:
   type: book
+  output-dir: _book
 book:
   title: "Psy309: A Simulated Research Project"
   author: "Jennet Baumbach, Ph.D"
