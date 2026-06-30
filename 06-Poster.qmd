@@ -1,0 +1,44 @@
+---
+output: html_document
+---
+
+# Poster Assignment
+
+## Purpose and Goals of the Poster Assignment
+
+This assignment encourages you to:
+
+- Complete and showcase your analysis in a concise format.
+- Gain experience in presenting research visually and verbally.
+- Give and receive constructive feedback.
+
+The purpose of this assignment is to help you complete your data analysis ahead of the final project deadline and engage in a peer review process to both give and receive feedback. This assignment mirrors a typical academic conference experience where presenters create posters and explain their work. You’ll create a digital poster of your analysis and record a short video explaining it.
+
+### Digital Poster Creation
+   - Create a digital poster that presents the key components of your analysis, including the research question, methodology, main findings, and conclusion.
+   - You may use any software to create your poster (e.g., Canva, RStudio, PowerPoint).
+   - Ensure that your poster is clear, visually engaging, and concise.
+   - Most conferences will specify the dimensions that your poster should be (e.g., 36 inches * 48 inches). I am leaving the size of the canvas up to you.
+   - Minimize text on the poster as much as possible. 
+   - Bullet points are welcome rather than paragraphs of writing. 
+
+### Video Presentation
+   - Record a **5-minute video (no longer)** of yourself explaining your poster.
+   - You can use any software tool that you find suitable to record this video. I use Zoom to make videos and I find that works well, but if you prefer a different software that is fine! 
+   - Your explanation should be similar to a poster presentation at an academic conference. Aim to summarize the main points of your analysis clearly and concisely.
+   - In your video, you should explain the **rationale** for the current fictitious project, justify the **chosen methodological approach**, **explain the results** from the analyses and **interpret the findings** in the context of relevant literature. 
+   - Make sure your video demonstrates an understanding of the purpose, method, and findings of your analysis.
+
+### Evaluation Criteria
+   - Your poster is worth **5 marks** and will be graded based on clarity, organization, analysis, visual appeal, and adherence to the 5-minute time limit.
+   - Grades will focus on the clarity of your analysis and how effectively your poster communicates key findings.
+
+### Peer Review (Mandatory for Participation Marks)
+   - To receive full participation marks for the November 15th class, you must comment on at least **5 other students' video presentations**.
+   - Use the "complement sandwich" approach: Start with a positive comment, provide constructive feedback, and end with another positive comment.
+
+## Submission Details
+- Submit your poster as a digital file along with the video link by the due date.
+- Your peer comments are due one week after the poster submission and participation marks will be assigned based on completion.
+
+Good luck, and enjoy the process of summarizing and presenting your work!

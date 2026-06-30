@@ -4,9 +4,9 @@ output:
   word_document: default
 ---
 
-# Practical Assignment #4: Exploring Variability in the DV
+# Practical Assignment #4
 
-## Assignment Instructions
+## Exploring Variability in the DV: Assignment Instructions
 
 *Please submit a single document for practical #4. A .docx file is the preferred format.*
 
@@ -19,6 +19,7 @@ But if we want to go further and understand why the world is the way that it is,
 For your topic of interest, **describe a second construct / covariate that you suspect is linked (either positively or negatively) to your dependent variable of interest**. What is your reasoning for selecting this variable? Is there an obvious reason that it is relevant, or, even better- is it mentioned as being related in the research literature? **In a short paragraph (3-5 sentences), describe:**
   
 -	Discuss your idea for why the two variables might be related.
+
 -	Be clear if the proposed relationship is positive or negative, and speculate about the strength.
 
 ```{r,echo=FALSE,fig.cap="Figure 1. A reminder about the data patterns that correspond to various correlation coefficients"}
@@ -37,7 +38,7 @@ Most importantly, we need to get specific about the expect association value. In
 
 If you cannot find any reports of correlation values in the literature, then you will have to argue from theory about your predicted effect size:
 
-```{r,echo=FALSE,message=FALSE,warning=FALSE}
+```{r,echo=FALSE,message=FALSE,warning=FALSE, fig.align='center'}
 knitr::include_graphics("Figs/effect_size.jpg")
 ```
 
@@ -45,7 +46,7 @@ Please note that finding correlations >.30 (or < -.30) is rare in a lot of psych
 
 ### 3. Power Analysis: what sample size should you use? {-}
 
-Use an online calculator (LINK: https://homepage.univie.ac.at/robin.ristl/samplesize.php?test=correlation) or the `pwr` package in Rstudio to determine the sample size needed to meet statistical significance at a = 0.05 and beta = 0.8 given the estimated correlation that you derived from your literature search. Explain what values you entered in the calculator, and what number of participants the calculator indicated would be sufficient to detect statistical significance.
+Use the `pwr` package in Rstudio to determine the sample size needed to meet statistical significance at a = 0.05 and beta = 0.8 given the estimated correlation that you derived from your literature search. Explain what values you entered in the calculator, and what number of participants the calculator indicated would be sufficient to detect statistical significance.
 
 ***For this portion of the assignment, make sure that you have your code blocks set to `echo = TRUE, message = FALSE, warning = FALSE`.*** This will print the code and the result, but not excessive the messages that R sends.
 

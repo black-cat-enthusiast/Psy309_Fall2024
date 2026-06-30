@@ -7,9 +7,9 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Practical Assignment #3: Magnitude of Manipulations {-}
+# Practical Assignment #3 {-}
 
-## Assignment Instructions {-}
+## Magnitude of Manipulations: Assignment Instructions {-}
 
 ### 1. Experiments: Manipulating Independent Variable(s) {-}
 

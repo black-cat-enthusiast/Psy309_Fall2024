@@ -10,9 +10,9 @@ knitr::opts_chunk$set(echo = TRUE,
                       warning = FALSE)
 ```
 
-# Practical Assignment #5: Connecting the IV and Covariate
+# Practical Assignment #5
 
-## Assignment Instructions
+## Connecting the IV and Covariate: Assignment Instructions
 
 ### 1. Thinking About Causality {-}
 

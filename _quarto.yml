@@ -12,12 +12,14 @@ book:
     - 03-Practical_3.qmd
     - 04-Practical_4.qmd
     - 05-Practical_5.qmd
+    - 06-Poster.qmd
     - 06-Final_Project.qmd
-    - 07-TA_Breakdwon.qmd
     
 number-sections: false
 
 format:
   html:
     theme: cosmo
-    css: "style.css"
+    css: style.css
+    toc-depth: 3
+    toc-expand: 3
