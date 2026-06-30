@@ -7,9 +7,9 @@ editor_options:
   chunk_output_type: console
 ---
 
-# Practical Assignment #3 {-}
+# Practical Assignment #3: Magnitude of Manipulations {-}
 
-## Magnitude of Manipulations {-}
+## Assignment Instructions {-}
 
 ### 1. Experiments: Manipulating Independent Variable(s) {-}
 
@@ -58,164 +58,221 @@ Write a closing paragraph (3-5 sentences) summarizing what it is like learning t
 
 Additionally, feel free to reflect on the process of using Rstudio to generate data - Is there anything that would have improved your experience doing this lab?
 
-### Code For Practical #3 {-}
+## Code For Practical #3 {-}
+
+We would like to see the code that you have written, so please ensure that R renders an output document that shows both the codes and the outputs. Use the code below to ensure that Rstudio will print code and show outputs while hiding annoying messages and warnings from the program. 
 
 ```{r,include=TRUE}
-# this is the "setup" chunk. Info here will apply to all code blocks in the document. 
+# This is the "setup" chunk. 
+# Info here will apply to all code blocks in the document. 
+# It is telling R how to handle code that it encounters in subsequent chunks.
+
 knitr::opts_chunk$set(echo = TRUE, # Show the code
                       warning = FALSE, # Hide warnings from R
                       message = FALSE) # Hide messages from R
 ```
 
+### Load Required Packages
+
+Run the `install.packages()` line of code only once per computer. After you've run it once, "note it out" by adding a `#` character at the beginning of the line. This makes it so that the program reads it as a note, and will not attempt to execute the code. Alternatively, you could just delete this line of code. Either way, it is important that you remove this line of code after its been run, as it will prevent .Rmd and .qmd files from knitting. 
+
 ```{r}
-# step 1 install packages 
-## Do once per computer
-
 # install.packages(c("tidyverse","reshape2"))
+```
 
-# Call the packages 
-## Do this every session
+Every time you open Rstudio, you must call the packages that you want to work with to your session using the `library()` command.
 
+```{r}
 library(tidyverse) # Call the tidyverse
 library(reshape2) # Call reshape2 (for the "melt" function)
 ```
 
-### Object-oriented programming {-}
+These packages contain some of the functions that we will use in the chunks below.
 
-Examples of how Rstudio can be used to assign single values, lists of values, or 2-D arrays of Data. 
+### A Quick intro to R-Code and Object-oriented programming {-}
+
+Rstudio can operate like a high-level calculator. If we run a functional process in-line, the result of that process will be printed out:
 
 ```{r}
-# Notes 
-
-# text will cause problems 
-
-# First example 
-
 67 * 88
+```
 
+We could also "assign" the results of a functional process onto an object in the working environment (this is the basis of object-oriented programming).
+
+```{r}
 # Object-oriented programming 
+a <- 67 * 88 
+```
 
-a <- 67 * 88 # Assign the result of the function onto the object "a"
+Here, we told Rstudio to assign the result of the function onto the object "a". We could then perform subsequent calculations with the object "a": 
 
-# Example 2 
+```{r}
+a + 200
+```
 
+But much of the time, as analysts, we are working with more data than a single value. Rstudio can also assign complex data structures onto objects, which are used in subsequent computations. 
+
+```{r}
 b <- c(1,2,3,4,5) # Assign a list onto the object "b"
+```
 
-# Example 3 - DATA FAME 
+We could also assign a two-dimensional piece of data (i.e., with multiple rows and multiple columns) on to an object: 
 
-c <- data.frame( # Assign a 2-D data frame onto the object "c"
+```{r}
+c <- data.frame(
   ID = c(1,2,3,4,5), 
   Score = c(100,110,90,95,107)
 )
 ```
 
+Then we could "pass" the object `c` to subsequent functions. For example, the `head` function shows us the first six rows of data:
+
+```{r}
+head(c)
+```
+
+R is the ***statistician's tool*** so many statistical functions are built in: 
+
+```{r}
+mean(c$Score)
+```
+
+- Prints out the mean of the specified column from a dataframe. 
+
+```{r}
+sd(c$Score)
+```
+
+- Prints out the standard deviation of the specified column from a dataframe. 
+
 ### Random number generation {-}
+
+In this course, we will be generating fictitious data to represent your chosen project. In order to do this, we need to understand how random number generation works in R. 
+
+We should include a line of code `set.seed()` before computing any kind of pseudo-random process. Under the hood, Rstuido is not really using a random process. Instead, it is using a process that is finely-tuned to appear random. The `set.seed()` function specifies a starting point for the random number generation, which will ensure that the subsequent functions always produce the same values. 
 
 ```{r}
 set.seed(123) # Beginning of the random process
-
-d <- data.frame(
-  ID = c(1:100), # 100 IDs
-  Score = runif(n=100,min=1,max=10) # 100 random scores
-)
-
-head(d) # show me the first 6 rows
-tail(d) # show me the last 6 rows
-
-# Make a quick histogram of the data
-histogram <- d %>%
-  ggplot(aes(x=Score))+
-  geom_histogram(bins = 8, alpha=0.2, colour = "black")+
-  theme_classic()
-
-# Save the histogram as a high quality .png image
-ggsave("Figs/hist_1.png",histogram,height = 2.5, width = 5, dpi = 300)
-
-# Call back the high quality image 
-knitr::include_graphics("Figs/hist_1.png")
 ```
 
+- You can pick any value to enter here. 
 
-### Sample from the normal distribution {-}
+- You can also test how changing this value will change the results that you get below. 
+
+#### Method #1: Sample from a Normal Distribution
+
+Here, I will assign onto the object `d` a dataframe with two columns and 100. rows. The code below instructs Rstudio to fill the first column with the values 1 through 100. The second column uses the `rnorm()` function to assign 100 values from a normal distribution with a mean of 100 and a standard deviation of 15. 
+
+```{r}
+d <- data.frame(
+  ID = c(1:100),
+  Score = rnorm(n = 100, mean = 100, sd = 15)
+)
+```
+
+We could then pass the object `d` to other R functions:
+
+```{r}
+head(d) # show me the first 6 rows
+tail(d) # show me the last 6 rows
+```
+
+We could also generate a quick visualization by generating a ggplot: 
+
+```{r}
+d %>%
+  ggplot(aes(x=Score))+
+  geom_histogram(bins = 8, alpha = 0.2, colour = "black")+
+  theme_classic()
+```
+
+- We can visualize the mean and the spread of the scores by looking at the histogram. 
+
+#### Method #2: Sample from a List of Values {-}
+
+The method above (sampling from a normal distribution) will generate data with partial values. In many cases, students are proposing measures that produce discrete data for their Psy309 projects. If you want to generate discrete data, use the code bellow to sample from a specified list of values. 
+
+This code assigns a dataframe with two columns and 100 rows onto the object `e`. The first column will contain the values 1 through 100. The second column will contain the values 1 through 7 randomly sampled with replacement. 
 
 ```{r}
 e <- data.frame(
   ID = c(1:100),
-  Score = rnorm(n = 100, mean = 100, sd = 15) # sample from normal distribution
+  Score = sample(x = c(1:7), size = 100, replace = TRUE)
 )
-
-# Generate the chart
-histogram <- e %>%
-  ggplot(aes(x=Score))+
-  geom_histogram(bins = 8, alpha=0.2, colour = "black")+
-  theme_classic()
-
-# Save the histogram as a high quality .png image
-ggsave("Figs/hist_2.png",histogram,height = 2.5, width = 5, dpi = 300)
-
-# Call back the high quality image 
-knitr::include_graphics("Figs/hist_2.png")
 ```
 
-### Sampling from a list of values {-}
+We could also control the likelihood of each outcome in the list using the code below. Here, I am first generating a separate object names `prob_info` which contains a list of values that is equal in length of the options that will be sampled (in this case, 7), and that all add up to 1. Then, I could pass the list of probabilities to the `prob` argument of the `sample` function: 
 
 ```{r}
-# Example 1: sample randomly from the values 1:7
-f <- data.frame(
-  ID = c(1:100),
-  Score = sample(x=c(1:7),size=100,replace = TRUE)
-)
-
-
-# Example 2: set the probabilities for the possible responses
 Prob_info <- c(0.02, 0.03, 0.05, 0.1, 0.1, 0.4, 0.4)
 
-g <- data.frame(
+f <- data.frame(
   ID = c(1:100),
-  Score = sample(x=c(1:7),size=100,replace = TRUE,prob = Prob_info) # use prob info
+  Score = sample(x = c(1:7), size = 100, replace = TRUE, prob = Prob_info)
 )
+```
 
-# Generate the chart
-histogram <- g %>%
+We could use the same code as above (only changing the object that we will start with) to see a histogram of the data that we saved on the object `f` in the chunk above:
+
+```{r}
+f %>%
   ggplot(aes(x=Score))+
   geom_histogram(bins = 7, alpha=0.2, colour = "black")+
   theme_classic()+
   scale_x_continuous(breaks=c(1:7))
-
-# Save the histogram as a high quality .png image
-ggsave("Figs/hist_3.png",histogram,height = 2.5, width = 5, dpi = 300)
-
-# Call back the high quality image 
-knitr::include_graphics("Figs/hist_3.png")
 ```
 
-### Example of a complete dataset {-}
+### Example of a Complete Dataset for Practical #3 {-}
+
+Create two (or more) objects that represent the different levels of your independent variable. Simulate two columns of data for each group that represent "baseline" and "post-intervention" scores on your chosen DV using the functions from above. The data that you create should emulate what you would expect to get from the measure that you chose to use. 
 
 ```{r}
 # Make data for a ctl group
 Control_group <- data.frame(
   ID = c(1:100),
   Condition = "Placebo",
-  Baseline_IQ = rnorm(n=100,mean=100,sd=15),
-  Post_IQ = rnorm(n=100,mean=100,sd=15)
+  Baseline_IQ = rnorm(n = 100, mean = 100, sd = 15),
+  Post_IQ = rnorm(n = 100, mean = 100, sd = 15)
 )
 
 # And experimental data with the exact same column headers
 Experimental_group <- data.frame(
   ID = c(101:200),
   Condition = "Drug",
-  Baseline_IQ = rnorm(n=100,mean=100,sd=15),
-  Post_IQ = rnorm(n=100,mean=130,sd=15)
+  Baseline_IQ = rnorm(n = 100, mean = 100, sd = 15),
+  Post_IQ = rnorm(n = 100, mean = 130, sd = 15)
 )
 
 # attach them together
 JLB_data <- rbind(Control_group,Experimental_group)
 ```
 
-### Aggregate table of data {-}
+One thing that I notice when I check what my data look like using `head()` is that the values contain decimals, but IQ scores can only be whole values. 
 
 ```{r}
-# An example of "tidy text" (from the tidyverse):
+head(JLB_data)
+```
+
+I can easily round my data using the `round()` function: 
+
+```{r}
+JLB_data$Baseline_IQ <- round(JLB_data$Baseline_IQ)
+JLB_data$Post_IQ <- round(JLB_data$Post_IQ)
+```
+
+- The code above overwrote my two columns of data with rounded versions of the existing values.
+
+Now, when I check my data again, the raw values are whole numbers, as they should be for my hypothetical measurement tool! 
+
+```{r}
+head(JLB_data)
+```
+
+### Aggregate table of data {-}
+
+For Practical assignment #3, we want to see that you've created data that make sense for your chosen DV. To do this, we need to see a summary table of your data in addition to a preview of the raw values. The code below demonstrates how to create a good-looking summary table to showcase your simulated data.
+
+```{r}
 table <- JLB_data %>% # Take the data AND THEN
   melt(id.vars = c("ID","Condition")) %>% # Switch to long form AND THEN
   group_by(Condition,variable) %>% # Group by the IVs
@@ -227,13 +284,31 @@ table <- JLB_data %>% # Take the data AND THEN
     max = max(value)
   ) %>% mutate(se = sd / sqrt(n)) # Create a column for SE, and compute it
 
+# Print out the object table that the code above created
+table
+```
+
+- When I print out `table`, I see that the column names are not as informative as they could be. 
+
+- In particular, I dislike the column name "variable" -- this does not give the reader any information about what kind of data that column contains. 
+
+I can use this code to rename the columns: 
+
+```{r}
 # Rename the columns for a better looking table
 colnames(table) <- c("Condition","Timepoint","n","mean","sd","min","max","se")
+```
 
-# a regular table
-table
+And I can also pass my object to the `kable()` command from the `knitr` package to create a better looking table (compare the output from the chunk below to the printout when we just typed "table" above.)
 
+```{r}
 # a pretty table 
 knitr::kable(table, digits = 2)
 ```
+
+- For practical #3, your primary goal is to generate a summary table like this one representing the hypothesized effect of your IV on your DV. 
+
+
+
+
 

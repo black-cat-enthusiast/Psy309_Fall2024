@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Psy309: A Simulated Research Project - Practical Assignment #4</title>
+<title>Psy309: A Simulated Research Project - Practical Assignment #4: Exploring Variability in the DV</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -133,6 +133,7 @@ window.Quarto = {
 };
 </script>
 
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body class="nav-sidebar floating">
@@ -144,7 +145,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-Practical_4.html"><span class="chapter-title">Practical Assignment #4</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04-Practical_4.html"><span class="chapter-title">Practical Assignment #4: Exploring Variability in the DV</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -187,17 +188,17 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03-Practical_3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Practical Assignment #3</span></a>
+ <span class="menu-text">Practical Assignment #3: Magnitude of Manipulations</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./04-Practical_4.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Practical Assignment #4</span></a>
+  <a href="./04-Practical_4.html" class="sidebar-item-text sidebar-link active"><span class="chapter-title">Practical Assignment #4: Exploring Variability in the DV</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./05-Practical_5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Practical Assignment #5</span></a>
+  <a href="./05-Practical_5.html" class="sidebar-item-text sidebar-link"><span class="chapter-title">Practical Assignment #5: Connecting the IV and Covariate</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -222,14 +223,23 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#exploring-variability-in-the-dv" id="toc-exploring-variability-in-the-dv" class="nav-link active" data-scroll-target="#exploring-variability-in-the-dv">Exploring Variability in the DV</a>
+  <li><a href="#assignment-instructions" id="toc-assignment-instructions" class="nav-link active" data-scroll-target="#assignment-instructions">Assignment Instructions</a>
   <ul class="collapse">
   <li><a href="#connecting-covariates-to-you-dependent-variable-of-interest" id="toc-connecting-covariates-to-you-dependent-variable-of-interest" class="nav-link" data-scroll-target="#connecting-covariates-to-you-dependent-variable-of-interest">1. Connecting covariates to you dependent variable of interest</a></li>
   <li><a href="#what-is-already-known-about-these-varaibles" id="toc-what-is-already-known-about-these-varaibles" class="nav-link" data-scroll-target="#what-is-already-known-about-these-varaibles">2. What is already known about these varaibles?</a></li>
   <li><a href="#power-analysis-what-sample-size-should-you-use" id="toc-power-analysis-what-sample-size-should-you-use" class="nav-link" data-scroll-target="#power-analysis-what-sample-size-should-you-use">3. Power Analysis: what sample size should you use?</a></li>
   <li><a href="#a-picture-is-worth-1000-words" id="toc-a-picture-is-worth-1000-words" class="nav-link" data-scroll-target="#a-picture-is-worth-1000-words">4. A picture is worth 1000 words…</a></li>
   <li><a href="#reflect" id="toc-reflect" class="nav-link" data-scroll-target="#reflect">5. Reflect</a></li>
-  <li><a href="#code-for-practical-4" id="toc-code-for-practical-4" class="nav-link" data-scroll-target="#code-for-practical-4">Code for Practical #4</a></li>
+  </ul></li>
+  <li><a href="#code-for-practical-4" id="toc-code-for-practical-4" class="nav-link" data-scroll-target="#code-for-practical-4">Code for Practical #4</a>
+  <ul class="collapse">
+  <li><a href="#power-analysis" id="toc-power-analysis" class="nav-link" data-scroll-target="#power-analysis">Power Analysis</a></li>
+  <li><a href="#generate-data" id="toc-generate-data" class="nav-link" data-scroll-target="#generate-data">Generate Data</a></li>
+  <li><a href="#check-out-the-data" id="toc-check-out-the-data" class="nav-link" data-scroll-target="#check-out-the-data">Check out the data</a></li>
+  <li><a href="#check-the-correlation" id="toc-check-the-correlation" class="nav-link" data-scroll-target="#check-the-correlation">Check the correlation</a></li>
+  <li><a href="#compute-a-simple-linear-regression" id="toc-compute-a-simple-linear-regression" class="nav-link" data-scroll-target="#compute-a-simple-linear-regression">Compute a simple linear regression</a></li>
+  <li><a href="#code-to-generate-a-basic-scatterplot" id="toc-code-to-generate-a-basic-scatterplot" class="nav-link" data-scroll-target="#code-to-generate-a-basic-scatterplot">Code to generate a basic scatterplot:</a></li>
+  <li><a href="#a-fancier-better-looking-scatterplot" id="toc-a-fancier-better-looking-scatterplot" class="nav-link" data-scroll-target="#a-fancier-better-looking-scatterplot">A fancier, better looking scatterplot:</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -239,7 +249,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-title">Practical Assignment #4</span></h1>
+<h1 class="title"><span class="chapter-title">Practical Assignment #4: Exploring Variability in the DV</span></h1>
 </div>
 
 
@@ -256,8 +266,8 @@ window.Quarto = {
 </header>
 
 
-<section id="exploring-variability-in-the-dv" class="level2">
-<h2 class="anchored" data-anchor-id="exploring-variability-in-the-dv">Exploring Variability in the DV</h2>
+<section id="assignment-instructions" class="level2">
+<h2 class="anchored" data-anchor-id="assignment-instructions">Assignment Instructions</h2>
 <p><em>Please submit a single document for practical #4. A .docx file is the preferred format.</em></p>
 <section id="connecting-covariates-to-you-dependent-variable-of-interest" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="connecting-covariates-to-you-dependent-variable-of-interest">1. Connecting covariates to you dependent variable of interest</h3>
@@ -319,8 +329,9 @@ window.Quarto = {
 <h3 class="unnumbered anchored" data-anchor-id="reflect">5. Reflect</h3>
 <p>Write a closing paragraph (3-5 sentences) summarizing what it is like trying to estimate an association / correlation from the literature. What did you think about creating your first data visualization using R? Were you surprised by the number of participants required to detect your effect with 80% power? Feeling confused about any of these concepts? Is there anything that would have improved your experience doing this assignment?</p>
 </section>
-<section id="code-for-practical-4" class="level3 unnumbered">
-<h3 class="unnumbered anchored" data-anchor-id="code-for-practical-4">Code for Practical #4</h3>
+</section>
+<section id="code-for-practical-4" class="level2 unnumbered">
+<h2 class="unnumbered anchored" data-anchor-id="code-for-practical-4">Code for Practical #4</h2>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set up how the code chunks will print</span></span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span>opts_chunk<span class="sc">$</span><span class="fu">set</span>(<span class="at">echo =</span> <span class="cn">TRUE</span>, <span class="co"># Show the code</span></span>
@@ -339,8 +350,9 @@ window.Quarto = {
 <span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
 <span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pwr)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<section id="power-analysis" class="level4">
-<h4 class="anchored" data-anchor-id="power-analysis">Power Analysis</h4>
+<section id="power-analysis" class="level3">
+<h3 class="anchored" data-anchor-id="power-analysis">Power Analysis</h3>
+<p>In order to determine an optimal sample size, we estimate the magnitude of the effect of interest, then back-calculate how many participants would be needed to detect significance, assuming that the hypothesized effect actually exists in the real world. There is a hand R-function to accomplish this: <code>pwr.r.test()</code> from the <code>pwr</code> package. Here, we specify four pieces of information, and ask R to calculate the fifth. Whichever element is set to NULL will be calculated by R:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">pwr.r.test</span>(</span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="cn">NULL</span>,</span>
@@ -360,13 +372,14 @@ window.Quarto = {
     alternative = two.sided</code></pre>
 </div>
 </div>
-<p>Make sure to <strong><em>always</em></strong> round up the number of participants!</p>
 <ul>
-<li>My analysis indicates that a sample size of <span class="math inline">\(n = 85\)</span> would be required to detect statistical significance at <span class="math inline">\(\alpha = 0.05\)</span> for a relationship where <span class="math inline">\(r = 0.3\)</span>.</li>
+<li><p>My analysis indicates that a sample size of <span class="math inline">\(n = 85\)</span> would be required to detect statistical significance at <span class="math inline">\(\alpha = 0.05\)</span> for a relationship where <span class="math inline">\(r = 0.3\)</span>.</p></li>
+<li><p>Make sure to <strong><em>always</em></strong> round up the number of participants!</p></li>
 </ul>
 </section>
-<section id="generate-data" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="generate-data">Generate Data</h4>
+<section id="generate-data" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="generate-data">Generate Data</h3>
+<p>For practical #4, we will generate data using a different approach than what we did previously in practical #3. Here, we will use the <code>rnorm_multi()</code> function from the <code>faux</code> package. This function allows us to generate two columns of data with a specified correlation between them.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Set a consistent start point for "random" data generation</span></span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Makes it so the output will be consistent</span></span>
@@ -374,11 +387,21 @@ window.Quarto = {
 <span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Generate data. Specify the number of rows, number of variables, means for the columns, sd's for the columns, and the correlation between the columns.</span></span>
 <span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(<span class="at">n =</span> <span class="dv">85</span>, <span class="at">vars =</span> <span class="dv">2</span>, <span class="at">mu =</span> <span class="fu">c</span>(<span class="dv">65</span>,<span class="dv">100</span>), <span class="at">sd =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>), <span class="at">r =</span> <span class="sc">-</span><span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">rnorm_multi</span>(</span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a>  <span class="at">n =</span> <span class="dv">85</span>, <span class="at">vars =</span> <span class="dv">2</span>, </span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a>  <span class="at">mu =</span> <span class="fu">c</span>(<span class="dv">65</span>,<span class="dv">100</span>), </span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="at">sd =</span> <span class="fu">c</span>(<span class="dv">10</span>,<span class="dv">15</span>), </span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">r =</span> <span class="sc">-</span><span class="fl">0.3</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
+<ul>
+<li><p>The code above assigns a dataframe with two columns onto the object <code>data</code>.</p></li>
+<li><p>The first column will have a mean of 65 and a standard deviation of 10. This column represents the age of the participants in my fictitious study.</p></li>
+<li><p>The second column will have a mean of 100 and a standard deviation of 15. This column represents IQ scores in my fictitious study.</p></li>
+</ul>
 </section>
-<section id="check-out-the-data" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="check-out-the-data">Check out the data</h4>
+<section id="check-out-the-data" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="check-out-the-data">Check out the data</h3>
+<p>Just like we did in practical #3, we can pass our data object to the <code>head()</code> function to see a preview of the first 6 rows:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Show me the first 6 rows of data: </span></span>
 <span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -391,16 +414,21 @@ window.Quarto = {
 5 54.27693  98.64371
 6 48.10980 122.44146</code></pre>
 </div>
+</div>
+<ul>
+<li>By default, the <code>rnorm_multi()</code> function names the columns X1 and X2 (not the most informative!)</li>
+</ul>
+<p>I recommend that you rename the columns to reflect the quantities that they are intended to represent. You can use this code to rename them:</p>
+<div class="cell">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Rename the columns to represent your variables </span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">colnames</span>(data) <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Age"</span>,<span class="st">"IQ"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
-<section id="check-the-correlation" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="check-the-correlation">Check the correlation</h4>
+<section id="check-the-correlation" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="check-the-correlation">Check the correlation</h3>
+<p>We specified a correlation when generating this data using <code>rnorm_multi()</code>, but the data are generated using a pseudo-random process, so the correlation between the columns won’t always be exactly what we specified.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Check the correlation between the two columns </span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># If you don't like it, play around with the value in set.seed until you are happy. </span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(data<span class="sc">$</span>Age,data<span class="sc">$</span>IQ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cor.test</span>(data<span class="sc">$</span>Age,data<span class="sc">$</span>IQ)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
     Pearson's product-moment correlation
@@ -415,12 +443,21 @@ sample estimates:
 -0.2695696 </code></pre>
 </div>
 </div>
+<ul>
+<li><p>The actual correlation between my two columns of data is -.27.</p></li>
+<li><p>Notice how this output provides information on everything that we need for APA-style statistical reporting (correlation coefficient, t statistic, degrees of freedom, p-value, 95% confidence intervals).</p></li>
+<li><p>If you don’t like the result of this analysis, you can feel free to play around with the value in set.seed until you are happy.</p></li>
+</ul>
 </section>
-<section id="compute-a-simple-linear-regression" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="compute-a-simple-linear-regression">Compute a simple linear regression</h4>
+<section id="compute-a-simple-linear-regression" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="compute-a-simple-linear-regression">Compute a simple linear regression</h3>
+<p>Correlation is a simplified version of regression, so if we compute a regression on the same data, many of the values will be exactly the same. One key piece of information that the linear model provides which the correlation output does not give us is the <em>slope of the line of best fit</em>.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">lm</span>(IQ <span class="sc">~</span> Age, <span class="at">data=</span>data)</span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Construct a simple linear model</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>res <span class="ot">&lt;-</span> <span class="fu">lm</span>(IQ <span class="sc">~</span> Age, <span class="at">data=</span>data)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="co"># See a summary of the linear model</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(res)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
@@ -442,32 +479,36 @@ Multiple R-squared:  0.07267,   Adjusted R-squared:  0.0615
 F-statistic: 6.504 on 1 and 83 DF,  p-value: 0.0126</code></pre>
 </div>
 </div>
+<ul>
+<li><p>The Estimate for my predictor (Age) is the slope of the line of best fit.</p></li>
+<li><p>Here, each 1-year increase in age is associated with a 0.36-point decrease in IQ scores.</p></li>
+<li><p>Depending on your goals, you could also say something like a 10-year increase in age is associated with a 3.6-point decrease in IQ score.</p></li>
+</ul>
 </section>
-<section id="code-to-generate-a-basic-scatterplot" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="code-to-generate-a-basic-scatterplot">Code to generate a basic scatterplot:</h4>
+<section id="code-to-generate-a-basic-scatterplot" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="code-to-generate-a-basic-scatterplot">Code to generate a basic scatterplot:</h3>
+<p>As we’ve discussed in class, a picture is worth 1000 words when it comes to data! Seeing a chart of the continuous relationship will always be more informative than reviewing the statistical outputs.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>basic <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>data <span class="sc">%&gt;%</span></span>
 <span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> IQ))<span class="sc">+</span></span>
 <span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>()<span class="sc">+</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a><span class="co"># Save a high quality .png image</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a><span class="do">## Default size is 7 inches x 7 seven inches</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a><span class="fu">ggsave</span>(<span class="st">"Figs/scatter_1.png"</span>,basic, <span class="at">dpi =</span> <span class="dv">300</span>)</span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a><span class="co"># Call back the high quality image </span></span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">include_graphics</span>(<span class="st">"Figs/scatter_1.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"lm"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
-<p><img src="Figs/scatter_1.png" class="img-fluid figure-img" width="1050"></p>
+<p><img src="04-Practical_4_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid figure-img" width="672"></p>
 </figure>
 </div>
 </div>
 </div>
+<ul>
+<li><p>Running the code to create the ggplot will print it out in-line.</p></li>
+<li><p>By default it will be 7 inches by 7 inches, generating small axis titles and a “zoomed-out” appearance when rendered.</p></li>
+</ul>
 </section>
-<section id="a-fancier-better-looking-scatterplot" class="level4 unnumbered">
-<h4 class="unnumbered anchored" data-anchor-id="a-fancier-better-looking-scatterplot">A fancier, better looking scatterplot:</h4>
+<section id="a-fancier-better-looking-scatterplot" class="level3 unnumbered">
+<h3 class="unnumbered anchored" data-anchor-id="a-fancier-better-looking-scatterplot">A fancier, better looking scatterplot:</h3>
+<p>To improve the chart aesthetics, we can save it off as a .png image, then call the .png image back to our file. This will print out a more balanced, better looking chart. To accomplish this, I add additional arguments into the <code>geom_point()</code> and <code>geom_smooth()</code> lines of the chart code. Then, I use <code>ggsave()</code> to generate a .png image which will be stored in my working directory. The image will be 4 inches wide and 4 inches tall, and have 300 display pixels per inch. Finally, I use <code>knitr::include_graphic()</code> to print a copy of the .png image.</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>a <span class="ot">&lt;-</span> data <span class="sc">%&gt;%</span></span>
 <span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> Age, <span class="at">y =</span> IQ))<span class="sc">+</span></span>
@@ -497,9 +538,12 @@ F-statistic: 6.504 on 1 and 83 DF,  p-value: 0.0126</code></pre>
 </div>
 </div>
 </div>
+<ul>
+<li><p>Now the axes are more appropriately sized and easier to read.</p></li>
+<li><p>I also added <code>theme_classic()</code> which makes the chart appear more academic than the default ggplot output.</p></li>
+</ul>
 
 
-</section>
 </section>
 </section>
 
@@ -915,13 +959,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./03-Practical_3.html" class="pagination-link" aria-label="Practical Assignment #3">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Practical Assignment #3</span>
+      <a href="./03-Practical_3.html" class="pagination-link" aria-label="Practical Assignment #3: Magnitude of Manipulations">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Practical Assignment #3: Magnitude of Manipulations</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05-Practical_5.html" class="pagination-link" aria-label="Practical Assignment #5">
-        <span class="nav-page-text"><span class="chapter-title">Practical Assignment #5</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05-Practical_5.html" class="pagination-link" aria-label="Practical Assignment #5: Connecting the IV and Covariate">
+        <span class="nav-page-text"><span class="chapter-title">Practical Assignment #5: Connecting the IV and Covariate</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

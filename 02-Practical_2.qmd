@@ -39,7 +39,7 @@ Consider the validity of the empirical paper that you have selected. Please **de
 
 ### 4. Develop a Research Idea  {-}
 
-Now that you have reviewed the kinds of studies that are published in your field of interest and taken a look a the types of variables they use, expand on the existing work. **Write 2-3 paragraphs describing a novel study idea** that would produce data to support at least two of the "types of claims" that we have discussed in class (e.g., Frequency AND Association). Make sure that you clearly describe the independent and dependent variables in the study. 
+Now that you have reviewed the kinds of studies that are published in your field of interest and taken a look a the types of variables they use, expand on the existing work. **Write 2-3 paragraphs describing a novel study idea** that would produce data to support **a causal claim**. Make sure that you clearly describe the independent and dependent variables in the study. 
 
 What ideas do you have, either about re-using a measure you’ve read about, or improving / creating a new measure to investigate your topic? What sort of inference are you hoping to make? To describe something that we know little about? To look at the relationship between two or more constructs? Or to show that changing something about the situation causes changes in your dependent variable? 
 
@@ -49,7 +49,7 @@ Please specify the **rationale** for the study (why would this research be impor
 
 **Write a closing paragraph (3-5 sentences) describing how you are thinking about measuring the construct of interest in your research topic**. Remember that we will be creating and analyzing fictitious data over the next few weeks to further explore the research process. Would the study that you are conceptualizing be feasible in the real world? Why or why not? What processes would you need to follow in order to actually conduct this study (e.g., REB approval..)
 
-*Submissions should be 2-3 pages in length. References don't need to be written on a separate page. No marks for APA format, so please feel free to make use of various levels of headings to enhance readability.*
+*Submissions should be 2-3 pages in length. References don't need to be written on a separate page. No marks for APA document formatting, so please feel free to make use of various levels of headers to enhance readability.*
 
 
 

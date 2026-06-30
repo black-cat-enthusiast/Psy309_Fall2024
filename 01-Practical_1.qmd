@@ -19,9 +19,9 @@ The purpose of this assignment is to showcase your interest in a specific topic 
 
 **In a single paragraph (3-5 sentences), tell us what you would like to research.**
 
-*Some questions that you could think over while selecting at topic:*
+*Some questions that you could think over while selecting at topic*:
 
-Why did you decide to study Psychology? There is some mystery about the mind, or some insight that you have had, that motivates you. Do you want to help people with a particular set of challenges? Do you want to understand growth and development? The way the brain works? How people interact? The possibilities are endless.
+Why did you decide to study Psychology? There is some mystery about the mind, or some insight that you have had, that motivates you? Do you want to help people with a particular set of challenges? Do you want to understand growth and development? The way the brain works? How people interact? The possibilities are endless...
 
 In this course you will learn how to develop a research proposal around a topic of your choice, one that could be the beginning of a grant proposal or a way to wow potential supervisors for grad school, or to impress potential employers who want to know if you can lead project. The more you make this something relevant to your own goals, the more useful this course will be.
 
@@ -47,7 +47,7 @@ Conduct a basic search for a topic that you are interested in. If you would like
 
 **Provide a brief (3-5 sentence) summary of one empirical, peer-reviewed research paper from your list** (preferably one that represents an approach to your research topic that you find interesting.)
 
-- Tell us what the paper was about and why you chose it - how did you know it was an empirical paper? What about it was interesting to you?
+- Tell us what the paper was about and why you chose it. How did you know it was an empirical paper? What about it was interesting to you?
     + You don’t have to tell us everything about the paper- again just a 3-5 sentence summary in your own words, which means you must leave many details out! You will get into the details of this paper in the next two practical assignments. Note: you can change this ‘focus paper’ later if you find something better, but it is better to start with a specific paper in mind.
     + You will end up having to create an empirical research proposal by the end of the term, so this paper can be an important example for you to rely and build upon as the term goes on. The important thing is to pick a paper and dive in - this is a ‘safe space’ to just immerse yourself in a research approach, regardless of whether you actually perform research like this in the future!
 

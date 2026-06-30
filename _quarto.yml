@@ -20,3 +20,4 @@ number-sections: false
 format:
   html:
     theme: cosmo
+    css: "style.css"

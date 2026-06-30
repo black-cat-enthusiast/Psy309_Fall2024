@@ -4,9 +4,9 @@ output:
   word_document: default
 ---
 
-# Practical Assignment #4
+# Practical Assignment #4: Exploring Variability in the DV
 
-## Exploring Variability in the DV
+## Assignment Instructions
 
 *Please submit a single document for practical #4. A .docx file is the preferred format.*
 
@@ -66,7 +66,7 @@ Use an online calculator (LINK: https://homepage.univie.ac.at/robin.ristl/sample
 Write a closing paragraph (3-5 sentences) summarizing what it is like trying to estimate an association / correlation from the literature. What did you think about creating your first data visualization using R? Were you surprised by the number of participants required to detect your effect with 80% power? Feeling confused about any of these concepts? Is there anything that would have improved your experience doing this assignment?
 
 
-### Code for Practical #4 {-}
+## Code for Practical #4 {-}
 
 ```{r,setup, include=TRUE}
 # Set up how the code chunks will print
@@ -88,7 +88,9 @@ library(tidyverse)
 library(pwr)
 ```
 
-#### Power Analysis
+### Power Analysis
+
+In order to determine an optimal sample size, we estimate the magnitude of the effect of interest, then back-calculate how many participants would be needed to detect significance, assuming that the hypothesized effect actually exists in the real world. There is a hand R-function to accomplish this: `pwr.r.test()` from the `pwr` package. Here, we specify four pieces of information, and ask R to calculate the fifth. Whichever element is set to NULL will be calculated by R:
 
 ```{r}
 pwr.r.test(
@@ -100,11 +102,13 @@ pwr.r.test(
 )
 ```
 
-Make sure to ***always*** round up the number of participants! 
-
 - My analysis indicates that a sample size of $n = 85$ would be required to detect statistical significance at $\alpha = 0.05$ for a relationship where $r = 0.3$. 
 
-#### Generate Data {-}
+- Make sure to ***always*** round up the number of participants! 
+
+### Generate Data {-}
+
+For practical #4, we will generate data using a different approach than what we did previously in practical #3. Here, we will use the `rnorm_multi()` function from the `faux` package. This function allows us to generate two columns of data with a specified correlation between them. 
 
 ```{r}
 # Set a consistent start point for "random" data generation
@@ -113,52 +117,87 @@ set.seed(123) # Can be any value.
 
 # Generate data. Specify the number of rows, number of variables, means for the columns, sd's for the columns, and the correlation between the columns.
 
-data <- rnorm_multi(n = 85, vars = 2, mu = c(65,100), sd = c(10,15), r = -0.3)
+data <- rnorm_multi(
+  n = 85, vars = 2, 
+  mu = c(65,100), 
+  sd = c(10,15), 
+  r = -0.3)
 ```
 
-#### Check out the data {-}
+- The code above assigns a dataframe with two columns onto the object `data`. 
+
+- The first column will have a mean of 65 and a standard deviation of 10. This column represents the age of the participants in my fictitious study. 
+
+- The second column will have a mean of 100 and a standard deviation of 15. This column represents IQ scores in my fictitious study. 
+
+### Check out the data {-}
+
+Just like we did in practical #3, we can pass our data object to the `head()` function to see a preview of the first 6 rows:
 
 ```{r}
 # Show me the first 6 rows of data: 
 head(data)
+```
 
+- By default, the `rnorm_multi()` function names the columns X1 and X2 (not the most informative!)
+
+I recommend that you rename the columns to reflect the quantities that they are intended to represent. You can use this code to rename them: 
+
+```{r}
 # Rename the columns to represent your variables 
 colnames(data) <- c("Age","IQ")
 ```
 
-#### Check the correlation {-}
+### Check the correlation {-}
+
+We specified a correlation when generating this data using `rnorm_multi()`, but the data are generated using a pseudo-random process, so the correlation between the columns won't always be exactly what we specified. 
 
 ```{r}
-# Check the correlation between the two columns 
-# If you don't like it, play around with the value in set.seed until you are happy. 
 cor.test(data$Age,data$IQ)
 ```
 
-#### Compute a simple linear regression {-}
+- The actual correlation between my two columns of data is -.27. 
+
+- Notice how this output provides information on everything that we need for APA-style statistical reporting (correlation coefficient, t statistic, degrees of freedom, p-value, 95% confidence intervals). 
+
+- If you don't like the result of this analysis, you can feel free to play around with the value in set.seed until you are happy. 
+
+### Compute a simple linear regression {-}
+
+Correlation is a simplified version of regression, so if we compute a regression on the same data, many of the values will be exactly the same. One key piece of information that the linear model provides which the correlation output does not give us is the *slope of the line of best fit*. 
 
 ```{r}
+# Construct a simple linear model
 res <- lm(IQ ~ Age, data=data)
+
+# See a summary of the linear model
 summary(res)
 ```
 
+- The Estimate for my predictor (Age) is the slope of the line of best fit. 
 
-#### Code to generate a basic scatterplot: {-}
+- Here, each 1-year increase in age is associated with a 0.36-point decrease in IQ scores. 
+
+- Depending on your goals, you could also say something like a 10-year increase in age is associated with a 3.6-point decrease in IQ score. 
+
+### Code to generate a basic scatterplot: {-}
+
+As we've discussed in class, a picture is worth 1000 words when it comes to data! Seeing a chart of the continuous relationship will always be more informative than reviewing the statistical outputs. 
 
 ```{r}
-basic <- data %>%
+data %>%
   ggplot(aes(x = Age, y = IQ))+
   geom_point()+
   geom_smooth(method = "lm")
-
-# Save a high quality .png image
-## Default size is 7 inches x 7 seven inches
-ggsave("Figs/scatter_1.png",basic, dpi = 300)
-
-# Call back the high quality image 
-knitr::include_graphics("Figs/scatter_1.png")
 ```
 
-#### A fancier, better looking scatterplot: {-}
+- Running the code to create the ggplot will print it out in-line. 
+
+- By default it will be 7 inches by 7 inches, generating small axis titles and a "zoomed-out" appearance when rendered. 
+
+### A fancier, better looking scatterplot: {-}
+
+To improve the chart aesthetics, we can save it off as a .png image, then call the .png image back to our file. This will print out a more balanced, better looking chart. To accomplish this, I add additional arguments into the `geom_point()` and `geom_smooth()` lines of the chart code. Then, I use `ggsave()` to generate a .png image which will be stored in my working directory. The image will be 4 inches wide and 4 inches tall, and have 300 display pixels per inch. Finally, I use `knitr::include_graphic()` to print a copy of the .png image. 
 
 ```{r,fig.cap="ADD A FIGURE CAPTION HERE"}
 a <- data %>%
@@ -182,3 +221,6 @@ ggsave("JLB_graph.png",a,height=4,width=4,dpi = 300)
 knitr::include_graphics("JLB_graph.png")
 ```
 
+- Now the axes are more appropriately sized and easier to read. 
+
+- I also added `theme_classic()` which makes the chart appear more academic than the default ggplot output. 

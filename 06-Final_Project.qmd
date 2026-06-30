@@ -28,7 +28,7 @@ For this reason, please **show code used to generate analyses** as well as the r
 
 ## Introduction  {-}
 
-The expected length of the introduction section is ~ 1000 words. Make sure that you divide your ideas into paragraphs that each discuss a unique component of your study. The introduction section should be at least 5 paragraphs long, and should not be more than 10 paragraphs. We do not typically use subheading within the introduction section of an empirical article. You should introduce the articles that you have sourced throughout the practical assignments by describing **what's been done**, **what's been found**, and **what these findings means**. Use the past literature to provide rationale for the experiment that you are currently conducting. 
+The expected length of the introduction section is ~ 500 words. Make sure that you divide your ideas into paragraphs that each discuss a unique component of your study. The introduction section should be at least 5 paragraphs long, and should not be more than 10 paragraphs. We do not typically use subheading within the introduction section of an empirical article. You should introduce the articles that you have sourced throughout the practical assignments by describing **what's been done**, **what's been found**, and **what these findings means**. Use the past literature to provide rationale for the experiment that you are currently conducting. 
 
 In the final paragraph of the introduction section, you should explain the purpose of your paper (e.g., describe how you will be extending upon the findings that you've summarized so far). Make sure that you clearly explain all of the variables you will be using: The independent variable, the dependent variable, and the covariate. 
 
@@ -319,7 +319,7 @@ Unpack / explain the results from your current simulated experiment in the conte
 
 Please also explain what grouping the covariate into categories (and running factorial ANOVA) versus using linear regression on the continuous covariate add to your understanding of the measured variables. 
 
-The discussion should be between 1000 - 2000 words. Focus on ***quality*** rather than quantity. Subheadings are often useful in the discussion section. Use subheadings in such a way that they enhance your narrative. Make sure that you are ***discussing*** the findings (i.e., don't just re-state the results). 
+The discussion should be between 500-1000 words. Focus on ***quality*** rather than quantity. Subheadings are often useful in the discussion section. Use subheadings in such a way that they enhance your narrative. Make sure that you are ***discussing*** the findings (i.e., don't just re-state the results). 
 
 Here, you should also reflect on the strengths and weaknesses of your current approach. Connect your theoretical study to real-world scenarios. Should this research be carried out in real life? Why or why not? Are there other, more logical or feasible versions of this experiment that should or could be conducted? Any thoughts about experimental design for future researchers?  
 
